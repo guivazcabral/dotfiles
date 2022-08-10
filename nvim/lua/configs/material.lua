@@ -31,7 +31,7 @@ function M.config()
     lualine_style = 'stealth'
   })
 
-  vim.cmd "colorscheme material"
+  -- vim.cmd "colorscheme material"
 end
 
 return M

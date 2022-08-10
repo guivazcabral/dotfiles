@@ -40,10 +40,7 @@ function M.config()
       disabled_filetypes = { "NvimTree", "dashboard", "Outline" },
       component_separators = "",
       section_separators = "",
-      theme = {
-        normal = { c = { fg = colors.white, bg = colors.grey } },
-        inactive = { c = { fg = colors.white, bg = colors.grey } },
-      },
+      theme = 'tokyonight'
     },
     sections = {
       lualine_a = {},

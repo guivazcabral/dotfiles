@@ -78,6 +78,7 @@ packer.startup {
       end,
       requires="kyazdani42/nvim-web-devicons"
     }
+    
     use "moll/vim-bbye"
 
     -- File explorer
@@ -102,6 +103,14 @@ packer.startup {
       "projekt0n/github-nvim-theme",
       config = function()
         require("configs.theme").config()
+      end
+    }
+
+    -- Colorscheme
+    use {
+      'folke/tokyonight.nvim',
+      config = function()
+        vim.cmd "colorscheme tokyonight"
       end
     }
 
@@ -233,6 +242,7 @@ packer.startup {
       "nvim-telescope/telescope.nvim",
       cmd = "Telescope",
       config = function()
+        require("telescope.health").check()
         require("configs.telescope").config()
       end,
     }
@@ -377,7 +387,6 @@ packer.startup {
         require("configs.neoscroll").config()
       end
     }
-
   end,
   config = {
     compile_path = vim.fn.stdpath "config" .. "/lua/packer_compiled.lua",

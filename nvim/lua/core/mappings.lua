@@ -15,6 +15,9 @@ map("n", "<C-h>", "<C-w>h", opts)
 map("n", "<C-j>", "<C-w>j", opts)
 map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
+map('n', 'gb', ':BufferLinePick<CR>', opts)
+map('n', 'gh', ':BufferLineCyclePrev<CR>', opts)
+map('n', 'gl', ':BufferLineCycleNext<CR>', opts)
 
 -- Close buffer
 map("n", "Q", "<cmd>Bdelete!<CR>", opts)
@@ -75,13 +78,14 @@ map("n", "<A-j>", "<Esc><cmd>m .+1<CR>==gi", opts)
 map("n", "<A-k>", "<Esc><cmd>m .-2<CR>==gi", opts)
 
 -- NvimTree
-map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", opts)
-map("n", "<leader>o", "<cmd>NvimTreeFocus<CR>", opts)
+map("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>", opts)
+map("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", opts)
 
 -- Dashboard
 map("n", "<leader>fn", "<cmd>DashboardNewFile<CR>", opts)
 map("n", "<leader>db", "<cmd>Dashboard<CR>", opts)
 map("n", "<leader>bm", "<cmd>DashboardJumpMarks<CR>", opts)
+map("n", "<leader>sl", "<cmd>SessionLoad<CR>", opts)
 
 -- Telescope
 map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", opts)
@@ -93,7 +97,7 @@ map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", opts)
 map("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>", opts)
 
 -- Lspsaga
-map("n", "gl", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
+-- map("n", "gl", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
 map("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
 map("n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>", opts)
 map("n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>", opts)
