@@ -15,7 +15,7 @@ map("n", "<C-h>", "<C-w>h", opts)
 map("n", "<C-j>", "<C-w>j", opts)
 map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
-map('n', 'gb', ':BufferLinePick<CR>', opts)
+map('n', 'gp', ':BufferLinePick<CR>', opts)
 map('n', 'gh', ':BufferLineCyclePrev<CR>', opts)
 map('n', 'gl', ':BufferLineCycleNext<CR>', opts)
 
