@@ -1,5 +1,6 @@
-Install spaceship prompt
+Install kitty https://sw.kovidgoyal.net/kitty/binary/
 
-https://github.com/spaceship-prompt/spaceship-prompt#oh-my-zsh
+Install spaceship prompt https://github.com/spaceship-prompt/spaceship-prompt#oh-my-zsh
 
-Install kitty
+brew install ripgrep
+brew install fzf
