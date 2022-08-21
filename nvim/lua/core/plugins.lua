@@ -98,14 +98,6 @@ packer.startup {
       end
     }
 
-    -- Github Theme
-    use {
-      "projekt0n/github-nvim-theme",
-      config = function()
-        require("configs.theme").config()
-      end
-    }
-
     -- Colorscheme
     use {
       'folke/tokyonight.nvim',
