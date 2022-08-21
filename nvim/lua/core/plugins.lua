@@ -379,6 +379,19 @@ packer.startup {
         require("configs.neoscroll").config()
       end
     }
+
+    -- Cheatsheet
+    use {
+      'sudormrfbin/cheatsheet.nvim',
+      requires = {
+        {'nvim-telescope/telescope.nvim'},
+        {'nvim-lua/popup.nvim'},
+        {'nvim-lua/plenary.nvim'},
+      },
+      config = function()
+        require("configs.cheatsheet").config()
+      end
+    }
   end,
   config = {
     compile_path = vim.fn.stdpath "config" .. "/lua/packer_compiled.lua",

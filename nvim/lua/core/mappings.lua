@@ -112,6 +112,9 @@ map("n", "<C-\\>", "<cmd>ToggleTerm<CR>", opts)
 -- Markdown Preview
 map("n", "<leader>mp", "<Plug>MarkdownPreview", opts)
 
+-- Cheatsheet
+map("n", "<leader>?", "<Cmd>Cheatsheet<CR>", opts)
+
 -- Visual --
 -- Stay in indent mode
 map("v", "<", "<gv", opts)

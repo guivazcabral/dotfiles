@@ -1,0 +1,19 @@
+## panes
+Navigate to left pane | <S-h>
+Navigate to right pane | <S-l>
+
+## tabs
+Select tab by number | gp 
+Select previous tab | gh
+Select next tab | gl 
+
+## git
+Current line blame | tb 
+
+## file
+Copy file path | <leader>cs
+
+## code
+Go to definition | gd
+Find references | gr
+Refactor rename | <leader>rn
