@@ -7,7 +7,9 @@ function M.config()
   end
 
   cheatsheet.setup({
-    bundled_cheatsheets = { disabled = {"nerd-fonts"} },
+    bundled_cheatsheets = { 
+      disabled = { "nerd-fonts", "octo" } 
+    },
     bundled_plugin_cheatsheets = true,
     include_only_installed_plugins = true,
   })

@@ -40,7 +40,7 @@ packer.startup {
     -- Comment
     use {
       "numToStr/Comment.nvim",
-      config = function ()
+      config = function()
         require("configs.comment").config()
       end
     }
@@ -76,9 +76,9 @@ packer.startup {
       config = function()
         require("configs.bufferline").config()
       end,
-      requires="kyazdani42/nvim-web-devicons"
+      requires = "kyazdani42/nvim-web-devicons"
     }
-    
+
     use "moll/vim-bbye"
 
     -- File explorer
@@ -234,7 +234,6 @@ packer.startup {
       "nvim-telescope/telescope.nvim",
       cmd = "Telescope",
       config = function()
-        require("telescope.health").check()
         require("configs.telescope").config()
       end,
     }
@@ -270,7 +269,7 @@ packer.startup {
         "nvim-telescope/telescope.nvim",
         "kyazdani42/nvim-web-devicons",
       },
-      config = function ()
+      config = function()
         require("configs.octo").config()
       end
     }
@@ -279,7 +278,7 @@ packer.startup {
       "TimUntersberger/neogit",
       requires = "nvim-lua/plenary.nvim",
       event = "BufRead",
-      config = function ()
+      config = function()
         require("configs.neogit")
       end
     }
@@ -297,7 +296,7 @@ packer.startup {
     use {
       "tpope/vim-rails",
       event = "BufRead",
-      config = function ()
+      config = function()
         require("configs.vim-rails")
       end
     }
@@ -384,9 +383,9 @@ packer.startup {
     use {
       'sudormrfbin/cheatsheet.nvim',
       requires = {
-        {'nvim-telescope/telescope.nvim'},
-        {'nvim-lua/popup.nvim'},
-        {'nvim-lua/plenary.nvim'},
+        { 'nvim-telescope/telescope.nvim' },
+        { 'nvim-lua/popup.nvim' },
+        { 'nvim-lua/plenary.nvim' },
       },
       config = function()
         require("configs.cheatsheet").config()

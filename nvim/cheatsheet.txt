@@ -8,7 +8,7 @@ Select previous tab | gh
 Select next tab | gl 
 
 ## git
-Current line blame | tb 
+Current line blame | <leader>tb 
 
 ## file
 Copy file path | <leader>cs
