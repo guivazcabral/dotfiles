@@ -9,11 +9,20 @@ Select next tab | gl
 
 ## git
 Current line blame | <leader>tb 
+Toggle deleted | <leader>td
+Preview hunk | <leader>hp
+Diff this | <leader>hd
 
 ## file
 Copy file path | <leader>cs
 
 ## code
-Go to definition | gd
+Clear highlighted text | <leader>h
 Find references | gr
+Go to definition | gd
+JSON Path to register | <leader>jp
+Move line down (visual) | <A-j>
+Move line up (visual) | <A-k>
 Refactor rename | <leader>rn
+Show line diagnostics | gl
+

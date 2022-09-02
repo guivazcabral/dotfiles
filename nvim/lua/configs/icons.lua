@@ -113,6 +113,11 @@ function M.config()
       color = colors.toml,
       name = "toml",
     },
+    ["spec.ts"] = {
+      icon = "ﭧ",
+      color = colors.ts,
+      name = "ts",
+    },
     ts = {
       icon = "",
       color = colors.ts,

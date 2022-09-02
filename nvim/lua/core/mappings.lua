@@ -15,9 +15,6 @@ map("n", "<C-h>", "<C-w>h", opts)
 map("n", "<C-j>", "<C-w>j", opts)
 map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
-map('n', 'gp', ':BufferLinePick<CR>', opts)
-map('n', 'gh', ':BufferLineCyclePrev<CR>', opts)
-map('n', 'gl', ':BufferLineCycleNext<CR>', opts)
 
 -- Close buffer
 map("n", "Q", "<cmd>Bdelete!<CR>", opts)
@@ -96,8 +93,12 @@ map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", opts)
 map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", opts)
 map("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>", opts)
 
+-- Json Path
+map("n", "<leader>jp", "<cmd>JsonPath<CR>", opts)
+
 -- Lspsaga
--- map("n", "gl", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
+map("n", "<M-CR>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
+map("n", "gl", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
 map("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
 map("n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>", opts)
 map("n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>", opts)

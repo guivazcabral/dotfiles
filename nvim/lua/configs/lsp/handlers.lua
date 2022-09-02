@@ -1,7 +1,6 @@
 local M = {}
 
 function M.setup()
-
   local signs = {
     { name = "DiagnosticSignError", text = "" },
     { name = "DiagnosticSignWarn", text = "" },

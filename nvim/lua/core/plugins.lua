@@ -391,6 +391,14 @@ packer.startup {
         require("configs.cheatsheet").config()
       end
     }
+
+    -- Copy json path
+    use {
+      'mogelbrod/vim-jsonpath',
+      config = function()
+        require("configs.jsonpath").config()
+      end
+    }
   end,
   config = {
     compile_path = vim.fn.stdpath "config" .. "/lua/packer_compiled.lua",
