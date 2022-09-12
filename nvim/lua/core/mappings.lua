@@ -97,7 +97,7 @@ map("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>", opts)
 map("n", "<leader>jp", "<cmd>JsonPath<CR>", opts)
 
 -- Lspsaga
-map("n", "<M-CR>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
+map("n", "<M-CR>", "<cmd>Lspsaga code_action<cr>", opts)
 map("n", "gl", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
 map("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
 map("n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>", opts)

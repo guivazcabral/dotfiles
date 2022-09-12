@@ -35,6 +35,8 @@ alias amend="gc --amend --no-edit"
 alias amend-edit="gc --amend"
 alias gpf="ggpush --force-with-lease"
 alias gap="ga -p"
+alias awswhoami="aws sts get-caller-identity"
+alias nv=nvim
 
 eval "$(rbenv init -)"
 

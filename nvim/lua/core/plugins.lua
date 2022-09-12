@@ -100,9 +100,11 @@ packer.startup {
 
     -- Colorscheme
     use {
-      'folke/tokyonight.nvim',
+      "catppuccin/nvim", as = "catppuccin",
       config = function()
-        vim.cmd "colorscheme tokyonight"
+        vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+        require("catppuccin").setup()
+        vim.cmd [[colorscheme catppuccin]]
       end
     }
 

@@ -66,6 +66,9 @@ function M.config()
       --   -- add custom logic
       --   return buffer_a.modified > buffer_b.modified
       -- end
+      highlights = require("catppuccin.groups.integrations.bufferline").get {
+        styles = { "italic", "bold" },
+      },
     },
   }
 end

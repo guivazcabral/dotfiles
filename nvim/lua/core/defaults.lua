@@ -1,6 +1,6 @@
 local config = {
 
-  colorscheme = "tokyonight",
+  colorscheme = "catppuccin",
 
   plugins = {},
 

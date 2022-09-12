@@ -64,7 +64,8 @@ M.on_attach = function(client, bufnr)
     "solargraph",
     "sumneko_lua",
     "tsserver",
-    "yamlls"
+    "yamlls",
+    "terraformls"
   }
 
   for _, value in ipairs(lsp_client) do
@@ -85,5 +86,7 @@ if not status_ok then
 end
 
 M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+
+
 
 return M
