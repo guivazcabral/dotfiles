@@ -92,6 +92,7 @@ map("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)
 map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", opts)
 map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", opts)
 map("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>", opts)
+map("n", "<leader>fr", "<cmd>Telescope registers<CR>", opts)
 
 -- Json Path
 map("n", "<leader>jp", "<cmd>JsonPath<CR>", opts)

@@ -46,3 +46,4 @@ alias lg='lazygit'
 
 setopt auto_cd
 cdpath=($HOME/dev)
+export EDITOR=/usr/local/bin/nvim
