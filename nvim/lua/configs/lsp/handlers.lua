@@ -70,8 +70,8 @@ M.on_attach = function(client, bufnr)
 
   for _, value in ipairs(lsp_client) do
     if client.name == value then
-      client.server_capabilities.document_formatting = false
-      client.server_capabilities.document_range_formatting = false
+      client.resolved_capabilities.document_formatting = false
+      client.resolved_capabilities.document_range_formatting = false
     end
   end
 
