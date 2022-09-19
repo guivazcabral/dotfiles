@@ -1,4 +1,3 @@
-local M = {}
 
 local opts = { noremap = true, silent = true }
 
@@ -116,6 +115,9 @@ map("n", "<leader>mp", "<Plug>MarkdownPreview", opts)
 
 -- Cheatsheet
 map("n", "<leader>?", "<Cmd>Cheatsheet<CR>", opts)
+
+-- Outline
+map("n", "<C-7>", "<Cmd>SymbolsOutline<CR>", opts)
 
 -- Visual --
 -- Stay in indent mode

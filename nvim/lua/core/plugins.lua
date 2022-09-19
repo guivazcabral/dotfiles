@@ -225,7 +225,6 @@ packer.startup {
     -- LSP symbols
     use {
       "simrat39/symbols-outline.nvim",
-      cmd = "SymbolsOutline",
       setup = function()
         require("configs.symbols-outline").setup()
       end
