@@ -7,6 +7,7 @@ function M.config()
   end
 
   local colors = {
+    angular = "#c3002f",
     c = "#519aba",
     css = "#61afef",
     deb = "#a1b7ee",
@@ -112,6 +113,21 @@ function M.config()
       icon = "",
       color = colors.toml,
       name = "toml",
+    },
+    ["module.ts"] = {
+      icon = "",
+      color = colors.angular,
+      name = "angular",
+    },
+    ["stories.ts"] = {
+      icon = "",
+      color = colors.rb,
+      name = "storybook",
+    },
+    ["stories.tsx"] = {
+      icon = "",
+      color = colors.rb,
+      name = "storybook",
     },
     ["spec.ts"] = {
       icon = "ﭧ",

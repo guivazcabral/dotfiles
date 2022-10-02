@@ -5,4 +5,5 @@ Install spaceship prompt https://github.com/spaceship-prompt/spaceship-prompt#oh
 ```sh
 brew install ripgrep
 brew install fzf
+npm install jsonlint -g
 ```

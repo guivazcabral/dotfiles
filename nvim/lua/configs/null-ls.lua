@@ -36,6 +36,8 @@ function M.config()
       diagnostics.rubocop,
       -- Terraform
       formatting.terraform_fmt,
+      -- Json
+      diagnostics.jsonlint,
     },
     on_attach = function(client, bufnr)
       if client.supports_method("textDocument/formatting") then

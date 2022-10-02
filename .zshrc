@@ -37,6 +37,8 @@ alias gpf="ggpush --force-with-lease"
 alias gap="ga -p"
 alias awswhoami="aws sts get-caller-identity"
 alias nv=nvim
+alias update-kitty="cd ~ && curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin"
+alias update-zsh="source ~/.zshrc"
 
 eval "$(rbenv init -)"
 
