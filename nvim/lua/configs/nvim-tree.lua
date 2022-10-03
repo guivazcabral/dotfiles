@@ -61,7 +61,6 @@ function M.config()
       },
     },
     view = {
-      height = 30,
       hide_root_folder = false,
       mappings = {
         custom_only = false,
