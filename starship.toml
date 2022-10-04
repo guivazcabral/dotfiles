@@ -1,0 +1,27 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """$directory$git_branch$package$nodejs$ruby$aws
+$character"""
+
+[aws]
+format = "on [$symbol$profile]($style) "
+style = "bold blue"
+symbol = " "
+force_display = true
+
+[git_branch]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+format = "is [$symbol$version]($style) "
+display_private = true
+
+[ruby]
+symbol = " "
+
+[character]
+success_symbol = "[➜](bold green)"

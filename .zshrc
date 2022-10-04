@@ -1,3 +1,8 @@
+#####
+# WITH THE ADDITION OF FISH, THIS BECAME DEPRECATED
+# KEEP IT HERE IF WE MOVE BACK TO ohmyzsh
+#####
+
 export ZSH="/Users/guilherme/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
