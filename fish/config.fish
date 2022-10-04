@@ -10,7 +10,6 @@ export STARSHIP_CONFIG=/Users/guilherme/dev/dotfiles/starship.toml
 starship init fish | source
 
 # auto load nvm version on pwd change
-export NVM_DIR="$HOME/.nvm"
 load_nvm > /dev/stderr
 
 alias gpf="ggpush --force-with-lease"
