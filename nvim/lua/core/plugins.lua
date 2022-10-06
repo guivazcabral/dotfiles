@@ -137,6 +137,11 @@ packer.startup {
           "windwp/nvim-ts-autotag",
           after = "nvim-treesitter"
         },
+        {
+          -- context sticky headers
+          "nvim-treesitter/nvim-treesitter-context",
+          after = "nvim-treesitter"
+        },
       },
     }
 
