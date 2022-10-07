@@ -136,4 +136,7 @@ map("x", "K", "<cmd>move '<-2<CR>gv-gv", opts)
 map("x", "<A-j>", "<cmd>move '>+1<CR>gv-gv", opts)
 map("x", "<A-k>", "<cmd>move '<-2<CR>gv-gv", opts)
 
+-- Run tests
+map("n", "<leader>t", "<cmd>lua require('jester').run_file()<CR>", opts)
+
 return M

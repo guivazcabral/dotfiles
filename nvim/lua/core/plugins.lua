@@ -298,6 +298,13 @@ packer.startup {
       end
     }
 
+    use {
+      "David-Kunz/jester" ,
+      config = function()
+        require("configs.jester").config()
+      end
+    }
+
     -- Rails
     use {
       "tpope/vim-rails",
