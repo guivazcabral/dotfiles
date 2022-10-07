@@ -5,7 +5,7 @@ $character"""
 
 [aws]
 format = "on [$symbol$profile]($style) "
-style = "bold blue"
+style = "bold #fab387"
 symbol = " "
 force_display = true
 
@@ -19,9 +19,13 @@ symbol = " "
 symbol = " "
 format = "is [$symbol$version]($style) "
 display_private = true
+style = "#fab387"
 
 [ruby]
 symbol = " "
 
+[directory]
+style = "bold #fab387"
+
 [character]
-success_symbol = "[➜](bold green)"
+success_symbol = "[𐳝](bold fg:#89b4fa)"
