@@ -20,3 +20,4 @@ alias lg="lazygit"
 
 export EDITOR=/usr/local/bin/nvim
 
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
