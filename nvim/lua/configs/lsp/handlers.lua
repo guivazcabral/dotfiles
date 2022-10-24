@@ -70,6 +70,11 @@ M.on_attach = function(client, bufnr)
 
   for _, value in ipairs(lsp_client) do
     if client.name == value then
+      if client.name == "tsserver" then
+        client.server_capabilities.documentRangeFormattingProvider = false
+        client.server_capabilities.documentFormattingProvider = false
+      end
+
       client.server_capabilities.document_formatting = false
       client.server_capabilities.document_range_formatting = false
     end
@@ -85,7 +90,7 @@ if not status_ok then
   return
 end
 
-M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
-
+M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 return M
+

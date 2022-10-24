@@ -24,7 +24,7 @@ function M.config()
       -- Elixir
       formatting.mix,
       -- JS
-      formatting.prettier,
+      formatting.prettierd,
       -- Fish
       formatting.fish_indent,
       -- Go
