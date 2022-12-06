@@ -134,6 +134,11 @@ function M.config()
       color = colors.ts,
       name = "ts",
     },
+    ["cy.ts"] = {
+      icon = "ﭧ",
+      color = colors.ts,
+      name = "ts",
+    },
     ts = {
       icon = "",
       color = colors.ts,
