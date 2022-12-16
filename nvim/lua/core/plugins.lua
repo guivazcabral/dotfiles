@@ -412,6 +412,13 @@ packer.startup {
         require("configs.jsonpath").config()
       end
     }
+
+    use {
+      'gaelph/logsitter.nvim', 
+      requires = {
+        'nvim-treesitter/nvim-treesitter'
+      }
+    }
   end,
   config = {
     compile_path = vim.fn.stdpath "config" .. "/lua/packer_compiled.lua",

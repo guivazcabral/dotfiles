@@ -96,6 +96,9 @@ map("n", "<leader>fr", "<cmd>Telescope registers<CR>", opts)
 -- Json Path
 map("n", "<leader>jp", "<cmd>JsonPath<CR>", opts)
 
+-- Logsitter
+map("n", "<leader>lg", "<cmd>lua require('logsitter').log()<CR>", opts)
+
 -- Lspsaga
 map("n", "<M-CR>", "<cmd>Lspsaga code_action<cr>", opts)
 map("n", "gl", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
