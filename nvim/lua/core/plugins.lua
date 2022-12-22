@@ -419,6 +419,12 @@ packer.startup {
         'nvim-treesitter/nvim-treesitter'
       }
     }
+
+    use{ 'anuvyklack/pretty-fold.nvim',
+      config = function()
+        require("configs.pretty-fold").config()
+      end
+    }
   end,
   config = {
     compile_path = vim.fn.stdpath "config" .. "/lua/packer_compiled.lua",

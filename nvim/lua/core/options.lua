@@ -7,6 +7,7 @@ set.spelllang = "en"                            -- Support US english
 set.clipboard = "unnamedplus"                   -- Connection to the system clipboard
 set.signcolumn = "yes"                          -- Always show the sign column
 set.foldmethod = "manual"                       -- Create folds manually
+set.foldcolumn = "1"                              -- Show fold markers on the left of line numbers
 set.completeopt = { "menuone", "noselect" }     -- Options for insert mode completion
 set.colorcolumn = "99999"                       -- Fix for the indentline problem
 set.backup = false                              -- Disable making a backup file
