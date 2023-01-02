@@ -420,11 +420,13 @@ packer.startup {
       }
     }
 
-    use{ 'anuvyklack/pretty-fold.nvim',
+    use {
+      'anuvyklack/pretty-fold.nvim',
       config = function()
         require("configs.pretty-fold").config()
       end
     }
+
   end,
   config = {
     compile_path = vim.fn.stdpath "config" .. "/lua/packer_compiled.lua",
