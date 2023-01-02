@@ -25,28 +25,30 @@ function M.config()
     { icon = '  ',
       desc = 'Recently opened files                 ',
       action = 'Telescope oldfiles',
-      shortcut = 'SPC f h' },
+      shortcut = 'SPC f h'
+    },
     { icon = '  ',
       desc = 'Find file                             ',
       action = 'Telescope find_files',
-      shortcut = 'SPC f f' },
+      shortcut = 'SPC f f'
+    },
     { icon = '  ',
       desc = 'File Browser                          ',
       action = 'NvimTreeToggle',
-      shortcut = 'SPC e e' },
+      shortcut = 'SPC e e'
+    },
     { icon = '  ',
       desc = 'Find Word                             ',
       action = 'Telescope live_grep',
-      shortcut = 'SPC f g' },
+      shortcut = 'SPC f g'
+    },
     { icon = '洛 ',
       desc = 'New File                              ',
       action = 'DashboardNewFile',
-      shortcut = 'SPC f n' },
-    { icon = '  ',
-      desc = 'Last Session                          ',
-      action = 'SessionLoad',
-      shortcut = 'SPC s l' },
+      shortcut = 'SPC f n'
+    },
   }
+
   local g = vim.g
   local fn = vim.fn
 

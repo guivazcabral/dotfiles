@@ -427,6 +427,14 @@ packer.startup {
       end
     }
 
+    use {
+      'EricDriussi/remember-me.nvim',
+      config = function()
+        require("configs.remember-me").config()
+      end
+    }
+
+
   end,
   config = {
     compile_path = vim.fn.stdpath "config" .. "/lua/packer_compiled.lua",
