@@ -76,6 +76,11 @@ function M.config()
       u = { "<cmd>PackerUpdate<cr>", "Update" },
     },
 
+    w = {
+      name = "Windows",
+      Q = { "<cmd>%bd|e#<cr>", "Close other windows" },
+    },
+
     g = {
       name = "Git",
       j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
