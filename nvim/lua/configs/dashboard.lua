@@ -2,53 +2,6 @@ local M = {}
 
 function M.config()
   local db = require('dashboard')
-  db.custom_header = {
-    '        ████████████████████        ',
-    '      ██                    ██      ',
-    '    ██                        ██    ',
-    '  ██                            ██  ',
-    '  ██                            ██  ',
-    '████████████████████████████████████',
-    '██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██',
-    '  ████████████████████████████████  ',
-    '██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██',
-    '  ██░░██░░░░██████░░░░░░██░░░░████  ',
-    '  ████  ████      ██████  ████  ██  ',
-    '  ██                            ██  ',
-    '    ████████████████████████████    ',
-    '                                    ', 
-  }
-
-  db.preview_file_height = 12
-  db.preview_file_width = 80
-  db.custom_center = {
-    { icon = '  ',
-      desc = 'Recently opened files                 ',
-      action = 'Telescope oldfiles',
-      shortcut = 'SPC f h'
-    },
-    { icon = '  ',
-      desc = 'Find file                             ',
-      action = 'Telescope find_files',
-      shortcut = 'SPC f f'
-    },
-    { icon = '  ',
-      desc = 'File Browser                          ',
-      action = 'NvimTreeToggle',
-      shortcut = 'SPC e e'
-    },
-    { icon = '  ',
-      desc = 'Find Word                             ',
-      action = 'Telescope live_grep',
-      shortcut = 'SPC f g'
-    },
-    { icon = '洛 ',
-      desc = 'New File                              ',
-      action = 'DashboardNewFile',
-      shortcut = 'SPC f n'
-    },
-  }
-
   local g = vim.g
   local fn = vim.fn
 
@@ -60,6 +13,61 @@ function M.config()
   }
 
   g.indentLine_fileTypeExclude = { "dashboard" }
+
+
+  db.setup({
+    theme = 'doom',
+    config = {
+      header = {
+        '        ████████████████████        ',
+        '      ██                    ██      ',
+        '    ██                        ██    ',
+        '  ██                            ██  ',
+        '  ██                            ██  ',
+        '████████████████████████████████████',
+        '██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██',
+        '  ████████████████████████████████  ',
+        '██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██',
+        '  ██░░██░░░░██████░░░░░░██░░░░████  ',
+        '  ████  ████      ██████  ████  ██  ',
+        '  ██                            ██  ',
+        '    ████████████████████████████    ',
+        '                                    ', 
+      },
+      center = {
+        { icon = '  ',
+          desc = 'Recently opened files                 ',
+          action = 'Telescope oldfiles',
+          keymap = 'SPC f h'
+        },
+        { icon = '  ',
+          desc = 'Find file                             ',
+          action = 'Telescope find_files',
+          shortcut = 'SPC f f'
+        },
+        { icon = '  ',
+          desc = 'File Browser                          ',
+          action = 'NvimTreeToggle',
+          keymap = 'SPC e e'
+        },
+        { icon = '  ',
+          desc = 'Find Word                             ',
+          action = 'Telescope live_grep',
+          keymap = 'SPC f g'
+        },
+        { icon = '洛 ',
+          desc = 'New File                              ',
+          action = 'DashboardNewFile',
+          keymap = 'SPC f n'
+        },
+      },
+      footer = {
+        " ",
+        " Neovim loaded " .. plugins_count .. " plugins ",
+      }
+
+    }
+  })
 end
 
 return M

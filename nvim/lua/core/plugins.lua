@@ -328,9 +328,11 @@ packer.startup {
     -- Start screen
     use {
       "glepnir/dashboard-nvim",
+      event = 'VimEnter',
       config = function()
         require("configs.dashboard").config()
-      end
+      end,
+      requires = {'nvim-tree/nvim-web-devicons'}
     }
 
     -- Color highlighting
@@ -433,8 +435,6 @@ packer.startup {
         require("configs.remember-me").config()
       end
     }
-
-
   end,
   config = {
     compile_path = vim.fn.stdpath "config" .. "/lua/packer_compiled.lua",
