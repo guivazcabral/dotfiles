@@ -96,8 +96,10 @@ map("n", "<leader>fr", "<cmd>Telescope registers<CR>", opts)
 -- Json Path
 map("n", "<leader>jp", "<cmd>JsonPath<CR>", opts)
 
--- Logsitter
-map("n", "<leader>lg", "<cmd>lua require('logsitter').log()<CR>", opts)
+-- Logsitter this is so hacky it hurts
+vim.keymap.set("n", "<leader>lg", function()
+  require("logsitter").log()
+end)
 
 -- Lspsaga
 map("n", "<M-CR>", "<cmd>Lspsaga code_action<cr>", opts)
