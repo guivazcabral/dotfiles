@@ -69,6 +69,9 @@ map("n", "<leader>fr", "<cmd>Telescope registers<CR>", opts)
 -- Json Path
 map("n", "<leader>jp", "<cmd>JsonPath<CR>", opts)
 
+-- Run tests
+map("n", "<leader>t", "<cmd>TestFile<CR>", opts)
+
 -- Logsitter this is so hacky it hurts
 vim.keymap.set("n", "<leader>lg", function()
   require("logsitter").log()

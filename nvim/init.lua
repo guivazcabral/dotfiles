@@ -285,7 +285,7 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'help', 'vim' },
+  ensure_installed = { 'javascript', 'typescript', 'tsx', 'help', 'vim' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = false,
@@ -492,6 +492,7 @@ cmp.setup {
   },
 }
 
+require "after.plugins.autocmds"
 require "after.plugins.defaults"
 require "after.plugins.mappings"
 

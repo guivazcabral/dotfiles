@@ -2,9 +2,9 @@ return {
   "moll/vim-bbye",
   "tpope/vim-surround",
   "tpope/vim-abolish",
-  "karb94/neoscroll.nvim",
   "p00f/nvim-ts-rainbow",
   "windwp/nvim-ts-autotag",
+  "gaelph/logsitter.nvim",
   {
     "folke/trouble.nvim",
     config = function()
