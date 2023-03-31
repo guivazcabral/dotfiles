@@ -396,6 +396,7 @@ local on_attach = function(_, bufnr)
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
     vim.lsp.buf.format({ async = true })
   end, { desc = 'Format current buffer with LSP' })
+
   nmap('<leader>f', '<CMD>Format<CR>', 'Format current buffer with LSP')
 end
 
@@ -445,23 +446,6 @@ mason_lspconfig.setup_handlers {
     }
   end,
 }
-
-local mason_null_ls = require 'mason-null-ls'
-
-mason_null_ls.setup({
-  -- list of formatters & linters for mason to install
-  ensure_installed = {
-    "prettierd",     -- ts/js formatter
-    "stylua",        -- lua formatter
-    "terraform_fmt", -- terraform
-    "yamlfmt"        -- Yaml
-  },
-  -- auto-install configured formatters & linters (with null-ls)
-  automatic_installation = true,
-  automatic_setup = true,
-})
-
-mason_null_ls.setup_handlers()
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
