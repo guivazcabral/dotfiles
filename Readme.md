@@ -1,3 +1,10 @@
+## Dotfiles
+
+Welcome to my dotfiles 🎉 here you'll find (some of) the configuration I use in my personal dev env.
+This is very personal, as it relies heavily on my preferences. 
+It is also ever-changing so don't expect this to be super up to date. 
+
+
 <details>
   <summary>Kitty</summary>
   
