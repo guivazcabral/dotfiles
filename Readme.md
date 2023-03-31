@@ -1,22 +1,40 @@
-[kitty](https://sw.kovidgoyal.net/kitty/binary/) 
+<details>
+  <summary>Kitty</summary>
+  
+  - Install [kitty](https://sw.kovidgoyal.net/kitty/binary/) 
+  
+  - Create symlinks for `~/.config` 
+  
+  - Install fish `brew install fish`
+  
+</details>
 
-Create symlinks for `~/.config` 
+<details>
+  <summary>Neovim</summary>
+  
+  - Install [Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim) 
+  
+  - Create symlinks for `~/.config` 
+  
+  - Install utilities:
+  
+    ```sh
+    brew install ripgrep
+    brew install fzf
+    npm install jsonlint -g
+    npm install -g @fsouza/prettierd
+    ```
+</details>
 
-fish
+<details>
+  <summary>Misc</summary>
+  
+  - Slack theme: 
+    ```
+    #11111B,#F8F8FA,#6C7086,#B4BEFE,#181825,#CDD6F4,#A6E3A1,#F38BA8,#11111B,#FAB387
+    ```
+  
+</details>
 
-```sh
-brew install fish
-```
 
-Neovim Utils
 
-```sh
-brew install ripgrep
-brew install fzf
-npm install jsonlint -g
-```
-
-Slack theme: 
-```
-#11111B,#F8F8FA,#6C7086,#B4BEFE,#181825,#CDD6F4,#A6E3A1,#F38BA8,#11111B,#FAB387
-```
