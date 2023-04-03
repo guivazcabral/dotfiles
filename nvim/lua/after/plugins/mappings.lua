@@ -53,8 +53,8 @@ map("n", "<A-j>", "<Esc><cmd>m .+1<CR>==gi", opts)
 map("n", "<A-k>", "<Esc><cmd>m .-2<CR>==gi", opts)
 
 -- NvimTree
-map("n", "<leader>ee", "<cmd>Neotree toggle<CR>", opts)
-map("n", "<leader>e", "<cmd>Neotree focus<CR>", opts)
+map("n", "<leader>ee", "<cmd>NeoTreeRevealToggle<CR>", opts)
+map("n", "<leader>e", "<cmd>NeoTreeReveal<CR>", opts)
 
 -- Telescope
 map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", opts)
