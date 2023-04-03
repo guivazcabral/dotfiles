@@ -52,22 +52,22 @@ map("n", "<S-h>", "<cmd>bprevious<CR>", opts)
 map("n", "<A-j>", "<Esc><cmd>m .+1<CR>==gi", opts)
 map("n", "<A-k>", "<Esc><cmd>m .-2<CR>==gi", opts)
 
--- NvimTree
+-- NeoTree
 map("n", "<leader>ee", "<cmd>NeoTreeRevealToggle<CR>", opts)
 map("n", "<leader>e", "<cmd>NeoTreeReveal<CR>", opts)
 
--- Telescope
-map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", opts)
-map("n", "<leader>fw", "<cmd>Telescope grep_string<CR>", opts)
-map("n", "<leader>gc", "<cmd>Telescope git_commits<CR>", opts)
-map("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)
-map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", opts)
-map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", opts)
-map("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>", opts)
-map("n", "<leader>fr", "<cmd>Telescope registers<CR>", opts)
-
 -- NavBuddy
 map("n", "<leader>nb", "<cmd>Navbuddy<CR>", opts)
+
+-- Gitsigns
+map("n", "<leader>hR", "<cmd>Gitsigns reset_buffer<CR>", opts)
+map("n", "<leader>tb", "<cmd>Gitsigns toggle_current_line_blame<CR>", opts)
+map("n", "<leader>td", "<cmd>Gitsigns toggle_deleted<CR>", opts)
+
+-- LSPSaga
+map("n", "<M-CR>", "<cmd>Lspsaga code_action<cr>", opts)
+map("n", "gl", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
+map("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
 
 -- Json Path
 map("n", "<leader>jp", "<cmd>JsonPath<CR>", opts)
