@@ -355,7 +355,25 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = "Open diagn
 
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
+  -- checker for values in hashTable
+  local function has_value(tab, val)
+    for index, value in ipairs(tab) do
+      if value == val then
+        return true
+      end
+    end
+
+    return false
+  end
+
+  local navbuddy = require("nvim-navbuddy")
+  local blacklisted_lsps = { "angularls" }
+
+  if not has_value(blacklisted_lsps, client.name) then
+    navbuddy.attach(client, bufnr)
+  end
+
   -- NOTE: Remember that lua is a real programming language, and as such it is possible
   -- to define small helper and utility functions so you don't have to repeat yourself
   -- many times.

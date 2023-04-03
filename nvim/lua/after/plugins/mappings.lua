@@ -66,6 +66,9 @@ map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", opts)
 map("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>", opts)
 map("n", "<leader>fr", "<cmd>Telescope registers<CR>", opts)
 
+-- NavBuddy
+map("n", "<leader>nb", "<cmd>Navbuddy<CR>", opts)
+
 -- Json Path
 map("n", "<leader>jp", "<cmd>JsonPath<CR>", opts)
 
