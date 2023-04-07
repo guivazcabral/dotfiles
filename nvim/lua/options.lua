@@ -30,7 +30,6 @@ vim.o.splitbelow = true                -- Splitting a new window below the curre
 vim.o.splitright = true                -- Splitting a new window at the right of the current one
 vim.o.swapfile = false                 -- Disable use of swapfile for the buffer
 vim.o.tabstop = 2                      -- Number of space in a tab
-vim.o.termguicolors = true
 vim.o.termguicolors = true             -- Enable 24-bit RGB color in the TUI
 vim.o.textwidth = 99
 vim.o.timeout = true
