@@ -16,7 +16,7 @@ map("n", "<C-l>", "<C-w>l", opts)
 
 -- Close buffer
 map("n", "Q", "<cmd>Bdelete!<CR>", opts)
-map("n", "<C-w>Q", "<cmd>%bd|e#<CR>", opts) -- Close all but current buffer
+map("n", "<C-w>q", "<cmd>%bd|e#<CR>", opts) -- Close all but current buffer
 
 -- Split windows
 map("n", "vv", "<C-w>v", opts)
@@ -71,6 +71,7 @@ map("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
 
 -- Open diagnostics
 map("n", "<C-p>", "<cmd>TroubleToggle<CR>", opts)
+
 -- Json Path
 map("n", "<leader>jp", "<cmd>JsonPath<CR>", opts)
 
