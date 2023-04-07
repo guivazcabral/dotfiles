@@ -6,12 +6,6 @@ return {
   "windwp/nvim-ts-autotag",
   "gaelph/logsitter.nvim",
   {
-    "folke/trouble.nvim",
-    config = function()
-      require("trouble").setup {}
-    end
-  },
-  {
     "SmiteshP/nvim-navbuddy",
     dependencies = {
       "neovim/nvim-lspconfig",

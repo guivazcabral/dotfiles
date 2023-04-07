@@ -69,6 +69,8 @@ map("n", "<M-CR>", "<cmd>Lspsaga code_action<cr>", opts)
 map("n", "gl", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
 map("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
 
+-- Open diagnostics
+map("n", "<C-p>", "<cmd>TroubleToggle<CR>", opts)
 -- Json Path
 map("n", "<leader>jp", "<cmd>JsonPath<CR>", opts)
 
