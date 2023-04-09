@@ -1,6 +1,23 @@
 return {
   'nvim-lualine/lualine.nvim',
   config = function()
+    local copilot_indicator = function()
+      local client = vim.lsp.get_active_clients({ name = "copilot" })[1]
+      if client == nil then
+        return ""
+      end
+
+      if vim.tbl_isempty(client.requests) then
+        return "" -- default icon whilst copilot is idle
+      end
+
+      local spinners = { "⣾", "⣽", "⣻", "⢿", "⡿", "⣟", "⣯", "⣷" }
+      local ms = vim.loop.hrtime() / 1000000
+      local frame = math.floor(ms / 120) % #spinners
+
+      return spinners[frame + 1]
+    end
+
     require('lualine').setup {
       options = {
         icons_enabled = true,
