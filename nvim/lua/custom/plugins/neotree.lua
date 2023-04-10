@@ -182,10 +182,8 @@ return {
             --"*.meta",
             --"*/src/*/tsconfig.json",
           },
-          always_show = { -- remains visible even if other settings would normally hide it
-            ".gitignore", ".github", ".npmrc", ".nvmrc", "environment.ts", "environment.js"
-          },
-          never_show = { -- remains hidden even if visible is toggled to true, this overrides always_show
+          always_show = {}, -- remains visible even if other settings would normally hide it
+          never_show = {    -- remains hidden even if visible is toggled to true, this overrides always_show
             --".DS_Store",
             --"thumbs.db"
           },
