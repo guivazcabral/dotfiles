@@ -8,6 +8,12 @@ return {
       require('nvim-ts-autotag').setup()
     end
   },
+  {
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+      require('colorizer').setup()
+    end
+  },
   "gaelph/logsitter.nvim",
   {
     "SmiteshP/nvim-navbuddy",
