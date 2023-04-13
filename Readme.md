@@ -1,16 +1,13 @@
 ## Dotfiles
 
 Welcome to my dotfiles 🎉 here you'll find (some of) the configuration I use in my personal dev env.
-This is very personal, as it relies heavily on my preferences. 
-It is also ever-changing so don't expect this to be super up to date. 
-
+This is very personal, as it relies heavily on my preferences.
+It is also ever-changing so don't expect this to be super up to date.
 
 <details>
   <summary>Kitty</summary>
   
   - Install [kitty](https://sw.kovidgoyal.net/kitty/binary/) 
-  
-  - Create symlinks for `~/.config` 
   
   - Install fish `brew install fish`
   
@@ -34,6 +31,18 @@ It is also ever-changing so don't expect this to be super up to date.
 </details>
 
 <details>
+  <summary>Lazygit</summary>
+  
+  - Install Lazygit
+
+    ```sh
+    brew install lazygit
+    ```
+
+  - Create symlinks for `~/Users/guilherme/Library/Application\ Support/lazygit/config.yml` -> `dotfiles/lazygit/config.yml`
+</details>
+
+<details>
   <summary>Misc</summary>
   
   - Slack theme: 
@@ -42,6 +51,3 @@ It is also ever-changing so don't expect this to be super up to date.
     ```
   
 </details>
-
-
-
