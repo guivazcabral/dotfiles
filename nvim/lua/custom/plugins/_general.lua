@@ -2,6 +2,7 @@ return {
   "moll/vim-bbye",
   "tpope/vim-surround",
   "tpope/vim-abolish",
+  "stevearc/dressing.nvim",
   {
     "windwp/nvim-ts-autotag",
     config = function()
