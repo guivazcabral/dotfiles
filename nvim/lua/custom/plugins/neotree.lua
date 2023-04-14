@@ -57,6 +57,8 @@ return {
       --           return a.type > b.type
       --       end
       --   end , -- this sorts files and directories descendantly
+      log_level = "error", -- "trace", "debug", "info", "warn", "error", "fatal"
+      log_to_file = false, -- true, false, "/path/to/file.log", use :NeoTreeLogs to show the file            
       default_component_configs = {
         container = {
           enable_character_fade = true
