@@ -31,7 +31,7 @@ return {
         cvs = false,
         ["."] = false,
       },
-      copilot_node_command = 'node', -- Node.js version must be > 16.x
+      copilot_node_command = vim.fn.expand("$HOME") .. "/.nvm/versions/node/v18.10.0/bin/node", -- Node.js version must be > 16.x
       server_opts_overrides = {},
     })
   end,
