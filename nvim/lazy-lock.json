@@ -2,7 +2,7 @@
   "Comment.nvim": { "branch": "master", "commit": "38d3b7eb553872d8866f14a0dd4fe84126068fce" },
   "LuaSnip": { "branch": "master", "commit": "a46ab6f8bce6bbddd8ce3e287e1a517c1f5e348e" },
   "bufferline.nvim": { "branch": "main", "commit": "243893ba9d5d1049dd451a25cab32ec7f8f67bcf" },
-  "catppuccin": { "branch": "main", "commit": "c265cf0cba841bfdd6d5888d9b31d8746175482f" },
+  "catppuccin": { "branch": "main", "commit": "304908d13d08bb9464d7e65d473d04777c97f6d6" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "0e6b2ed705ddcff9738ec4ea838141654f12eeef" },
   "cmp_luasnip": { "branch": "master", "commit": "18095520391186d634a0045dacaa346291096566" },
   "copilot.lua": { "branch": "master", "commit": "19c1c945553918d683a001e697faad933c41bb5d" },
