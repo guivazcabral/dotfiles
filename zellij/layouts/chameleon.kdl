@@ -1,0 +1,45 @@
+layout {
+  cwd "app"
+  pane  {
+    size "2%"
+    borderless true
+    plugin location="zellij:tab-bar"
+  }
+  pane {
+    split_direction "vertical"
+    pane {
+      size "70%"
+      focus true
+      name "Chameleon"
+      command "nvim"
+    }
+    pane {
+      split_direction "horizontal"
+      stacked true
+      pane {
+        name "Install"
+        command "npm"
+        args "install"
+        start_suspended false
+        expanded true
+      }
+      pane {
+        name "Database"
+        command "docker"
+        args "compose" "up"
+        start_suspended true
+      }
+      pane {
+        name "Server"
+        command "npm"
+        args "run" "dev"
+        start_suspended true
+      }
+    }
+  }
+  pane {
+    size "3%"
+    borderless true
+    plugin location="zellij:status-bar"
+  }
+}
