@@ -8,17 +8,60 @@ It is also ever-changing so don't expect this to be super up to date.
   <summary>Kitty</summary>
   
   - Install [kitty](https://sw.kovidgoyal.net/kitty/binary/) 
+
+  - Symlink `.config` folders:
+    ```sh
+    ln -s `dotfiles/kitty`
+    ```
+
+</details>
+
+
+<details>
+  <summary>Terminal things</summary>
   
-  - Install fish `brew install fish`
+  - Install fish
+    ```sh
+    brew install fish
+    ```
+
+  - Install [Zellij](https://zellij.dev/documentation/installation.html) 
+    ```sh
+    brew install zellij
+    ```
+
+  - Symlink `.config` folders:
+    ```sh
+    ln -s `dotfiles/fish`
+    ln -s `dotfiles/omf`
+    ln -s `dotfiles/zellij`
+    ```
   
 </details>
+
+
+<details>
+  <summary>Karabiner</summary>
+  
+  - Download binary from [Karabiner](https://karabiner-elements.pqrs.org/) and install
+
+  - Symlink `.config` folder:
+    ```sh
+    ln -s `dotfiles/karabiner`
+    ```
+  
+</details>
+
 
 <details>
   <summary>Neovim</summary>
   
   - Install [Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim) 
   
-  - Create symlinks for `~/.config` 
+  - Symlink `.config` folder:
+    ```sh
+    ln -s `dotfiles/nvim`
+    ```
   
   - Install utilities:
   
@@ -26,7 +69,6 @@ It is also ever-changing so don't expect this to be super up to date.
     brew install ripgrep
     brew install fzf
     npm install jsonlint -g
-    npm install -g @fsouza/prettierd
     ```
 </details>
 
@@ -39,7 +81,7 @@ It is also ever-changing so don't expect this to be super up to date.
     brew install lazygit
     ```
 
-  - Create symlinks for `~/Users/guilherme/Library/Application\ Support/lazygit/config.yml` -> `dotfiles/lazygit/config.yml`
+  - Create symlink for `/Users/guilherme/Library/Application\ Support/lazygit/config.yml` -> `dotfiles/lazygit/config.yml`
 </details>
 
 <details>
