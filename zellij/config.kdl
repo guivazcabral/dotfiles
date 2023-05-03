@@ -138,6 +138,8 @@ keybinds {
         bind "Ctrl g" { SwitchToMode "Locked"; }
         bind "Ctrl q" { Quit; }
         bind "Alt n" { NewPane; }
+        bind "Alt x" { CloseFocus; }
+        bind "Alt c" { Clear; }
         bind "Alt t" { NewTab; }
         bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
         bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
@@ -188,6 +190,12 @@ plugins {
     status-bar { path "status-bar"; }
     strider { path "strider"; }
     compact-bar { path "compact-bar"; }
+}
+
+ui {
+    pane_frames {
+        hide_session_name true
+    }
 }
 
 // Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP
