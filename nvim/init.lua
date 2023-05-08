@@ -315,7 +315,7 @@ local on_attach = function(client, bufnr)
   end
 
   local navbuddy = require("nvim-navbuddy")
-  local blacklisted_lsps = { "angularls", "tailwindcss" }
+  local blacklisted_lsps = { "angularls", "tailwindcss", "docker_compose_language_service" }
 
   if not has_value(blacklisted_lsps, client.name) then
     navbuddy.attach(client, bufnr)
