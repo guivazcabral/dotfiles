@@ -29,3 +29,4 @@ style = "bold #fab387"
 
 [character]
 success_symbol = "[𐳝](bold fg:#89b4fa)"
+error_symbol = "[𐳝](bold fg:#f38ba8)"
