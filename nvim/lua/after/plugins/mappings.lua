@@ -63,6 +63,7 @@ map("n", "<leader>nb", "<cmd>Navbuddy<CR>", opts)
 map("n", "<leader>hR", "<cmd>Gitsigns reset_buffer<CR>", opts)
 map("n", "<leader>tb", "<cmd>Gitsigns toggle_current_line_blame<CR>", opts)
 map("n", "<leader>td", "<cmd>Gitsigns toggle_deleted<CR>", opts)
+map("n", "<leader>gg", "<cmd>LazyGit<CR>", opts)
 
 -- LSPSaga
 map("n", "<M-CR>", "<cmd>Lspsaga code_action<cr>", opts)

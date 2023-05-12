@@ -3,6 +3,7 @@ return {
   "tpope/vim-surround",
   "tpope/vim-abolish",
   "stevearc/dressing.nvim",
+  "kdheepak/lazygit.nvim",
   {
     "windwp/nvim-ts-autotag",
     config = function()
