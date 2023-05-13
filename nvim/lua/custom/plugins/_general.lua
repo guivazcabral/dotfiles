@@ -5,6 +5,11 @@ return {
   "stevearc/dressing.nvim",
   "kdheepak/lazygit.nvim",
   {
+    "phaazon/hop.nvim",
+    branch = "v2",
+    opts = {}
+  },
+  {
     "windwp/nvim-ts-autotag",
     config = function()
       require('nvim-ts-autotag').setup()

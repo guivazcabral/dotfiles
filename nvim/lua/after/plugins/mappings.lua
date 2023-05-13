@@ -65,6 +65,11 @@ map("n", "<leader>tb", "<cmd>Gitsigns toggle_current_line_blame<CR>", opts)
 map("n", "<leader>td", "<cmd>Gitsigns toggle_deleted<CR>", opts)
 map("n", "<leader>gg", "<cmd>LazyGit<CR>", opts)
 
+-- Hop
+map("n", "Hw", "<cmd>HopWord<CR>", opts)
+map("n", "Hl", "<cmd>HopLine<CR>", opts)
+map("n", "Ha", "<cmd>HopAnywhere<CR>", opts)
+
 -- LSPSaga
 map("n", "<M-CR>", "<cmd>Lspsaga code_action<cr>", opts)
 map("n", "gl", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
