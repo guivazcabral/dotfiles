@@ -83,7 +83,8 @@ map("n", "<C-p>", "<cmd>TroubleToggle<CR>", opts)
 map("n", "<leader>jp", "<cmd>JsonPath<CR>", opts)
 
 -- Run tests
-map("n", "<leader>t", "<cmd>TestFile<CR>", opts)
+map("n", "<leader>tt", "<cmd>lua require('neotest').run.run()<CR>", opts)
+map("n", "<leader>ts", "<cmd>lua require('neotest').summary.open()<CR>", opts)
 
 -- Logsitter
 map("n", "<leader>lg", "<cmd>lua require('logsitter').log()<CR>", opts)
