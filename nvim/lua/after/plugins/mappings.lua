@@ -61,6 +61,7 @@ map("n", "<leader>nb", "<cmd>Navbuddy<CR>", opts)
 
 -- Gitsigns
 map("n", "<leader>hR", "<cmd>Gitsigns reset_buffer<CR>", opts)
+map("n", "<leader>hH", "<cmd>Gitsigns reset_hunk<CR>", opts)
 map("n", "<leader>tb", "<cmd>Gitsigns toggle_current_line_blame<CR>", opts)
 map("n", "<leader>td", "<cmd>Gitsigns toggle_deleted<CR>", opts)
 map("n", "<leader>gg", "<cmd>LazyGit<CR>", opts)
@@ -84,10 +85,8 @@ map("n", "<leader>jp", "<cmd>JsonPath<CR>", opts)
 -- Run tests
 map("n", "<leader>t", "<cmd>TestFile<CR>", opts)
 
--- Logsitter this is so hacky it hurts
-vim.keymap.set("n", "<leader>lg", function()
-  require("logsitter").log()
-end)
+-- Logsitter
+map("n", "<leader>lg", "<cmd>lua require('logsitter').log()<CR>", opts)
 
 -- Visual --
 -- Stay in indent mode
