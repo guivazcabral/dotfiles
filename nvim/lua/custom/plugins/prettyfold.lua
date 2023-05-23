@@ -1,5 +1,6 @@
 return {
   'anuvyklack/pretty-fold.nvim',
+  event = "VeryLazy",
   config = function()
     local pretty_fold = require("pretty-fold")
 
