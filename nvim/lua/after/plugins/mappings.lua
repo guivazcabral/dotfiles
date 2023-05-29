@@ -93,3 +93,8 @@ map("n", "<leader>lg", "<cmd>lua require('logsitter').log()<CR>", opts)
 -- Stay in indent mode
 map("v", "<", "<gv", opts)
 map("v", ">", ">gv", opts)
+
+
+-- Screenshots
+map("v", "<leader>ms", "<esc><cmd>lua require('silicon').visualise_api({to_clip = true})<CR>", opts)
+
