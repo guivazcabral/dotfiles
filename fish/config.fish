@@ -5,6 +5,10 @@ end
 function fish_greeting
 end
 
+export PATH="/opt/homebrew/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export EDITOR="nvim"
+export SHELL="/opt/homebrew/bin/fish"
+
 # init startship
 export STARSHIP_CONFIG=/Users/guilherme/dev/dotfiles/starship.toml
 starship init fish | source
@@ -13,7 +17,6 @@ starship init fish | source
 load_nvm >/dev/stderr
 
 export EDITOR=/usr/local/bin/nvim
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # source custom files
 source ~/.config/fish/custom/gsb.fish
