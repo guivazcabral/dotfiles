@@ -16,7 +16,7 @@ symbol = " "
 symbol = " "
 
 [package]
-symbol = " "
+symbol = "󰏖 "
 format = "is [$symbol$version]($style) "
 display_private = true
 style = "#fab387"
