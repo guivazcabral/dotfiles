@@ -22,3 +22,4 @@ export EDITOR=/usr/local/bin/nvim
 source ~/.config/fish/custom/gsb.fish
 source ~/.config/fish/custom/zellij.fish
 source ~/.config/fish/custom/abbrs/misc.fish
+source ~/.config/fish/custom/secrets.fish
