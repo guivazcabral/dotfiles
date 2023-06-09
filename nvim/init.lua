@@ -321,6 +321,10 @@ local on_attach = function(client, bufnr)
     navbuddy.attach(client, bufnr)
   end
 
+  if (client.name == "tsserver") then
+    client.server_capabilities.documentFormattingProvider = false
+  end
+
   -- NOTE: Remember that lua is a real programming language, and as such it is possible
   -- to define small helper and utility functions so you don't have to repeat yourself
   -- many times.
