@@ -49,6 +49,17 @@ return {
         end
       end
 
+      local count_open_file_buffers = function()
+        local count = 0
+        for _, buffer_number in pairs(vim.api.nvim_list_bufs()) do
+          local buffer_name = vim.api.nvim_buf_get_name(buffer_number)
+          if buffer_name ~= "" then
+            count = count + 1
+          end
+        end
+        return count
+      end
+
       local minisessions = require("mini.sessions")
       minisessions.setup({
         autoread = false,
@@ -65,7 +76,11 @@ return {
 
       vim.api.nvim_create_autocmd("VimLeavePre", {
         callback = function()
-          minisessions.write(project_folder_name .. ".vim")
+          close_bad_buffers()
+          local number_of_open_buffers = count_open_file_buffers()
+          if (number_of_open_buffers > 0) then
+            minisessions.write(project_folder_name .. ".vim")
+          end
         end
       })
     end
