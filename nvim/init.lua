@@ -235,7 +235,7 @@ end, { desc = '[/] Fuzzily search in current buffer' })
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'javascript', 'typescript', 'tsx', 'vimdoc', 'vim' },
+  ensure_installed = { 'javascript', 'typescript', 'tsx', 'vimdoc', 'vim', 'json' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = false,
