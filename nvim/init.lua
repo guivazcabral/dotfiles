@@ -86,7 +86,7 @@ require('lazy').setup({
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', opts = {} },
+      { 'j-hui/fidget.nvim', opts = {}, tag = "legacy" },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
@@ -96,7 +96,8 @@ require('lazy').setup({
   {
     -- Autocompletion
     'hrsh7th/nvim-cmp',
-    dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
+    dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip',
+      'rafamadriz/friendly-snippets', },
   },
 
   -- Useful plugin to show you pending keybinds.
@@ -315,15 +316,12 @@ local on_attach = function(client, bufnr)
   end
 
   local navbuddy = require("nvim-navbuddy")
-  local blacklisted_lsps = { "angularls", "tailwindcss", "docker_compose_language_service" }
+  local blacklisted_lsps = { "angularls", "tailwindcss", "docker_compose_language_service", "eslint" }
 
   if not has_value(blacklisted_lsps, client.name) then
     navbuddy.attach(client, bufnr)
   end
 
-  if (client.name == "tsserver") then
-    client.server_capabilities.documentFormattingProvider = false
-  end
 
   -- NOTE: Remember that lua is a real programming language, and as such it is possible
   -- to define small helper and utility functions so you don't have to repeat yourself
@@ -358,6 +356,11 @@ local on_attach = function(client, bufnr)
   nmap('<leader>wl', function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, '[W]orkspace [L]ist Folders')
+
+  if (client.name == "tsserver") then
+    client.server_capabilities.documentFormattingProvider = false
+    nmap("<leader>o", '<CMD>OrganizeImports<CR>', '[O]rganize Imports')
+  end
 
   -- Create a command `:Format` local to the LSP buffer
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
@@ -406,10 +409,25 @@ mason_lspconfig.setup {
 
 mason_lspconfig.setup_handlers {
   function(server_name)
+    local commands = {}
+    if (server_name == "tsserver") then
+      commands["OrganizeImports"] = {
+        function()
+          local params = {
+            command = "_typescript.organizeImports",
+            arguments = { vim.api.nvim_buf_get_name(0) },
+            title = ""
+          }
+          vim.lsp.buf.execute_command(params)
+        end
+      }
+    end
+
     require('lspconfig')[server_name].setup {
       capabilities = capabilities,
       on_attach = on_attach,
       settings = servers[server_name],
+      commands = commands
     }
   end,
 }
