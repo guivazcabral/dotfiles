@@ -1,6 +1,7 @@
 return {
   {
     "jose-elias-alvarez/null-ls.nvim",
+    dependencies = { "jose-elias-alvarez/typescript.nvim" },
     config = function()
       local null_ls = require("null-ls")
       local formatting = null_ls.builtins.formatting
@@ -11,6 +12,7 @@ return {
       null_ls.setup {
         sources = {
           -- JS
+          require("typescript.extensions.null-ls.code-actions"),
           diagnostics.eslint,
           formatting.eslint,
           formatting.prettier.with({
