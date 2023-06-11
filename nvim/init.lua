@@ -370,6 +370,12 @@ local on_attach = function(client, bufnr)
   nmap('<leader>f', '<CMD>Format<CR>', 'Format current buffer with LSP')
 end
 
+-- Create a command to send messages output to a file
+-- This is useful for debugging purposes
+vim.api.nvim_create_user_command("EnableRedir", function()
+  vim.cmd("redir! >> /Users/guilherme/.cache/nvim/nvim.log")
+end, {})
+
 -- Enable the following language servers
 --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
 --
