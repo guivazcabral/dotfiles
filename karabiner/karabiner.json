@@ -88,6 +88,16 @@
                                     "key_code": "vk_none"
                                 }
                             ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "right_command"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "right_option"
+                                }
+                            ]
                         }
                     ],
                     "treat_as_built_in_keyboard": false
