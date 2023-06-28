@@ -12,7 +12,6 @@ return {
       null_ls.setup {
         sources = {
           -- JS
-          require("typescript.extensions.null-ls.code-actions"),
           diagnostics.eslint,
           formatting.eslint,
           formatting.prettier.with({
