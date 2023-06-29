@@ -9,13 +9,16 @@ return {
     version = "false",
     config = function()
       local starter = require('mini.starter')
-      local items = { starter.sections.recent_files(5, true, false) }
+      local items = {}
 
-      -- since we disable mini sessions for non-git repos, adding the sessions section on the
-      -- starter throws an error, so we disable it in that case too
       if (isGitRepo()) then
         table.insert(items, starter.sections.sessions(2, true))
       end
+
+      table.insert(items, starter.sections.recent_files(5, true, false))
+
+      -- since we disable mini sessions for non-git repos, adding the sessions section on the
+      -- starter throws an error, so we disable it in that case too
 
       starter.setup({
         items = items,
