@@ -1,4 +1,5 @@
 abbr zjls 'zellij list-sessions'
+abbr zja 'zellij attach'
 
 function zj
   set -l dir (basename $PWD)
