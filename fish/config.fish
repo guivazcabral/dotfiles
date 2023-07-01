@@ -23,4 +23,7 @@ source ~/.config/fish/custom/chrome.fish
 source ~/.config/fish/custom/gsb.fish
 source ~/.config/fish/custom/zellij.fish
 source ~/.config/fish/custom/abbrs/misc.fish
-source ~/.config/fish/custom/secrets.fish
+
+if test -e ~/.config/fish/custom/secrets.fish
+    source ~/.config/fish/custom/secrets.fish
+end
