@@ -1,15 +1,5 @@
 return {
   "mfussenegger/nvim-dap",
-  optional = true,
-  dependencies = {
-    {
-      "williamboman/mason.nvim",
-      opts = function(_, opts)
-        opts.ensure_installed = opts.ensure_installed or {}
-        table.insert(opts.ensure_installed, "js-debug-adapter")
-      end,
-    },
-  },
   opts = function()
     local dap = require("dap")
     if not dap.adapters["pwa-node"] then
@@ -50,6 +40,6 @@ return {
     end
   end,
   keys = {
-    { "<leader>td", function() require("neotest").run.run({ strategy = "dap" }) end, desc = "Debug Nearest" },
+    { "<leader>tD", function() require("neotest").run.run({ strategy = "dap" }) end, desc = "Debug Nearest" },
   },
 }
