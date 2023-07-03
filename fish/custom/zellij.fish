@@ -1,5 +1,8 @@
+abbr zz 'zellij'
 abbr zjls 'zellij list-sessions'
 abbr zja 'zellij attach'
+abbr zjkill 'zellij kill-session'
+abbr zjkillall 'zellij kill-all-sessions'
 
 function zj
   set -l dir (basename $PWD)
