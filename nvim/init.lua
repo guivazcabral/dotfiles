@@ -438,6 +438,7 @@ mason_lspconfig.setup_handlers {
             title = ""
           }
           vim.lsp.buf.execute_command(params)
+          vim.lsp.buf.format({ async = true })
         end
       }
     end

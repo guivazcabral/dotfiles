@@ -3,29 +3,8 @@ return {
   version = "*",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+    -- "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
     "MunifTanjim/nui.nvim",
-    {
-      -- only needed if you want to use the commands with "_with_window_picker" suffix
-      's1n7ax/nvim-window-picker',
-      tag = "v1.5",
-      config = function()
-        require 'window-picker'.setup({
-          autoselect_one = true,
-          include_current = false,
-          filter_rules = {
-            -- filter using buffer options
-            bo = {
-              -- if the file type is one of following, the window will be ignored
-              filetype = { 'neo-tree', "neo-tree-popup", "notify" },
-              -- if the buffer type is one of following, the window will be ignored
-              buftype = { 'terminal', "quickfix" },
-            },
-          },
-          other_win_hl_color = '#fab387', -- Catppuccin Mocha theme Peach swatch
-        })
-      end,
-    }
   },
   config = function()
     -- Unless you are still migrating, remove the deprecated commands from v1.x
@@ -43,22 +22,15 @@ return {
     -- in the form "LspDiagnosticsSignWarning"
 
     require('neo-tree').setup({
-      close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
+      close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
       popup_border_style = "rounded",
       enable_git_status = true,
       enable_diagnostics = true,
       open_files_do_not_replace_types = { "terminal", "trouble", "qf" }, -- when opening files, do not use windows containing these filetypes or buftypes
       sort_case_insensitive = false,                                     -- used when sorting files and directories in the tree
       sort_function = nil,                                               -- use a custom function for sorting files and directories in the tree
-      -- sort_function = function (a,b)
-      --       if a.type == b.type then
-      --           return a.path > b.path
-      --       else
-      --           return a.type > b.type
-      --       end
-      --   end , -- this sorts files and directories descendantly
-      log_level = "error", -- "trace", "debug", "info", "warn", "error", "fatal"
-      log_to_file = false, -- true, false, "/path/to/file.log", use :NeoTreeLogs to show the file            
+      log_level = "error",                                               -- "trace", "debug", "info", "warn", "error", "fatal"
+      log_to_file = false,                                               -- true, false, "/path/to/file.log", use :NeoTreeLogs to show the file
       default_component_configs = {
         container = {
           enable_character_fade = true
@@ -186,8 +158,8 @@ return {
           },
           always_show = {
             ".github"
-          }, -- remains visible even if other settings would normally hide it
-          never_show = {    -- remains hidden even if visible is toggled to true, this overrides always_show
+          },             -- remains visible even if other settings would normally hide it
+          never_show = { -- remains hidden even if visible is toggled to true, this overrides always_show
             --".DS_Store",
             --"thumbs.db"
           },

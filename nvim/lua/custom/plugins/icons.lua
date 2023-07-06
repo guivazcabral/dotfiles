@@ -1,10 +1,7 @@
 return {
   "nvim-tree/nvim-web-devicons",
   config = function()
-    local status_ok, icons = pcall(require, "nvim-web-devicons")
-    if not status_ok then
-      return
-    end
+    local icons = require("nvim-web-devicons")
 
     local colors = {
       angular = "#c3002f",
@@ -37,20 +34,10 @@ return {
     }
 
     icons.set_icon {
-      c = {
-        icon = "",
-        color = colors.c,
-        name = "c",
-      },
       css = {
         icon = "",
         color = colors.css,
         name = "css",
-      },
-      deb = {
-        icon = "",
-        color = colors.deb,
-        name = "deb",
       },
       Dockerfile = {
         icon = "",
@@ -67,45 +54,15 @@ return {
         color = colors.js,
         name = "js",
       },
-      kt = {
-        icon = "󱈙",
-        color = colors.kt,
-        name = "kt",
-      },
-      lock = {
-        icon = "",
-        color = colors.lock,
-        name = "lock",
-      },
       lua = {
         icon = "",
         color = colors.lua,
         name = "lua",
       },
-      mp3 = {
-        icon = "",
-        color = colors.mp3,
-        name = "mp3",
-      },
-      mp4 = {
-        icon = "",
-        color = colors.mp4,
-        name = "mp4",
-      },
-      out = {
-        icon = "",
-        color = colors.out,
-        name = "out",
-      },
       py = {
         icon = "",
         color = colors.py,
         name = "py",
-      },
-      ["robots.txt"] = {
-        icon = "ﮧ",
-        color = colors.robot,
-        name = "robots",
       },
       toml = {
         icon = "",
@@ -125,17 +82,17 @@ return {
       ["stories.tsx"] = {
         icon = "",
         color = colors.rb,
-        name = "storybook",
+        name = "storybookreact",
       },
       ["spec.ts"] = {
-        icon = "ﭧ",
+        icon = "",
         color = colors.ts,
-        name = "ts",
+        name = "specTs",
       },
       ["cy.ts"] = {
-        icon = "ﭧ",
+        icon = "󰙨",
         color = colors.ts,
-        name = "ts",
+        name = "cypress",
       },
       ts = {
         icon = "",
@@ -147,65 +104,15 @@ return {
         color = colors.ttf,
         name = "TrueTypeFont",
       },
-      rb = {
-        icon = "",
-        color = colors.rb,
-        name = "rb",
-      },
-      rpm = {
-        icon = "",
-        color = colors.rpm,
-        name = "rpm",
-      },
-      vue = {
-        icon = "﵂",
-        color = colors.vue,
-        name = "vue",
-      },
-      woff = {
-        icon = "",
-        color = colors.woff,
-        name = "WebOpenFontFormat",
-      },
-      woff2 = {
-        icon = "",
-        color = colors.woff2,
-        name = "WebOpenFontFormat2",
-      },
-      xz = {
-        icon = "",
-        color = colors.zip,
-        name = "xz",
-      },
-      zip = {
-        icon = "",
-        color = colors.zip,
-        name = "zip",
-      },
-      jsx = {
-        icon = "ﰆ",
+      tsx = {
+        icon = "",
         color = colors.jsx,
         name = "jsx",
       },
-      rust = {
-        icon = "",
-        color = colors.rs,
-        name = "rs",
-      },
-      jpg = {
-        icon = "",
-        color = colors.jpg,
-        name = "jpg",
-      },
-      png = {
-        icon = "",
-        color = colors.png,
-        name = "png",
-      },
-      jpeg = {
-        icon = "",
-        color = colors.jpeg,
-        name = "jpeg",
+      jsx = {
+        icon = "",
+        color = colors.jsx,
+        name = "jsx",
       },
     }
   end
