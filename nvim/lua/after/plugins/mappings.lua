@@ -71,6 +71,7 @@ map("n", "<leader>gg", "<cmd>LazyGit<CR>", opts)
 map("n", "<M-CR>", "<cmd>Lspsaga code_action<cr>", opts)
 map("n", "gl", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
 map("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
+map("n", "<leader>gR", "<cmd>Lspsaga finder<CR>", opts)
 
 -- Open diagnostics
 map("n", "<C-p>", "<cmd>TroubleToggle<CR>", opts)
