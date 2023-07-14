@@ -33,7 +33,7 @@ return {
       jpg = "#c882e7",
     }
 
-    icons.set_icon {
+    icons.set_icon({
       css = {
         icon = "",
         color = colors.css,
@@ -114,6 +114,6 @@ return {
         color = colors.jsx,
         name = "jsx",
       },
-    }
-  end
+    })
+  end,
 }

@@ -65,7 +65,12 @@ map("n", "<leader>hR", "<cmd>Gitsigns reset_buffer<CR>", opts)
 map("n", "<leader>hH", "<cmd>Gitsigns reset_hunk<CR>", opts)
 map("n", "<leader>tb", "<cmd>Gitsigns toggle_current_line_blame<CR>", opts)
 map("n", "<leader>td", "<cmd>Gitsigns toggle_deleted<CR>", opts)
+
+-- LazyGit
 map("n", "<leader>gg", "<cmd>LazyGit<CR>", opts)
+
+-- Neogit
+map("n", "<leader>ng", "<cmd>Neogit<CR>", opts)
 
 -- LSPSaga
 map("n", "<M-CR>", "<cmd>Lspsaga code_action<cr>", opts)

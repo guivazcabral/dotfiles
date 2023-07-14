@@ -17,7 +17,7 @@ return {
       ["neotest-jest"] = {
         jestCommand = "yarn test",
         jestConfigFile = function()
-          local file = vim.fn.expand('%:p')
+          local file = vim.fn.expand("%:p")
           if string.find(file, "/packages/") then
             return string.match(file, "(.-/[^/]+/)src") .. "jest.config.ts"
           end
@@ -25,13 +25,13 @@ return {
           return vim.fn.getcwd() .. "/jest.config.ts"
         end,
         cwd = function()
-          local file = vim.fn.expand('%:p')
+          local file = vim.fn.expand("%:p")
           if string.find(file, "/packages/") then
             return string.match(file, "(.-/[^/]+/)src")
           end
           return vim.fn.getcwd()
         end,
-      }
+      },
     },
     status = { virtual_text = true },
     output = { open_on_run = true },
@@ -42,7 +42,8 @@ return {
       virtual_text = {
         format = function(diagnostic)
           -- Replace newline and tab characters with space for more compact diagnostics
-          local message = diagnostic.message:gsub("\n", " "):gsub("\t", " "):gsub("%s+", " "):gsub("^%s+", "")
+          local message =
+            diagnostic.message:gsub("\n", " "):gsub("\t", " "):gsub("%s+", " "):gsub("^%s+", "")
           return message
         end,
       },

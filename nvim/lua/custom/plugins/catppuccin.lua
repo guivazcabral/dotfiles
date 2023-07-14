@@ -3,7 +3,7 @@ return {
     "catppuccin/nvim",
     name = "catppuccin",
     config = function()
-      vim.cmd.colorscheme 'catppuccin-mocha'
+      vim.cmd.colorscheme("catppuccin-mocha")
 
       require("catppuccin").setup({
         integrations = {
@@ -17,11 +17,12 @@ return {
           mini = true,
           neotest = true,
           neotree = true,
+          neogit = true,
           rainbow_delimiters = true,
           telescope = { enabled = true },
           which_key = true,
-        }
+        },
       })
-    end
+    end,
   },
 }

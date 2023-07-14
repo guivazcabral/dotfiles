@@ -8,10 +8,10 @@ return {
     "echasnovski/mini.starter",
     version = "false",
     config = function()
-      local starter = require('mini.starter')
+      local starter = require("mini.starter")
       local items = {}
 
-      if (isGitRepo()) then
+      if isGitRepo() then
         table.insert(items, starter.sections.sessions(2, true))
       end
 
@@ -24,16 +24,16 @@ return {
         items = items,
         content_hooks = {
           starter.gen_hook.adding_bullet(),
-          starter.gen_hook.aligning('center', 'center'),
+          starter.gen_hook.aligning("center", "center"),
         },
       })
-    end
+    end,
   },
   {
     "echasnovski/mini.sessions",
     version = "false",
     config = function()
-      if (not isGitRepo()) then
+      if not isGitRepo() then
         return
       end
 
@@ -67,8 +67,11 @@ return {
       minisessions.setup({
         autoread = false,
         autowrite = true,
-        directory = vim.fn.expand("$HOME") .. "/.cache/nvim/sessions/" .. project_folder_name .. "/",
-        file = '',
+        directory = vim.fn.expand("$HOME")
+          .. "/.cache/nvim/sessions/"
+          .. project_folder_name
+          .. "/",
+        file = "",
         force = { read = false, write = true, delete = false },
         hooks = {
           pre = { read = nil, write = close_bad_buffers, delete = nil },
@@ -81,11 +84,11 @@ return {
         callback = function()
           close_bad_buffers()
           local number_of_open_buffers = count_open_file_buffers()
-          if (number_of_open_buffers > 0) then
+          if number_of_open_buffers > 0 then
             minisessions.write(project_folder_name .. ".vim")
           end
-        end
+        end,
       })
-    end
+    end,
   },
 }
