@@ -14,6 +14,7 @@ return {
         diffview = true,
       },
       disable_insert_on_commit = "auto",
+      disable_commit_confirmation = true,
     })
 
     local group = vim.api.nvim_create_augroup("MyCustomNeogitEvents", { clear = true })
