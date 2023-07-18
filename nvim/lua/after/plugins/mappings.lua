@@ -54,8 +54,8 @@ map("n", "<A-j>", "<Esc><cmd>m .+1<CR>==gi", opts)
 map("n", "<A-k>", "<Esc><cmd>m .-2<CR>==gi", opts)
 
 -- NeoTree
-map("n", "<leader>ee", "<cmd>NeoTreeRevealToggle<CR>", opts)
-map("n", "<leader>e", "<cmd>NeoTreeReveal<CR>", opts)
+map("n", "<leader>ee", "<cmd>Neotree reveal toggle<CR>", opts)
+map("n", "<leader>e", "<cmd>Neotree reveal<CR>", opts)
 
 -- NavBuddy
 map("n", "<leader>nb", "<cmd>Navbuddy<CR>", opts)
