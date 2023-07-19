@@ -543,7 +543,7 @@ cmp.setup({
     { name = "luasnip" },
   },
 })
-
+require("luasnip.loaders.from_vscode").lazy_load()
 require("after.plugins.autocmds")
 require("after.plugins.mappings")
 
