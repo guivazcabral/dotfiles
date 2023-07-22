@@ -81,9 +81,13 @@ require("lazy").setup({
         topdelete = { text = "‾" },
         changedelete = { text = "~" },
       },
+      on_attach = function(bufnr)
+        vim.keymap.set("n", "<leader>gp", require("gitsigns").prev_hunk, { buffer = bufnr, desc = "[G]o to [P]revious Hunk" })
+        vim.keymap.set("n", "<leader>gn", require("gitsigns").next_hunk, { buffer = bufnr, desc = "[G]o to [N]ext Hunk" })
+        vim.keymap.set("n", "<leader>ph", require("gitsigns").preview_hunk, { buffer = bufnr, desc = "[P]review [H]unk" })
+      end,
     },
   },
-
   {
     -- Add indentation guides even on blank lines
     "lukas-reineke/indent-blankline.nvim",
@@ -120,9 +124,7 @@ require("lazy").setup({
     dependencies = {
       "nvim-treesitter/nvim-treesitter-textobjects",
     },
-    config = function()
-      pcall(require("nvim-treesitter.install").update({ with_sync = true }))
-    end,
+    build = ":TSUpdate",
   },
 
   { "nvim-treesitter/nvim-treesitter-context", opts = {} },
@@ -182,48 +184,13 @@ require("telescope").setup({
 pcall(require("telescope").load_extension, "fzf")
 
 -- See `:help telescope.builtin`
-vim.keymap.set(
-  "n",
-  "<leader>?",
-  require("telescope.builtin").oldfiles,
-  { desc = "[?] Find recently opened files" }
-)
-vim.keymap.set(
-  "n",
-  "<leader><space>",
-  require("telescope.builtin").buffers,
-  { desc = "[ ] Find existing buffers" }
-)
-vim.keymap.set(
-  "n",
-  "<leader>ff",
-  require("telescope.builtin").find_files,
-  { desc = "[F]ind [F]iles" }
-)
-vim.keymap.set(
-  "n",
-  "<leader>fh",
-  require("telescope.builtin").help_tags,
-  { desc = "[F]ind [H]elp" }
-)
-vim.keymap.set(
-  "n",
-  "<leader>fw",
-  require("telescope.builtin").grep_string,
-  { desc = "[F]ind current [W]ord" }
-)
-vim.keymap.set(
-  "n",
-  "<leader>fg",
-  require("telescope.builtin").live_grep,
-  { desc = "[F]ind by [G]rep" }
-)
-vim.keymap.set(
-  "n",
-  "<leader>fd",
-  require("telescope.builtin").diagnostics,
-  { desc = "[F]ind [D]iagnostics" }
-)
+vim.keymap.set("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
+vim.keymap.set("n", "<leader><space>", require("telescope.builtin").buffers, { desc = "[ ] Find existing buffers" })
+vim.keymap.set("n", "<leader>ff", require("telescope.builtin").find_files, { desc = "[F]ind [F]iles" })
+vim.keymap.set("n", "<leader>fh", require("telescope.builtin").help_tags, { desc = "[F]ind [H]elp" })
+vim.keymap.set("n", "<leader>fw", require("telescope.builtin").grep_string, { desc = "[F]ind current [W]ord" })
+vim.keymap.set("n", "<leader>fg", require("telescope.builtin").live_grep, { desc = "[F]ind by [G]rep" })
+vim.keymap.set("n", "<leader>fd", require("telescope.builtin").diagnostics, { desc = "[F]ind [D]iagnostics" })
 vim.keymap.set("n", "<leader>/", function()
   -- You can pass additional configuration to telescope to change theme, layout, etc.
   require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
@@ -236,12 +203,10 @@ end, { desc = "[/] Fuzzily search in current buffer" })
 -- See `:help nvim-treesitter`
 require("nvim-treesitter.configs").setup({
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { "javascript", "typescript", "tsx", "vimdoc", "vim", "json" },
-
-  -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
+  ensure_installed = { "javascript", "typescript", "tsx", "vimdoc", "vim", "json", "norg", "norg_meta" },
   auto_install = false,
   highlight = { enable = true },
-  indent = { enable = true, disable = { "python" } },
+  indent = { enable = true },
   incremental_selection = {
     enable = true,
     keymaps = {
@@ -316,18 +281,10 @@ local on_attach = function(client, bufnr)
     return false
   end
 
-  local navbuddy = require("nvim-navbuddy")
-  local blacklisted_lsps =
-    { "angularls", "tailwindcss", "docker_compose_language_service", "eslint" }
-
   local blacklisted_formatting_lsps = { "tsserver", "lua_ls" }
 
   if has_value(blacklisted_formatting_lsps, client.name) then
     client.server_capabilities.documentFormattingProvider = false
-  end
-
-  if not has_value(blacklisted_lsps, client.name) then
-    navbuddy.attach(client, bufnr)
   end
 
   -- NOTE: Remember that lua is a real programming language, and as such it is possible
@@ -351,11 +308,7 @@ local on_attach = function(client, bufnr)
   nmap("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
   nmap("<leader>D", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
   nmap("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
-  nmap(
-    "<leader>ws",
-    require("telescope.builtin").lsp_dynamic_workspace_symbols,
-    "[W]orkspace [S]ymbols"
-  )
+  nmap("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
 
   -- See `:help K` for why this keymap
   nmap("<C-k>", vim.lsp.buf.signature_help, "Signature Documentation")
@@ -495,6 +448,7 @@ cmp.setup({
     end, { "i", "s" }),
   }),
   sources = {
+    { name = "copilot" },
     { name = "nvim_lsp" },
     { name = "luasnip" },
   },
