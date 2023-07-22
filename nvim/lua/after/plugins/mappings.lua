@@ -2,7 +2,7 @@ local map = function(mode, keys, func, desc)
   local opts = { noremap = true, silent = true }
 
   if desc then
-    opts = { noremap = true, silent = true, desc = desc }
+    opts.desc = desc
   end
 
   vim.keymap.set(mode, keys, func, opts)
@@ -14,6 +14,13 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Normal --
+map(
+  "n",
+  "<leader>f",
+  "<CMD>lua vim.lsp.buf.format({ async = true })<CR>",
+  "Format current buffer with LSP"
+)
+
 -- Better window navigation
 map("n", "<C-h>", "<C-w>h")
 map("n", "<C-j>", "<C-w>j")
@@ -22,7 +29,7 @@ map("n", "<C-l>", "<C-w>l")
 
 -- Close buffer
 map("n", "Q", "<cmd>Bdelete!<CR>", "Close buffer")
-map("n", "<C-w>q", "<cmd>%bd|e#<CR>", "Close all but current buffer") -- Close all but current buffer
+map("n", "<C-w>q", "<cmd>%bd|e#|bd#<CR>", "Close all but current buffer") -- Close all but current buffer
 
 -- Split windows
 map("n", "vv", "<C-w>v", "Split vertically")

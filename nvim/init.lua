@@ -372,13 +372,6 @@ local on_attach = function(client, bufnr)
     nmap("<leader>o", "<CMD>OrganizeImports<CR>", "[O]rganize Imports")
   end
 
-  -- Create a command `:Format` local to the LSP buffer
-  vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
-    vim.lsp.buf.format({ async = true })
-  end, { desc = "Format current buffer with LSP" })
-
-  nmap("<leader>f", "<CMD>Format<CR>", "Format current buffer with LSP")
-
   local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
   if client.supports_method("textDocument/formatting") then
