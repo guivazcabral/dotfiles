@@ -3,6 +3,12 @@ return {
   build = ":Neorg sync-parsers",
   dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
+    -- check if current folder contains "datacamp" or "notes"
+    local function is_datacamp()
+      local path = vim.fn.expand("%:p:h")
+      return string.find(path, "datacamp") ~= nil
+    end
+
     require("neorg").setup({
       load = {
         ["core.defaults"] = {}, -- Loads default behaviour
@@ -18,6 +24,7 @@ return {
               work = "~/dev/datacamp/notes",
               home = "~/notes",
             },
+            default_workspace = is_datacamp() and "work" or "home",
           },
         },
       },

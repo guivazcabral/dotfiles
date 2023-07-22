@@ -98,7 +98,7 @@ map("n", "<leader>ts", "<cmd>lua require('neotest').summary.open()<CR>", "Open t
 map("n", "<leader>lg", "<cmd>lua require('logsitter').log()<CR>", "Console log")
 
 -- Logsitter
-map("n", "<leader>nO", "<cmd>Neorg workspace home<CR>", "Neorg home")
+map("n", "<leader>no", "<cmd>Neorg index<CR>", "Neorg")
 
 -- Visual --
 -- Stay in indent mode
