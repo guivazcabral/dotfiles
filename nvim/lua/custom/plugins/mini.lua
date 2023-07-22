@@ -46,7 +46,9 @@ return {
         local buffer_numbers = vim.api.nvim_list_bufs()
         for _, buffer_number in pairs(buffer_numbers) do
           local buffer_type = vim.api.nvim_buf_get_option(buffer_number, "buftype")
-          if buffer_type == "nofile" then
+          local buffer_file_type = vim.api.nvim_buf_get_option(buffer_number, "filetype")
+
+          if buffer_type == "nofile" or buffer_file_type == "norg" then
             vim.api.nvim_buf_delete(buffer_number, { force = true })
           end
         end
