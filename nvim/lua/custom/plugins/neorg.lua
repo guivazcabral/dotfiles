@@ -13,6 +13,7 @@ return {
           },
         }, -- Loads completion module
         ["core.keybinds"] = {}, -- Module for managing keybindings with Neorg mode support
+        ["core.itero"] = {}, -- Module for managing keybindings with Neorg mode support
         ["core.dirman"] = { -- Manages Neorg workspaces
           config = {
             workspaces = {
