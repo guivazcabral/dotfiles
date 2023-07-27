@@ -12,7 +12,13 @@ return {
     require("neorg").setup({
       load = {
         ["core.defaults"] = {}, -- Loads default behaviour
-        ["core.concealer"] = {}, -- Adds pretty icons to your documents
+        ["core.summary"] = {}, -- Loads default behaviour
+        ["core.export"] = {}, -- Loads default behaviour
+        ["core.concealer"] = {
+          config = {
+            icon_preset = "diamond",
+          },
+        }, -- Adds pretty icons to your documents
         ["core.completion"] = {
           config = {
             engine = "nvim-cmp",

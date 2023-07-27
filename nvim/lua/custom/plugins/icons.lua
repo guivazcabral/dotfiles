@@ -2,6 +2,7 @@ return {
   "nvim-tree/nvim-web-devicons",
   config = function()
     local icons = require("nvim-web-devicons")
+    local theme_colors = require("catppuccin.palettes").get_palette "mocha"
 
     local colors = {
       angular = "#c3002f",
@@ -114,6 +115,12 @@ return {
         color = colors.jsx,
         name = "jsx",
       },
+      norg = {
+        icon = "󰴓",
+        color = theme_colors.red,
+        name = "norg",
+      },
+
     })
   end,
 }

@@ -58,7 +58,9 @@ return {
         local count = 0
         for _, buffer_number in pairs(vim.api.nvim_list_bufs()) do
           local buffer_name = vim.api.nvim_buf_get_name(buffer_number)
-          if buffer_name ~= "" then
+          local buffer_file_type = vim.api.nvim_buf_get_option(buffer_number, "filetype")
+
+          if buffer_name ~= "" and buffer_file_type ~= "norg" then
             count = count + 1
           end
         end
