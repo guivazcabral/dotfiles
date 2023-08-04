@@ -33,7 +33,7 @@ return {
           svn = false,
           yaml = false,
         },
-        copilot_node_command = vim.fn.expand("$HOME") .. "/.nvm/versions/node/v18.16.0/bin/node", -- Node.js version must be > 16.x
+        copilot_node_command = "/Users/guilherme/Library/Application Support/fnm/node-versions/v18.16.0/installation/bin/node",
         server_opts_overrides = {},
       })
     end,
