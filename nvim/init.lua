@@ -202,8 +202,12 @@ end, { desc = "[/] Fuzzily search in current buffer" })
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
 require("nvim-treesitter.configs").setup({
+  autotag = { enable = true },
+  sync_install = false,
+  ignore_install = {},
+  modules = {},
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { "javascript", "typescript", "tsx", "vimdoc", "vim", "json", "norg", "norg_meta" },
+  ensure_installed = { "html", "javascript", "typescript", "tsx", "vimdoc", "vim", "json", "norg", "norg_meta" },
   auto_install = false,
   highlight = { enable = true },
   indent = { enable = true },
@@ -268,7 +272,7 @@ vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnos
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
 -- LSP settings.
---  This function gets run when an LSP connects to a particular buffer.
+-- This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(client, bufnr)
   -- checker for values in hashTable
   local function has_value(tab, val)
@@ -447,8 +451,8 @@ cmp.setup({
     end, { "i", "s" }),
   }),
   sources = {
-    { name = "copilot" },
     { name = "nvim_lsp" },
+    { name = "copilot" },
     { name = "luasnip" },
   },
 })

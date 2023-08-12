@@ -9,7 +9,7 @@ return {
 
     neogit.setup({
       use_telescope = true,
-      kind = "auto",
+      kind = "vsplit",
       integrations = {
         diffview = true,
       },
