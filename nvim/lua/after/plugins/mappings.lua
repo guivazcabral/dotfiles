@@ -14,12 +14,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Normal --
-map(
-  "n",
-  "<leader>f",
-  "<CMD>lua vim.lsp.buf.format({ async = true })<CR>",
-  "Format current buffer with LSP"
-)
+map("n", "<leader>f", "<CMD>lua vim.lsp.buf.format({ async = true })<CR>", "Format current buffer with LSP")
 
 -- Better window navigation
 map("n", "<C-h>", "<C-w>h")
@@ -52,15 +47,15 @@ map("n", "^", "0")
 map("n", "<leader>cs", ":let @+=fnamemodify(expand('%'), ':~:.')<CR>", "Copy file path")
 
 -- Resize with arrows
-map("n", "<C-Up>", "<cmd>resize -2<CR>")
-map("n", "<C-Down>", "<cmd>resize +2<CR>")
-map("n", "<C-Left>", "<cmd>vertical resize -2<CR>")
-map("n", "<C-Right>", "<cmd>vertical resize +2<CR>")
+map("n", "<C-Up>", "<cmd>resize -2<CR>", "- Horizontal")
+map("n", "<C-Down>", "<cmd>resize +2<CR>", "+ Horizontal")
+map("n", "<C-Left>", "<cmd>vertical resize -2<CR>", "- Vertical")
+map("n", "<C-Right>", "<cmd>vertical resize +2<CR>", "+ Vertical")
 
 -- Navigate buffers
 map("n", "<S-l>", "<cmd>bnext<CR>")
 map("n", "<S-h>", "<cmd>bprevious<CR>")
-map("n", "<leader>,", "<cmd>b#<CR>")
+map("n", "<leader>,", "<cmd>b#<CR>", "Return to previous buffer")
 
 -- NeoTree
 map("n", "<leader>ee", "<cmd>Neotree reveal toggle<CR>", "Toggle NeoTree")
@@ -99,7 +94,7 @@ map("n", "<leader>lg", "<cmd>lua require('logsitter').log()<CR>", "Console log")
 
 -- Neorg
 map("n", "<leader>no", "<cmd>Neorg index<CR>", "Neorg")
-map("n", "<leader>nt", "<cmd>Neorg toggle-concealer<CR>", "Neorg")
+map("n", "<leader>nt", "<cmd>Neorg toggle-concealer<CR>", "Neorg toggle concealer")
 
 -- Visual --
 -- Stay in indent mode
