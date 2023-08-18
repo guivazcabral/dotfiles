@@ -30,6 +30,11 @@ It is also ever-changing so don't expect this to be super up to date.
     brew install zellij
     ```
 
+  - Install [Exa](https://github.com/ogham/exa) 
+    ```sh
+    brew install exa
+    ```
+
   - Symlink `.config` folders:
     ```sh
     ln -s `dotfiles/fish`
