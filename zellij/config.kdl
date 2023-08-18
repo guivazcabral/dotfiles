@@ -136,7 +136,7 @@ keybinds clear-defaults=true {
     }
     shared_except "locked" {
         bind "Ctrl g" { SwitchToMode "Locked"; }
-        bind "Ctrl _" { Quit; }
+        bind "Ctrl k" { Quit; }
         bind "Alt n" { NewPane; }
         bind "Alt x" { CloseFocus; }
         bind "Alt c" { Clear; }
