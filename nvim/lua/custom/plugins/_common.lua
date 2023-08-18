@@ -9,6 +9,7 @@ return {
   { "norcalli/nvim-colorizer.lua", opts = {} },
   { "akinsho/toggleterm.nvim", opts = {} },
   "davidgranstrom/nvim-markdown-preview",
+  { "rmagatti/alternate-toggler", opts = {} },
   {
     "dbinagi/nomodoro",
     config = function()
