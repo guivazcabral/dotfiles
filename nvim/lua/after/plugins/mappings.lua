@@ -63,7 +63,7 @@ map("n", "<leader>e", "<cmd>Neotree reveal<CR>", "Focus NeoTree")
 
 -- Gitsigns
 map("n", "<leader>hR", "<cmd>Gitsigns reset_buffer<CR>", "Git Reset whole file")
-map("n", "<leader>hH", "<cmd>Gitsigns reset_hunk<CR>", "Git Reset hunk")
+map("n", "<leader>hh", "<cmd>Gitsigns reset_hunk<CR>", "Git Reset hunk")
 map("n", "<leader>tb", "<cmd>Gitsigns toggle_current_line_blame<CR>", "Git toggle blame")
 map("n", "<leader>td", "<cmd>Gitsigns toggle_deleted<CR>", "Git toggle deleted")
 
