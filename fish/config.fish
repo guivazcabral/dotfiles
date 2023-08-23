@@ -30,3 +30,5 @@ source ~/.config/fish/custom/abbrs/misc.fish
 if test -e ~/.config/fish/custom/secrets.fish
     source ~/.config/fish/custom/secrets.fish
 end
+
+status --is-interactive; and rbenv init - fish | source
