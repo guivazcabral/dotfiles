@@ -41,7 +41,7 @@ return {
         lualine_a = { "mode" },
         lualine_b = { "branch", "filename" },
         lualine_c = { "diff", "diagnostics" },
-        lualine_x = { copilot_indicator, require("nomodoro").status },
+        lualine_x = { copilot_indicator },
         lualine_y = { "filetype" },
         lualine_z = { "location" },
       },

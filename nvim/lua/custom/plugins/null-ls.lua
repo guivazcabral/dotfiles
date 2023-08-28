@@ -20,9 +20,6 @@ return {
         -- Terraform
         formatting.terraform_fmt,
         code_actions.gitrebase,
-        -- Ruby
-        -- diagnostics.rubocop.with({ command = "bundle", args = { "exec", "rubocop" } }),
-        formatting.rubocop,
       },
       on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then
