@@ -10,9 +10,4 @@ return {
   { "akinsho/toggleterm.nvim", opts = {} },
   "davidgranstrom/nvim-markdown-preview",
   { "rmagatti/alternate-toggler", opts = {} },
-  {
-    "m4xshen/hardtime.nvim",
-    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-    opts = {},
-  },
 }

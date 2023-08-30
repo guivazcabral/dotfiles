@@ -12,7 +12,7 @@ return {
         -- JS
         diagnostics.eslint_d,
         formatting.eslint_d,
-        formatting.prettierd,
+        -- formatting.prettierd,
         -- Fish
         formatting.fish_indent,
         -- Lua
