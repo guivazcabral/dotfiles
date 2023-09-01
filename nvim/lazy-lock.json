@@ -56,6 +56,7 @@
   "vim-bbye": { "branch": "master", "commit": "25ef93ac5a87526111f43e5110675032dbcacf56" },
   "vim-fugitive": { "branch": "master", "commit": "572c8510123cbde02e8a1dafcd376c98e1e13f43" },
   "vim-jsonpath": { "branch": "master", "commit": "af9c07b87765fc5aee176a894bc91fb04a5e3c47" },
+  "vim-ray-so-beautiful": { "branch": "master", "commit": "67a573e3cc7acc0d9bdb573b103cb2c8ddf39d64" },
   "vim-rhubarb": { "branch": "master", "commit": "ee69335de176d9325267b0fd2597a22901d927b1" },
   "vim-sleuth": { "branch": "master", "commit": "1cc4557420f215d02c4d2645a748a816c220e99b" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
