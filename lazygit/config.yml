@@ -1,4 +1,5 @@
 gui:
+  mouseEvents: false
   # use the mocha catpuccin theme
   theme:
     lightTheme: false
