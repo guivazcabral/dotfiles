@@ -38,7 +38,6 @@ It is also ever-changing so don't expect this to be super up to date.
   - Symlink `.config` folders:
     ```sh
     ln -s `dotfiles/fish`
-    ln -s `dotfiles/omf`
     ln -s `dotfiles/zellij`
     ```
   
