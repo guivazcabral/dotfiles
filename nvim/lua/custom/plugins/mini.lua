@@ -6,7 +6,7 @@ end
 return {
   {
     "echasnovski/mini.starter",
-    version = "false",
+    version = "*",
     config = function()
       local starter = require("mini.starter")
       local items = {}
@@ -31,7 +31,7 @@ return {
   },
   {
     "echasnovski/mini.sessions",
-    version = "false",
+    version = "*",
     config = function()
       if not isGitRepo() then
         return
@@ -71,10 +71,7 @@ return {
       minisessions.setup({
         autoread = false,
         autowrite = true,
-        directory = vim.fn.expand("$HOME")
-          .. "/.cache/nvim/sessions/"
-          .. project_folder_name
-          .. "/",
+        directory = vim.fn.expand("$HOME") .. "/.cache/nvim/sessions/" .. project_folder_name .. "/",
         file = "",
         force = { read = false, write = true, delete = false },
         hooks = {

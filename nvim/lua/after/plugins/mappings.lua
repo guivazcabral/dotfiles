@@ -28,7 +28,7 @@ map("n", "<C-w>q", "<cmd>%bd|e#|bd#<CR>", "Close all but current buffer") -- Clo
 
 -- Split windows
 map("n", "vv", "<C-w>v", "Split vertically")
-map("n", "ss", "<C-w>s", "Split horizontally")
+map("n", "vs", "<C-w>s", "Split horizontally")
 
 -- Clear search highlight
 map("n", "<leader>h", "<cmd>nohlsearch<CR>", "Clear search highlight")
