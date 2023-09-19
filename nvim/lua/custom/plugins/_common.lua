@@ -11,4 +11,9 @@ return {
   "davidgranstrom/nvim-markdown-preview",
   { "rmagatti/alternate-toggler", opts = {} },
   "sudoerwx/vim-ray-so-beautiful",
+  {
+    "chrisgrieser/nvim-puppeteer",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    ft = { "javascript", "typescript", "typescriptreact", "javascriptreact" },
+  },
 }
