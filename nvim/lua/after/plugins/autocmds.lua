@@ -13,6 +13,8 @@ vim.cmd([[autocmd BufRead,BufNewFile *.tf,*.tfvars set filetype=terraform]])
 vim.cmd([[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=json]])
 vim.cmd([[autocmd BufRead,BufNewFile *.graphqls set filetype=graphql]])
 
+vim.cmd([[autocmd BufRead,BufNewFile */node_modules/* lua vim.diagnostic.disable(0)]])
+
 vim.cmd([[
   " auto save
   autocmd FocusLost * silent! wa

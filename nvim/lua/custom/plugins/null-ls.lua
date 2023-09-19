@@ -10,7 +10,11 @@ return {
     null_ls.setup({
       sources = {
         -- JS
-        diagnostics.eslint_d,
+        diagnostics.eslint_d.with({
+          filter = function(diagnostic)
+            return diagnostic.code ~= "prettier/prettier"
+          end,
+        }),
         formatting.eslint_d,
         -- formatting.prettierd,
         -- Fish
