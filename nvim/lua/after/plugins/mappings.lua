@@ -93,7 +93,7 @@ map("n", "<leader>ts", "<cmd>lua require('neotest').summary.open()<CR>", "Open t
 map("n", "<leader>lg", "<cmd>lua require('logsitter').log()<CR>", "Console log")
 
 -- Alternate toggler
-map("n", "bt", "<cmd>lua require('alternate-toggler').toggleAlternate()<CR>", "Alternate toggle")
+map("n", "<leader>bt", "<cmd>lua require('alternate-toggler').toggleAlternate()<CR>", "Alternate toggle")
 
 -- Neorg
 map("n", "<leader>no", "<cmd>Neorg index<CR>", "Neorg")
