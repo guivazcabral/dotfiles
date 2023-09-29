@@ -28,7 +28,7 @@ return {
           config = {
             workspaces = {
               work = "~/dev/datacamp/notes",
-              home = "~/notes",
+              home = "~/dev/personal/notes",
             },
             default_workspace = is_datacamp() and "work" or "home",
           },

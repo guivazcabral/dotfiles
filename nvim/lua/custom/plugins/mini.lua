@@ -19,7 +19,6 @@ return {
 
       -- since we disable mini sessions for non-git repos, adding the sessions section on the
       -- starter throws an error, so we disable it in that case too
-
       starter.setup({
         items = items,
         content_hooks = {
