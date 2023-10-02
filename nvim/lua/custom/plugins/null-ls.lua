@@ -7,6 +7,8 @@ return {
     local diagnostics = null_ls.builtins.diagnostics
     local code_actions = null_ls.builtins.code_actions
 
+    local cwd = vim.fn.getcwd() .. "/node_modules/.bin/eslint"
+
     null_ls.setup({
       sources = {
         -- JS
@@ -14,6 +16,7 @@ return {
           filter = function(diagnostic)
             return diagnostic.code ~= "prettier/prettier"
           end,
+          -- extra_args = { "--eslint-path " .. cwd },
         }),
         formatting.eslint_d,
         -- formatting.prettierd,

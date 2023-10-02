@@ -4,7 +4,7 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-treesitter/nvim-treesitter",
     "antoinemadec/FixCursorHold.nvim",
-    "guivazcabral/neotest-jest",
+    "nvim-neotest/neotest-jest",
     "marilari88/neotest-vitest",
   },
   opts = {
@@ -13,7 +13,9 @@ return {
     -- or a table of adapter names, mapped to adapter configs.
     -- The adapter will then be automatically loaded with the config.
     adapters = {
-      "neotest-vitest",
+      ["neotest-vitest"] = {
+        command = "npm test",
+      },
       ["neotest-jest"] = {
         jestCommand = "yarn test",
         jestConfigFile = function()
@@ -42,8 +44,7 @@ return {
       virtual_text = {
         format = function(diagnostic)
           -- Replace newline and tab characters with space for more compact diagnostics
-          local message =
-            diagnostic.message:gsub("\n", " "):gsub("\t", " "):gsub("%s+", " "):gsub("^%s+", "")
+          local message = diagnostic.message:gsub("\n", " "):gsub("\t", " "):gsub("%s+", " "):gsub("^%s+", "")
           return message
         end,
       },
