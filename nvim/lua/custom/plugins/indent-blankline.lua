@@ -21,10 +21,10 @@ return {
     local theme_colors = require("catppuccin.palettes").get_palette("mocha")
 
     hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
-      vim.api.nvim_set_hl(0, "RainbowRed", { fg = theme_colors.red })
+      vim.api.nvim_set_hl(0, "RainbowRed", { fg = theme_colors.peach })
       vim.api.nvim_set_hl(0, "RainbowYellow", { fg = theme_colors.yellow })
       vim.api.nvim_set_hl(0, "RainbowBlue", { fg = theme_colors.blue })
-      vim.api.nvim_set_hl(0, "RainbowOrange", { fg = theme_colors.peach })
+      vim.api.nvim_set_hl(0, "RainbowOrange", { fg = theme_colors.pink })
       vim.api.nvim_set_hl(0, "RainbowGreen", { fg = theme_colors.green })
       vim.api.nvim_set_hl(0, "RainbowViolet", { fg = theme_colors.lavender })
       vim.api.nvim_set_hl(0, "RainbowCyan", { fg = theme_colors.teal })
