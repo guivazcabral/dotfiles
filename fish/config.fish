@@ -21,7 +21,7 @@ export EDITOR=/usr/local/bin/nvim
 # source custom files
 source ~/.config/fish/custom/chrome.fish
 source ~/.config/fish/custom/fnm.fish
-source ~/.config/fish/custom/gsb.fish
+source ~/.config/fish/custom/git.fish
 source ~/.config/fish/custom/kitty.fish
 source ~/.config/fish/custom/zellij.fish
 
