@@ -24,13 +24,18 @@ return {
             return string.match(file, "(.-/[^/]+/)src") .. "jest.config.ts"
           end
 
+          if string.find(file, "/apps/") then
+            return string.match(file, "(.-/[^/]+/)src") .. "jest.config.js"
+          end
+
           return vim.fn.getcwd() .. "/jest.config.ts"
         end,
         cwd = function()
           local file = vim.fn.expand("%:p")
-          if string.find(file, "/packages/") then
+          if string.find(file, "/packages/") or string.find(file, "/apps/") then
             return string.match(file, "(.-/[^/]+/)src")
           end
+
           return vim.fn.getcwd()
         end,
       },

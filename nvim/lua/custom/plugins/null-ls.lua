@@ -17,6 +17,7 @@ return {
             return diagnostic.code ~= "prettier/prettier"
           end,
           -- extra_args = { "--eslint-path " .. cwd },
+          extra_args = { "--eslint-path " .. cwd },
         }),
         formatting.eslint_d,
         -- formatting.prettierd,
