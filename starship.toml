@@ -4,6 +4,8 @@ palette = "catppuccin_mocha"
 format = """$directory$git_branch$package$nodejs$ruby$aws
 $character"""
 
+command_timeout = 1000
+
 [aws]
 format = "on [$symbol$profile]($style) "
 style = "bold peach"
