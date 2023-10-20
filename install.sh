@@ -53,7 +53,7 @@ install_brew_packages() {
 
   brew update
   echo "Installing Homebrew packages..."
-  brew install fish zellij exa ripgrep fzf lazygit
+  brew install fish zellij exa ripgrep fzf lazygit bat
 }
 
 change_shell_to_fish() {
@@ -69,7 +69,7 @@ bootstrap() {
   override_mac_defaults
   change_shell_to_fish
 
-  echo "Dotfiles bootstrapped successfully!"
+  echo "Dotfiles bootstrapped successfully! Restart your Mac for the changes to take effect."
 }
 
 # Execute the bootstrap process
