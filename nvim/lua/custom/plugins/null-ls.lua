@@ -1,5 +1,5 @@
 return {
-  "jose-elias-alvarez/null-ls.nvim",
+  "nvimtools/none-ls.nvim",
   dependencies = { "jose-elias-alvarez/typescript.nvim" },
   config = function()
     local null_ls = require("null-ls")
