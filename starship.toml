@@ -31,8 +31,8 @@ symbol = " "
 style = "bold peach"
 
 [character]
-success_symbol = "[𐳝](bold fg:blue)"
-error_symbol = "[𐳝](bold fg:red)"
+success_symbol = "[○](bold fg:blue)"
+error_symbol = "[○](bold fg:red)"
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
