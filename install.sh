@@ -53,7 +53,17 @@ install_brew_packages() {
 
   brew update
   echo "Installing Homebrew packages..."
-  brew install fish zellij exa ripgrep fzf lazygit bat
+
+  packages=(
+    bat
+    eza
+    fish
+    fzf
+    lazygit
+    ripgrep
+    zellij
+  )
+  brew install ${packages[@]}
 }
 
 change_shell_to_fish() {
