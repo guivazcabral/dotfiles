@@ -8,3 +8,6 @@ abbr -g la 'eza -la --icons --group-directories-first --octal-permissions'
 abbr -g lt 'eza -la --icons --group-directories-first --octal-permissions --tree --level=2'
 abbr -g y yarn
 abbr -g scripts 'cat package.json | jq -r ".scripts"'
+abbr -g f fnm
+abbr -g nvm fnm
+abbr -g fuse "fnm use"
