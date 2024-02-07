@@ -32,6 +32,13 @@ local config = {
   native_macos_fullscreen_mode = true,
   window_background_opacity = 1,
   window_decorations = "RESIZE",
+
+  default_prog = {
+    "/opt/homebrew/bin/fish",
+    "-l",
+    "-c",
+    "zellij",
+  },
 }
 
 return config
