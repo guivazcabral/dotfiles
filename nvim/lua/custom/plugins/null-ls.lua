@@ -13,14 +13,13 @@ return {
       sources = {
         -- JS
         diagnostics.eslint_d.with({
-          filter = function(diagnostic)
-            return diagnostic.code ~= "prettier/prettier"
-          end,
-          -- extra_args = { "--eslint-path " .. cwd },
+          -- filter = function(diagnostic)
+          --   return diagnostic.code ~= "prettier/prettier"
+          -- end,
           extra_args = { "--eslint-path " .. cwd },
         }),
         formatting.eslint_d,
-        -- formatting.prettierd,
+        formatting.prettierd,
         -- Fish
         formatting.fish_indent,
         -- Lua
