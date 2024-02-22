@@ -5,6 +5,7 @@ keybinds clear-defaults=true {
     shared_except "locked" {
         bind "Alt g" { SwitchToMode "Locked"; }
         bind "Alt n" { NewPane; }
+        bind "Alt q" { CloseTab; }
         bind "Alt x" { CloseFocus; }
         bind "Alt c" { Clear; }
         bind "Alt t" { NewTab; }
