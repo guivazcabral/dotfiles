@@ -11,4 +11,5 @@ return {
   "davidgranstrom/nvim-markdown-preview",
   { "rmagatti/alternate-toggler", opts = {} },
   "sudoerwx/vim-ray-so-beautiful",
+  "dmmulroy/ts-error-translator.nvim",
 }
