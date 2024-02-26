@@ -276,7 +276,7 @@ local on_attach = function(client, bufnr)
     return false
   end
 
-  local blacklisted_formatting_lsps = { "tsserver", "lua_ls" }
+  local blacklisted_formatting_lsps = { "lua_ls" }
 
   if has_value(blacklisted_formatting_lsps, client.name) then
     client.server_capabilities.documentFormattingProvider = false
@@ -315,6 +315,44 @@ local on_attach = function(client, bufnr)
 
   if client.name == "tsserver" then
     nmap("<leader>o", "<CMD>OrganizeImports<CR>", "[O]rganize Imports")
+  end
+
+  if client.name == "eslint" then
+    local function fix_all(opts)
+      local util = require("lspconfig.util")
+      local lsp = vim.lsp
+
+      opts = opts or {}
+
+      local eslint_lsp_client = util.get_active_client_by_name(opts.bufnr, "eslint")
+      if eslint_lsp_client == nil then
+        return
+      end
+
+      local request
+      if opts.sync then
+        request = function(bufnr, method, params)
+          eslint_lsp_client.request_sync(method, params, nil, bufnr)
+        end
+      else
+        request = function(bufnr, method, params)
+          eslint_lsp_client.request(method, params, nil, bufnr)
+        end
+      end
+
+      local bufnr = util.validate_bufnr(opts.bufnr or 0)
+      request(0, "workspace/executeCommand", {
+        command = "eslint.applyAllFixes",
+        arguments = {
+          {
+            uri = vim.uri_from_bufnr(bufnr),
+            version = lsp.util.buf_versions[bufnr],
+          },
+        },
+      })
+    end
+
+    nmap("<leader>fa", fix_all, "[F]ix all")
   end
 
   local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
