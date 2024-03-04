@@ -5,6 +5,10 @@ end
 
 return {
   {
+    "echasnovski/mini.notify",
+    opts = {},
+  },
+  {
     "echasnovski/mini.starter",
     version = "*",
     config = function()
