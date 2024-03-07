@@ -16,10 +16,17 @@ return {
       local items = {}
 
       if isGitRepo() then
-        table.insert(items, starter.sections.sessions(2, true))
+        local sessions = starter.sections.sessions(2, true)
+        if sessions then
+          table.insert(items, sessions)
+        end
       end
 
-      table.insert(items, starter.sections.recent_files(5, true, false))
+      local recent_files = starter.sections.recent_files(5, true, false)
+
+      if recent_files then
+        table.insert(items, recent_files)
+      end
 
       -- since we disable mini sessions for non-git repos, adding the sessions section on the
       -- starter throws an error, so we disable it in that case too
