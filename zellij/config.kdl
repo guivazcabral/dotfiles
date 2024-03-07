@@ -43,7 +43,7 @@ ui {
 }
 
 session_serialization false
-pane_frames false
+pane_frames true
 on_force_close "quit"
 mouse_mode true
 layout_dir "/Users/guilherme/dev/dotfiles/zellij"
