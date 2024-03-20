@@ -10,3 +10,8 @@
 [rebase]
   updateRefs = true
 
+; if you want to include a file only for repos under a certain folder,
+; you can use the following syntax:
+; [includeIf "gitdir:~/folder/subfolder/"]
+;   path = ~/folder/subfolder/.gitconfig
+
