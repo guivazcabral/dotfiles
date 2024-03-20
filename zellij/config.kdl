@@ -10,6 +10,7 @@ keybinds clear-defaults=true {
         bind "Alt c" { Clear; }
         bind "Alt t" { NewTab; }
         bind "Alt b" { BreakPane; }
+        bind "Alt f" { TogglePaneFrames; }
         bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
         bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
         bind "Alt j" "Alt Down" { MoveFocus "Down"; }
@@ -31,9 +32,7 @@ keybinds clear-defaults=true {
 }
 
 plugins {
-    status-bar { path "status-bar"; }
     compact-bar { path "compact-bar"; }
-    session-manager { path "session-manager"; }
 }
 
 ui {
