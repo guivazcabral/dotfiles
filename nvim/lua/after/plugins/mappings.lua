@@ -41,9 +41,10 @@ map("n", "<Right>", ":echoe 'Use l'<CR>")
 map("n", "<Up>", ":echoe 'Use k'<CR>")
 map("n", "<Down>", ":echoe 'Use j'<CR>")
 
--- Replace to better go to the beginning of the line
+-- Replace to better go to the beginning and end of the line
 map("n", "0", "^")
 map("n", "^", "0")
+map("n", "$", "g_")
 
 -- Copy filepath
 map("n", "<leader>cs", ":let @+=fnamemodify(expand('%'), ':~:.')<CR>", "Copy file path")
