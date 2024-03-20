@@ -1,5 +1,6 @@
 ; [include]
 ;   path = ~/dev/dotfiles/.gitconfig
+; the lines above are included automatically in the global config file by the install script
 
 [commit]
   gpgsign = true

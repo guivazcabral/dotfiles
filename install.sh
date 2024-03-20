@@ -5,21 +5,26 @@ DOTFILES_DIR="$HOME/dev/dotfiles"
 
 create_symlinks() {
   echo "Creating symlinks..."
-  echo "Creating symlink for kitty"
-  ln -sf $DOTFILES_DIR/kitty $XDG_CONFIG_HOME/kitty
-  echo "Creating symlink for fish"
+  echo "> Creating symlink for bat"
+  ln -sf $DOTFILES_DIR/bat $XDG_CONFIG_HOME/bat
+  echo "> Creating symlink for wezterm"
+  ln -sf $DOTFILES_DIR/wezterm $XDG_CONFIG_HOME/wezterm
+  echo "> Creating symlink for fish"
   ln -sf $DOTFILES_DIR/fish $XDG_CONFIG_HOME/fish
-  echo "Creating symlink for omf"
+  echo "> Creating symlink for omf"
   ln -sf $DOTFILES_DIR/omf $XDG_CONFIG_HOME/omf
-  echo "Creating symlink for zellij"
+  echo "> Creating symlink for zellij"
   ln -sf $DOTFILES_DIR/zellij $XDG_CONFIG_HOME/zellij
-  echo "Creating symlink for nvim"
+  echo "> Creating symlink for nvim"
   ln -sf $DOTFILES_DIR/nvim $XDG_CONFIG_HOME/nvim
-  echo "Creating symlink for lazygit"
+  echo "> Creating symlink for karabiner"
+  ln -sf $DOTFILES_DIR/nvim $XDG_CONFIG_HOME/karabiner
+  echo "> Creating symlink for lazygit"
   ln -sf $DOTFILES_DIR/lazygit/config.yml $HOME/Library/Application\ Support/lazygit/config.yml
 }
 
 override_mac_defaults() {
+  echo "Setting macOS defaults..."
   defaults write -g ApplePressAndHoldEnabled -bool false
   defaults write -g KeyRepeat -int 1
   defaults write -g InitialKeyRepeat -int 10
@@ -72,12 +77,20 @@ change_shell_to_fish() {
   chsh -s /opt/homebrew/bin/fish
 }
 
+setup_gitconfig() {
+  echo "Setting up gitconfig..."
+  git config --global user.name "Gui Cabral"
+  sed '1,2s/^..//' $DOTFILES_DIR/.gitconfig | head -n 2 >> $HOME/.gitconfig
+  echo "dotfiles/.gitconfig included successfully in global config"
+}
+
 # Main function to execute the bootstrap process
 bootstrap() {
   install_brew_packages
   create_symlinks
   override_mac_defaults
   change_shell_to_fish
+  setup_gitconfig
 
   echo "Dotfiles bootstrapped successfully! Restart your Mac for the changes to take effect."
 }
