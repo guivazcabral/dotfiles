@@ -43,7 +43,7 @@ return {
     opts = {
       show_help = "yes", -- Show help text for CopilotChatInPlace, default: yes
       debug = false, -- Enable or disable debug mode, the log file will be in ~/.local/state/nvim/CopilotChat.nvim.log
-      disable_extra_info = "no", -- Disable extra information (e.g: system prompt) in the response.
+      disable_extra_info = "yes", -- Disable extra information (e.g: system prompt) in the response.
       language = "English", -- Copilot answer language settings when using default prompts. Default language is English.
     },
     build = function()

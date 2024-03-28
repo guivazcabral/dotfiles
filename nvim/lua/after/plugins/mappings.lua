@@ -106,3 +106,6 @@ map("n", "<leader>nt", "<cmd>Neorg toggle-concealer<CR>", "Neorg toggle conceale
 -- Stay in indent mode
 map("v", "<", "<gv")
 map("v", ">", ">gv")
+
+-- Github Copilopt
+map("v", "<leader>cp", "<cmd>'<,'>CopilotChatInPlace<CR>", "Github Copilot")
