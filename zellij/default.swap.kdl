@@ -3,9 +3,6 @@ tab_template name="ui" {
        plugin location="zellij:compact-bar"
    }
    children
-   pane size=1 borderless=true {
-       plugin location="zellij:status-bar"
-   }
 }
 
 swap_tiled_layout name="vertical" {
