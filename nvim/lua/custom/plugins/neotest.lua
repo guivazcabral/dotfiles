@@ -6,6 +6,7 @@ return {
     "antoinemadec/FixCursorHold.nvim",
     "nvim-neotest/neotest-jest",
     "marilari88/neotest-vitest",
+    "nvim-neotest/nvim-nio",
   },
   opts = {
     -- Can be a list of adapters like what neotest expects,
