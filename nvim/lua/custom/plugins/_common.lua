@@ -12,4 +12,5 @@ return {
   { "rmagatti/alternate-toggler", opts = {} },
   "sudoerwx/vim-ray-so-beautiful",
   "dmmulroy/ts-error-translator.nvim",
+  { "yorickpeterse/nvim-tree-pairs", opts = {} },
 }
