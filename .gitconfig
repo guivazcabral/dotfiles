@@ -9,6 +9,8 @@
   enabled = true
 [rebase]
   updateRefs = true
+[core]
+  excludefile = ~/dev/dotfiles/.gitignore_global
 
 ; if you want to include a file only for repos under a certain folder,
 ; you can use the following syntax:
