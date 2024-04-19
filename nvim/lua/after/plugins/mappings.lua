@@ -73,14 +73,8 @@ map("n", "<leader>td", "<cmd>Gitsigns toggle_deleted<CR>", "Git toggle deleted")
 -- LazyGit
 map("n", "<leader>gg", "<cmd>LazyGit<CR>", "Lazygit")
 
--- Neogit
-map("n", "<leader>ng", "<cmd>Neogit<CR>", "Neogit")
-
--- LSPSaga
-map("n", "<M-CR>", "<cmd>Lspsaga code_action<cr>", "Code actions")
-map("n", "gl", "<cmd>Lspsaga show_line_diagnostics<CR>", "Show line diagnostics")
-map("n", "K", "<cmd>Lspsaga hover_doc<CR>", "Show hover docs")
-map("n", "<leader>gR", "<cmd>Lspsaga finder<CR>", "Find references")
+map("n", "<M-CR>", "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code actions")
+map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", "Show hover docs")
 
 -- Open diagnostics
 map("n", "<C-p>", "<cmd>TroubleToggle<CR>", "Open trouble pane")
@@ -97,10 +91,6 @@ map("n", "<leader>lg", "<cmd>lua require('logsitter').log()<CR>", "Console log")
 
 -- Alternate toggler
 map("n", "<leader>bt", "<cmd>lua require('alternate-toggler').toggleAlternate()<CR>", "Alternate toggle")
-
--- Neorg
-map("n", "<leader>no", "<cmd>Neorg index<CR>", "Neorg")
-map("n", "<leader>nt", "<cmd>Neorg toggle-concealer<CR>", "Neorg toggle concealer")
 
 -- Visual --
 -- Stay in indent mode
