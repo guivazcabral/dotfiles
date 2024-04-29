@@ -89,7 +89,20 @@ require("lazy").setup({
   { "numToStr/Comment.nvim", opts = {} },
 
   -- Fuzzy Finder (files, lsp, etc)
-  { "nvim-telescope/telescope.nvim", version = "*", dependencies = { "nvim-lua/plenary.nvim" } },
+  {
+    "nvim-telescope/telescope.nvim",
+    version = "*",
+    dependencies = { "nvim-lua/plenary.nvim", "Myzel394/jsonfly.nvim" },
+    keys = {
+      {
+        "<leader>j",
+        "<cmd>Telescope jsonfly<cr>",
+        desc = "Open json(fly)",
+        ft = { "json" },
+        mode = "n",
+      },
+    },
+  },
 
   -- Fuzzy Finder Algorithm which requires local dependencies to be built.
   -- Only load if `make` is available. Make sure you have the system
