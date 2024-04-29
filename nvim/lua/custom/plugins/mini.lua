@@ -5,6 +5,19 @@ end
 
 return {
   {
+    "echasnovski/mini.files",
+    version = false,
+    opts = {},
+    keys = {
+      {
+        "<leader>mf",
+        "<cmd>lua MiniFiles.open()<cr>",
+        desc = "Open MiniFiles",
+        mode = "n",
+      },
+    },
+  },
+  {
     "echasnovski/mini.notify",
     opts = {},
   },
