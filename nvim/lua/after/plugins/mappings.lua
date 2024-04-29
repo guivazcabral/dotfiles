@@ -79,8 +79,9 @@ map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", "Show hover docs")
 -- Open diagnostics
 map("n", "<C-p>", "<cmd>TroubleToggle<CR>", "Open trouble pane")
 
--- Json Path
-map("n", "<leader>jp", "<cmd>JsonPath<CR>", "Copy JSON Path")
+map("n", "<leader>jp", function()
+  require("copy-path").copy_json_path({ register = "*", remove_quotes = true })
+end, { desc = "Copy JSON Path", buffer = true })
 
 -- Run tests
 map("n", "<leader>tt", "<cmd>lua require('neotest').run.run()<CR>", "Run tests")
