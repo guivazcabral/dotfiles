@@ -25,8 +25,8 @@ style = "peach"
 style = "bold peach"
 
 [character]
-success_symbol = "[❱](bold fg:blue)"
-error_symbol = "[❱](bold fg:red)"
+success_symbol = "[❱](fg:blue)"
+error_symbol = "[❱](fg:red)"
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
