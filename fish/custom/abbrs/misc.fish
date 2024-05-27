@@ -11,3 +11,4 @@ abbr -g scripts 'cat package.json | jq -r ".scripts"'
 abbr -g f fnm
 abbr -g nvm fnm
 abbr -g fuse "fnm use"
+abbr -g yw "yarn watch"
