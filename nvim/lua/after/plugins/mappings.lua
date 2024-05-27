@@ -74,14 +74,13 @@ map("n", "<leader>td", "<cmd>Gitsigns toggle_deleted<CR>", "Git toggle deleted")
 map("n", "<leader>gg", "<cmd>LazyGit<CR>", "Lazygit")
 
 map("n", "<M-CR>", "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code actions")
-map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", "Show hover docs")
 
 -- Open diagnostics
 map("n", "<C-p>", "<cmd>TroubleToggle<CR>", "Open trouble pane")
 
 map("n", "<leader>jp", function()
   require("copy-path").copy_json_path({ register = "*", remove_quotes = true })
-end, { desc = "Copy JSON Path", buffer = true })
+end, "Copy JSON Path")
 
 -- Run tests
 map("n", "<leader>tt", "<cmd>lua require('neotest').run.run()<CR>", "Run tests")

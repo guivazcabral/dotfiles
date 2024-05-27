@@ -202,7 +202,6 @@ end, { desc = "[/] Fuzzily search in current buffer" })
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
 require("nvim-treesitter.configs").setup({
-  autotag = { enable = true },
   sync_install = false,
   ignore_install = {},
   modules = {},
@@ -265,6 +264,7 @@ require("nvim-treesitter.configs").setup({
     },
   },
 })
+require("nvim-ts-autotag").setup({})
 
 -- Diagnostic keymaps
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
