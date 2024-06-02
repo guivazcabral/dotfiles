@@ -76,7 +76,7 @@ map("n", "<leader>gg", "<cmd>LazyGit<CR>", "Lazygit")
 map("n", "<M-CR>", "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code actions")
 
 -- Open diagnostics
-map("n", "<C-p>", "<cmd>TroubleToggle<CR>", "Open trouble pane")
+map("n", "<C-p>", "<cmd>Trouble diagnostics<CR>", "Open trouble pane")
 
 map("n", "<leader>jp", function()
   require("copy-path").copy_json_path({ register = "*", remove_quotes = true })
