@@ -53,6 +53,7 @@ install_brew_packages() {
     fish
     fnm
     fzf
+    jandedobbeleer/oh-my-posh/oh-my-posh
     lazygit
     ripgrep
     zellij
