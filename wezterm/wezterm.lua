@@ -26,9 +26,7 @@ local config = {
   disable_default_key_bindings = true,
   font_size = 12.5,
   hide_tab_bar_if_only_one_tab = true,
-
   keys = keys,
-
   native_macos_fullscreen_mode = true,
   window_background_opacity = 1,
   window_decorations = "RESIZE",
