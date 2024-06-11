@@ -29,27 +29,15 @@ override_mac_defaults() {
   defaults write -g KeyRepeat -int 1
   defaults write -g InitialKeyRepeat -int 10
 
-  # Disable natural scrolling
-  # defaults write -g com.apple.swipescrolldirection -bool false
-
-  # Disable auto-correct
-  # defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
-
   # Disable auto-capitalization
   defaults write -g NSAutomaticCapitalizationEnabled -bool false
 
   # Disable smart quotes and dashes
-  # defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false
-  # defaults write -g NSAutomaticDashSubstitutionEnabled -bool false
+  defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false
+  defaults write -g NSAutomaticDashSubstitutionEnabled -bool false
 
   # Only show scrollbars when scrolling
   defaults write -g AppleShowScrollBars -string "WhenScrolling"
-
-  # Show all filename extensions
-  defaults write -g AppleShowAllExtensions -bool true
-
-  # Show hidden files in Finder
-  # defaults write com.apple.finder AppleShowAllFiles -bool true
 }
 
 install_brew_packages() {
