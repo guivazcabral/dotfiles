@@ -51,6 +51,7 @@ install_brew_packages() {
     bat
     eza
     fish
+    fnm
     fzf
     lazygit
     ripgrep
