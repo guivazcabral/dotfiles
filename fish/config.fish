@@ -9,9 +9,7 @@ export PATH="/opt/homebrew/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_mo
 export EDITOR="nvim"
 export SHELL="/opt/homebrew/bin/fish"
 
-# init startship
-export STARSHIP_CONFIG=/Users/guilherme/dev/dotfiles/starship.toml
-starship init fish | source
+oh-my-posh init fish --config ~/.config/oh-my-posh/config.yaml | source
 
 # auto load nvm version on pwd change
 load_nvm >/dev/stderr

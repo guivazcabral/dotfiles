@@ -1,3 +1,8 @@
+#####
+# WITH THE ADDITION OF OH-MY-POSH, THIS BECAME DEPRECATED
+# KEEP IT HERE IF WE MOVE BACK TO STARSHIP
+#####
+
 "$schema" = 'https://starship.rs/config-schema.json'
 palette = "catppuccin_mocha"
 

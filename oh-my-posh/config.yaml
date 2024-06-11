@@ -1,0 +1,81 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
+version: 2
+final_space: true
+transient_prompt:
+  template: "​"
+palette:
+  base: "#1e1e2e"
+  blue: "#89b4fa"
+  closer: p:os
+  crust: "#11111b"
+  flamingo: "#f2cdcd"
+  green: "#a6e3a1"
+  lavender: "#b4befe"
+  mantle: "#181825"
+  maroon: "#eba0ac"
+  mauve: "#cba6f7"
+  os: "#acb0be"
+  overlay0: "#6c7086"
+  overlay1: "#7f849c"
+  overlay2: "#9399b2"
+  peach: "#fab387"
+  pink: "#f5c2e7"
+  red: "#f38ba8"
+  rosewater: "#f5e0dc"
+  sapphire: "#74c7ec"
+  sky: "#89dceb"
+  subtext0: "#a6adc8"
+  subtext1: "#bac2de"
+  surface0: "#313244"
+  surface1: "#45475a"
+  surface2: "#585b70"
+  teal: "#94e2d5"
+  text: "#cdd6f4"
+  yellow: "#f9e2af"
+
+blocks:
+- type: prompt
+  alignment: left
+  segments:
+  - type: path
+    style: powerline
+    powerline_symbol: 
+    leading_powerline_symbol: 
+    foreground: "p:surface0"
+    background: "p:peach"
+    properties:
+      style: unique
+  - type: git
+    style: diamond
+    leading_diamond: " "
+    trailing_diamond: 
+    foreground: "p:peach"
+    background: "p:crust"
+    template: " {{ .UpstreamIcon }} {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus
+      }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and
+      (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} 
+      {{ .Staging.String }}{{ end }}"
+    properties:
+      branch_icon: ""
+      branch_identical_icon: ""
+      fetch_status: true
+      fetch_upstream_icon: true
+  - type: node
+    style: powerline
+    powerline_symbol: 
+    foreground: "p:peach"
+    background: "p:surface0"
+    template: "   {{ .Full }} "
+- type: rprompt
+  alignment: right
+  segments:
+  - type: executiontime
+    style: plain
+    foreground: "p:text"
+    background: "p:base"
+    template: "{{ .FormattedMs }}"
+    properties:
+      threshold: 500
+      style: austin
+      always_enabled: true
