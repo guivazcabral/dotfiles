@@ -11,8 +11,8 @@ create_symlinks() {
   ln -sf $DOTFILES_DIR/wezterm $XDG_CONFIG_HOME/wezterm
   echo "> Creating symlink for fish"
   ln -sf $DOTFILES_DIR/fish $XDG_CONFIG_HOME/fish
-  echo "> Creating symlink for omf"
-  ln -sf $DOTFILES_DIR/omf $XDG_CONFIG_HOME/omf
+  echo "> Creating symlink for oh-my-posh"
+  ln -sf $DOTFILES_DIR/oh-my-posh $XDG_CONFIG_HOME/oh-my-posh
   echo "> Creating symlink for zellij"
   ln -sf $DOTFILES_DIR/zellij $XDG_CONFIG_HOME/zellij
   echo "> Creating symlink for nvim"
@@ -53,6 +53,7 @@ install_brew_packages() {
     fish
     fnm
     fzf
+    jandedobbeleer/oh-my-posh/oh-my-posh
     lazygit
     ripgrep
     zellij
