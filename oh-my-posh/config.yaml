@@ -2,8 +2,6 @@
 
 version: 2
 final_space: true
-transient_prompt:
-  template: "​"
 palette:
   base: "#1e1e2e"
   blue: "#89b4fa"
@@ -41,7 +39,7 @@ blocks:
   - type: path
     style: powerline
     powerline_symbol: 
-    leading_powerline_symbol: 
+    leading_powerline_symbol: █
     foreground: "p:surface0"
     background: "p:peach"
     properties:
@@ -55,7 +53,7 @@ blocks:
     template: " {{ .UpstreamIcon }} {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus
       }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and
       (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} 
-      {{ .Staging.String }}{{ end }}"
+      {{ .Staging.String }}{{ end }} "
     properties:
       branch_icon: ""
       branch_identical_icon: ""
@@ -64,9 +62,17 @@ blocks:
   - type: node
     style: powerline
     powerline_symbol: 
+    leading_powerline_symbol: " "
     foreground: "p:peach"
     background: "p:surface0"
     template: "   {{ .Full }} "
+  - type: ruby
+    style: powerline
+    powerline_symbol: 
+    leading_powerline_symbol: " "
+    foreground: "p:base"
+    background: "p:red"
+    template: "   {{ .Full }} "
 - type: rprompt
   alignment: right
   segments:
