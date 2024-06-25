@@ -117,6 +117,20 @@ return {
       desc =
       "Toggle Output Panel"
     },
-    { "<leader>tS", function() require("neotest").run.stop() end,                  desc = "Stop" },
+    {
+      "<leader>tS",
+      function() require("neotest").run.stop() end,
+      desc = "Stop"
+    },
+    {
+      "<leader>tU",
+      function() require('neotest').run.run({jestCommand = "npx jest -u"}) end,
+      desc = "Update snapshot for nearest test"
+    },
+    {
+      "<leader>tu",
+      function() require('neotest').run.run({vim.fn.expand("%"), jestCommand = "npx jest -u"}) end,
+      desc = "Update snapshots for current file"
+    },
   },
 }
