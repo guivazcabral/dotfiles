@@ -13,6 +13,7 @@ vim.cmd([[autocmd BufRead,BufNewFile .terraformrc,terraform.rc set filetype=hcl]
 vim.cmd([[autocmd BufRead,BufNewFile *.tf,*.tfvars set filetype=terraform]])
 vim.cmd([[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=json]])
 vim.cmd([[autocmd BufRead,BufNewFile *.graphqls set filetype=graphql]])
+vim.cmd([[autocmd BufRead,BufNewFile *.graphql set filetype=graphql]])
 vim.cmd([[autocmd BufRead,BufNewFile *.env.* set filetype=sh]])
 
 vim.cmd([[autocmd BufRead,BufNewFile */node_modules/* lua vim.diagnostic.disable(0)]])
