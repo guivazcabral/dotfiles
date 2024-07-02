@@ -13,24 +13,13 @@ function fcommit --description "fzf powered git log and commit hash"
     end
 end
 
-function gbra --description "prompt lead git branch creation"
+function gbra --description "create branch with JIRA ref"
+    # Needs env vars JIRA_TOKEN and JIRA_DOMAIN to be set
+    set prefix "gui" # the prefix to use for the branch name
+
     if not string length --quiet $JIRA_DOMAIN || not string length --quiet $JIRA_TOKEN
         echo "Missing JIRA env vars. Check if JIRA_DOMAIN and JIRA_TOKEN are set"
         return
-    end
-
-    set prefix gui
-    set backstage (read -n 1 -f -P "Needs backstage? [y/N]: ")
-
-    if test -z $backstage
-        echo Aborting
-        return
-    end
-
-    if string match $backstage y
-        set prefix backstage/gui
-    else
-        echo "No backstage needed"
     end
 
     set ticket_title (fetch-jira-ticket-title)
@@ -47,7 +36,7 @@ end
 
 function fetch-jira-ticket-title
     # Ask the user for Jira ticket reference
-    set jira_ticket_ref (read -f -P "Enter the Jira ticket reference (e.g., PR-123): ")
+    set jira_ticket_ref (read -f -P "Enter the Jira ticket numbers (e.g., 1234 for ticket WL-1234): ")
 
     if test -z $jira_ticket_ref
         return
@@ -55,9 +44,8 @@ function fetch-jira-ticket-title
 
     # Check if the Jira ticket reference is not empty
     if test -n "$jira_ticket_ref"
-
         # Call Jira API to get the ticket title
-        set jira_url "https://$JIRA_DOMAIN/rest/api/2/issue/$jira_ticket_ref"
+        set jira_url "https://$JIRA_DOMAIN/rest/api/2/issue/WL-$jira_ticket_ref"
         set jira_response (curl -s $jira_url --user $JIRA_TOKEN)
 
         # Extract the ticket title from the JSON response
@@ -65,29 +53,15 @@ function fetch-jira-ticket-title
 
         # Check if the ticket title is not empty
         if test -n "$ticket_title"
-            set ticket_title_snake (echo $ticket_title | sed 's/[^a-zA-Z0-9 ]//g' |
-                string lower | string trim | sed 's/ /-/g' )
-
-            set ok (read -n 1 -P "Is \"$ticket_title_snake\" ok? [Y]es/[n]o: ")
+            set ok (read -n 1 -P "Is this your ticket: \"$ticket_title\" ? [Y]es/[n]o: ")
 
             if test -z $ok
-                return
+                return false
             end
 
             if test $ok = y
-                echo "$jira_ticket_ref/$ticket_title_snake"
-            else
-                set ticket_title (read -f -P "Enter the ticket title: ")
-                set ticket_title_snake (echo $ticket_title | sed 's/[^a-zA-Z0-9 ]//g' |
-                string lower | string trim | sed 's/ /-/g' )
-                echo "$jira_ticket_ref/$ticket_title_snake"
+                echo "wl-$jira_ticket_ref"
             end
-        else
-            set custom_title (read -f -P "Failed to automatically fetch the ticket title. Please enter the ticket title: ")
-            echo "$jira_ticket_ref/$custom_title"
         end
-    else
-        set custom_title (read -f -P "Failed to automatically fetch the ticket title. Please enter the ticket title: ")
-        echo "$jira_ticket_ref/$custom_title"
     end
 end
