@@ -1,5 +1,7 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
+    rbenv init - fish | source
+    pyenv init - | source
 end
 
 function fish_greeting
@@ -25,14 +27,6 @@ source ~/.config/fish/custom/zellij.fish
 
 source ~/.config/fish/custom/abbrs/misc.fish
 
-if test -e ~/.config/fish/custom/secrets.fish
+if test -e ~/.config/fish/custom/secrets.fish # checks if file exists because it's gitignored
     source ~/.config/fish/custom/secrets.fish
 end
-
-status --is-interactive; and rbenv init - fish | source
-
-# bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
-
- pyenv init - | source
