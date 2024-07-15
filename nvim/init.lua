@@ -326,6 +326,12 @@ local on_attach = function(client, bufnr)
     nmap("<leader>o", "<CMD>OrganizeImports<CR>", "[O]rganize Imports")
   end
 
+  if vim.lsp.inlay_hint then
+    vim.keymap.set("n", "<leader>uh", function()
+      vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({}))
+    end, { desc = "Toggle Inlay Hints" })
+  end
+
   if client.name == "eslint" then
     local function fix_all(opts)
       local util = require("lspconfig.util")
@@ -378,20 +384,33 @@ vim.api.nvim_create_user_command("EnableRedir", function()
   vim.cmd("redir! >> /Users/guilherme/.cache/nvim/nvim.log")
 end, {})
 
--- Enable the following language servers
---  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
---
---  Add any additional override configuration in the following tables. They will be passed to
---  the `settings` field of the server config. You must look up that documentation yourself.
+local js_inlay_hints = {
+  includeInlayEnumMemberValueHints = false,
+  includeInlayFunctionLikeReturnTypeHints = true,
+  includeInlayFunctionParameterTypeHints = false,
+  includeInlayParameterNameHints = "all",
+  includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+  includeInlayPropertyDeclarationTypeHints = true,
+  includeInlayVariableTypeHints = true,
+}
+
 local servers = {
   -- clangd = {},
   -- gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},
-  tsserver = {},
+  tsserver = {
+    javascript = {
+      inlayHints = js_inlay_hints,
+    },
+    typescript = {
+      inlayHints = js_inlay_hints,
+    },
+  },
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
+      hint = { enable = true },
       telemetry = { enable = false },
     },
   },
