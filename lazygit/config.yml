@@ -1,5 +1,12 @@
+quitOnTopLevelReturn: true
 gui:
+  nerdFontsVersion: "3"
   mouseEvents: false
+  expandFocusedSidePanel: true
+  showRandomTip: false
+  showBottomLine: false
+  showPanelJumps: false
+
   # use the mocha catpuccin theme
   theme:
     activeBorderColor:
@@ -24,3 +31,10 @@ gui:
 
   authorColors:
     '*': '#b4befe'
+
+keybinding:
+  universal:
+    executeCustomCommand: <disabled>
+
+git:
+  branchPrefix: "gui/wl-"
