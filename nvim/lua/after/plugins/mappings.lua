@@ -99,3 +99,8 @@ map("v", ">", ">gv")
 
 -- Github Copilopt
 map("v", "<leader>cp", "<cmd>'<,'>CopilotChatInPlace<CR>", "Github Copilot")
+
+-- Starter
+map("n", "<leader>ms", function()
+  require("mini.starter").open()
+end, "Open Starter")

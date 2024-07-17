@@ -5,19 +5,6 @@ end
 
 return {
   {
-    "echasnovski/mini.files",
-    version = false,
-    opts = {},
-    keys = {
-      {
-        "<leader>mf",
-        "<cmd>lua MiniFiles.open()<cr>",
-        desc = "Open MiniFiles",
-        mode = "n",
-      },
-    },
-  },
-  {
     "echasnovski/mini.notify",
     opts = {},
   },
@@ -44,6 +31,7 @@ return {
       -- since we disable mini sessions for non-git repos, adding the sessions section on the
       -- starter throws an error, so we disable it in that case too
       starter.setup({
+        autoopen = true,
         items = items,
         content_hooks = {
           starter.gen_hook.adding_bullet(),
