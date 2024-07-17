@@ -13,9 +13,6 @@ export SHELL="/opt/homebrew/bin/fish"
 
 oh-my-posh init fish --config ~/.config/oh-my-posh/config.yaml | source
 
-# auto load nvm version on pwd change
-load_nvm >/dev/stderr
-
 export EDITOR=/usr/local/bin/nvim
 
 # source custom files
@@ -29,3 +26,7 @@ source ~/.config/fish/custom/abbrs/misc.fish
 if test -e ~/.config/fish/custom/secrets.fish # checks if file exists because it's gitignored
     source ~/.config/fish/custom/secrets.fish
 end
+
+# auto load nvm version on pwd change
+load_nvm >/dev/stderr
+zellij_tab_name_update
