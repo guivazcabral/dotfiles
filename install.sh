@@ -13,6 +13,8 @@ create_symlinks() {
   ln -sf $DOTFILES_DIR/fish $XDG_CONFIG_HOME/fish
   echo "> Creating symlink for oh-my-posh"
   ln -sf $DOTFILES_DIR/oh-my-posh $XDG_CONFIG_HOME/oh-my-posh
+  echo "> Creating symlink for k9s"
+  ln -sf $DOTFILES_DIR/k9s $XDG_CONFIG_HOME/k9s
   echo "> Creating symlink for zellij"
   ln -sf $DOTFILES_DIR/zellij $XDG_CONFIG_HOME/zellij
   echo "> Creating symlink for nvim"
@@ -57,6 +59,7 @@ install_brew_packages() {
     lazygit
     ripgrep
     zellij
+    k9s
   )
   brew install ${packages[@]}
 }
