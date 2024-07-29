@@ -43,6 +43,12 @@ return {
     },
     status = { virtual_text = true },
     output = { open_on_run = true },
+    icons = {
+      running_animated = { "⣾", "⣽", "⣻", "⢿", "⡿", "⣟", "⣯", "⣷" },
+      skipped = "",
+      unknown = "",
+      watching = "",
+    },
   },
   config = function(_, opts)
     local neotest_ns = vim.api.nvim_create_namespace("neotest")
@@ -86,42 +92,58 @@ return {
   end,
   -- stylua: ignore
   keys = {
-    { "<leader>tt", function() require("neotest").run.run(vim.fn.expand("%")) end, desc = "Run File" },
-    {
-      "<leader>tT",
-      function() require("neotest").run.run(vim.loop.cwd()) end,
-      desc =
-      "Run All Test Files"
-    },
+    -- run tests
     {
       "<leader>tr",
       function() require("neotest").run.run() end,
-      desc =
-      "Run Nearest"
+      desc = "Run Nearest"
     },
+    {
+      "<leader>tt",
+      function() require("neotest").run.run(vim.fn.expand("%")) end,
+      desc = "Run File"
+    },
+    {
+      "<leader>tT",
+      function() require("neotest").run.run(vim.loop.cwd()) end,
+      desc = "Run All Test Files"
+    },
+
+    -- watching
+    {
+      "<leader>tw",
+      function() require("neotest").watch.toggle(vim.fn.expand("%")) end,
+      desc = "Toggle watching current file"
+    },
+    {
+      "<leader>tW",
+      function() require("neotest").watch.toggle() end,
+      desc = "Toggle watching nearest test"
+    },
+    
+    -- misc
     {
       "<leader>ts",
       function() require("neotest").summary.toggle() end,
-      desc =
-      "Toggle Summary"
+      desc = "Toggle Summary"
     },
     {
       "<leader>to",
-      function() require("neotest").output.open({ enter = true, auto_close = true }) end,
-      desc =
-      "Show Output"
+      function() require("neotest").output.open({ enter = true, auto_close = true, quiet = true }) end,
+      desc = "Show Output"
     },
     {
       "<leader>tO",
       function() require("neotest").output_panel.toggle() end,
-      desc =
-      "Toggle Output Panel"
+      desc = "Toggle Output Panel"
     },
     {
       "<leader>tS",
       function() require("neotest").run.stop() end,
       desc = "Stop"
     },
+
+    -- snapshots
     {
       "<leader>tU",
       function() require('neotest').run.run({jestCommand = "npx jest -u"}) end,
