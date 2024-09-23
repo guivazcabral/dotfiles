@@ -14,7 +14,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Normal --
-map("n", "<leader>f", "<CMD>lua vim.lsp.buf.format({ async = true })<CR>", "Format current buffer with LSP")
+-- map("n", "<leader>f", "<CMD>lua vim.lsp.buf.format({ async = true })<CR>", "Format current buffer with LSP")
 map("n", "<C-S>", "<Cmd>silent! update | redraw<CR>", "Save")
 map({ "i", "x" }, "<C-S>", "<Esc><Cmd>silent! update | redraw<CR>", "Save and go to Normal mode")
 

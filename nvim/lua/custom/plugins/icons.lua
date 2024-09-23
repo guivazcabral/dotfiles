@@ -2,7 +2,7 @@ return {
   "nvim-tree/nvim-web-devicons",
   config = function()
     local icons = require("nvim-web-devicons")
-    local theme_colors = require("catppuccin.palettes").get_palette "mocha"
+    local theme_colors = require("catppuccin.palettes").get_palette("mocha")
 
     local colors = {
       angular = "#c3002f",
@@ -11,27 +11,28 @@ return {
       deb = "#a1b7ee",
       docker = "#384d54",
       html = "#de8c92",
+      jpeg = "#c882e7",
+      jpg = "#c882e7",
       js = "#ebcb8b",
+      jsx = "#519ab8",
       kt = "#7bc99c",
       lock = "#c4c720",
       lua = "#51a0cf",
       out = "#abb2bf",
+      php = "#aeb2d5",
+      png = "#c882e7",
       py = "#a3b8ef",
+      rb = "#ff75a0",
       robot = "#abb2bf",
+      rpm = "#fca2aa",
+      rs = "#dea584",
       toml = "#39bf39",
       ts = "#519aba",
       ttf = "#abb2bf",
-      rb = "#ff75a0",
-      rpm = "#fca2aa",
+      vue = "#7bc99c",
       woff = "#abb2bf",
       woff2 = "#abb2bf",
       zip = "#f9d71c",
-      jsx = "#519ab8",
-      vue = "#7bc99c",
-      rs = "#dea584",
-      png = "#c882e7",
-      jpeg = "#c882e7",
-      jpg = "#c882e7",
     }
 
     icons.set_icon({
@@ -120,7 +121,16 @@ return {
         color = theme_colors.red,
         name = "norg",
       },
-
+      blade = {
+        icon = "",
+        color = colors.php,
+        name = "blade",
+      },
+      php = {
+        icon = "",
+        color = colors.php,
+        name = "php",
+      },
     })
   end,
 }
