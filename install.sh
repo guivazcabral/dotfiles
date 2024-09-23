@@ -23,6 +23,8 @@ create_symlinks() {
   ln -sf $DOTFILES_DIR/nvim $XDG_CONFIG_HOME/karabiner
   echo "> Creating symlink for lazygit"
   ln -sf $DOTFILES_DIR/lazygit/config.yml $HOME/Library/Application\ Support/lazygit/config.yml
+  echo "> Creating symlink for lazydocker"
+  ln -sf $DOTFILES_DIR/lazydocker/config.yml $HOME/Library/Application\ Support/lazydocker/config.yml
 }
 
 override_mac_defaults() {
@@ -57,6 +59,7 @@ install_brew_packages() {
     fzf
     jandedobbeleer/oh-my-posh/oh-my-posh
     lazygit
+    lazydocker
     ripgrep
     zellij
     k9s
