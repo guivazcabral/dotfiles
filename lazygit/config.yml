@@ -1,4 +1,5 @@
-quitOnTopLevelReturn: true
+# yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
+
 gui:
   nerdFontsVersion: "3"
   mouseEvents: false
