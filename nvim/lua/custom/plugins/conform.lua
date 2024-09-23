@@ -9,7 +9,8 @@ return {
       lua = { "stylua" },
       javascript = { "prettierd", "prettier", "eslint_d" },
       graphql = { "prettierd", "prettier" },
-      blade = { "blade-formatter" },
+      blade = { "prettierd" },
+      php = { "pint" },
     },
     -- Set up format-on-save
     format_on_save = { timeout_ms = 500, lsp_fallback = true },
