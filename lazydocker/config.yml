@@ -62,7 +62,13 @@ commandTemplates:
   dockerComposeConfig: '{{ .DockerCompose }} config'
   checkDockerComposeConfig: '{{ .DockerCompose }} config --quiet'
   serviceTop: '{{ .DockerCompose }} top {{ .Service.Name }}'
-oS:
+customCommands:
+  services:
+    - name: bash
+      attach: true
+      command: '{{ .DockerCompose }} exec -it {{ .Service.Name }} bash'
+      serviceNames: []
+os:
   openCommand: open {{filename}}
   openLinkCommand: open {{link}}
 stats:
