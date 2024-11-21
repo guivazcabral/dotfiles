@@ -2,6 +2,7 @@
 
 version: 2
 final_space: true
+disable_notice: true
 palette:
   base: "#1e1e2e"
   blue: "#89b4fa"
@@ -48,8 +49,8 @@ blocks:
     style: diamond
     leading_diamond: " "
     trailing_diamond: 
-    foreground: "p:peach"
-    background: "p:crust"
+    foreground: "p:crust"
+    background: "p:peach"
     template: " {{ .UpstreamIcon }} {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus
       }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and
       (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} 

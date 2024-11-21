@@ -7,11 +7,12 @@ end
 function fish_greeting
 end
 
-export PATH="/opt/homebrew/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="/opt/homebrew/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.local/bin:$PATH"
 export EDITOR="nvim"
 export SHELL="/opt/homebrew/bin/fish"
 export K9S_CONFIG_DIR="$HOME/.config/k9s"
 oh-my-posh init fish --config ~/.config/oh-my-posh/config.yaml | source
+oh-my-posh completion fish | source
 k9s completion fish | source
 
 export EDITOR=/usr/local/bin/nvim

@@ -333,7 +333,7 @@ local on_attach = function(client, bufnr)
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, "[W]orkspace [L]ist Folders")
 
-  if client.name == "tsserver" then
+  if client.name == "ts_ls" then
     nmap("<leader>o", "<CMD>OrganizeImports<CR>", "[O]rganize Imports")
   end
 
@@ -410,7 +410,7 @@ local servers = {
   -- gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},
-  tsserver = {
+  ts_ls = {
     javascript = {
       inlayHints = js_inlay_hints,
     },
@@ -448,7 +448,7 @@ mason_lspconfig.setup({
 mason_lspconfig.setup_handlers({
   function(server_name)
     local commands = {}
-    if server_name == "tsserver" then
+    if server_name == "ts_ls" then
       commands["OrganizeImports"] = {
         function()
           local params = {

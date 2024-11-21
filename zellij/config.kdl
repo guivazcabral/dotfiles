@@ -11,6 +11,7 @@ keybinds clear-defaults=true {
         bind "Alt t" { NewTab; }
         bind "Alt b" { BreakPane; }
         bind "Alt f" { TogglePaneFrames; }
+        bind "Alt r" { EditScrollback; }
         bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
         bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
         bind "Alt j" "Alt Down" { MoveFocus "Down"; }

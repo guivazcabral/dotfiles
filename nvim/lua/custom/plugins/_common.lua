@@ -12,7 +12,6 @@ return {
   { "rmagatti/alternate-toggler", opts = {} },
   "sudoerwx/vim-ray-so-beautiful",
   "dmmulroy/ts-error-translator.nvim",
-  { "yorickpeterse/nvim-tree-pairs", opts = {} },
   {
     "MeanderingProgrammer/markdown.nvim",
     dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
