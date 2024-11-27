@@ -156,9 +156,13 @@ return {
             --"*.meta",
             --"*/src/*/tsconfig.json",
           },
+          always_show_by_pattern = {
+            ".env*",
+          },
           always_show = {
             ".github",
             ".circleci",
+            ".gitignore",
           }, -- remains visible even if other settings would normally hide it
           never_show = { -- remains hidden even if visible is toggled to true, this overrides always_show
             --".DS_Store",
