@@ -7,7 +7,7 @@ return {
     -- Define your formatters
     formatters_by_ft = {
       lua = { "stylua" },
-      javascript = { "prettierd", "prettier", "eslint_d" },
+      javascript = { "eslint_d" },
       graphql = { "prettierd", "prettier" },
       blade = { "prettierd" },
       php = { "pint" },

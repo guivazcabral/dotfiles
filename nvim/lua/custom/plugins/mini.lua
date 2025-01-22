@@ -71,18 +71,22 @@ return {
           local buffer_name = vim.api.nvim_buf_get_name(buffer_number)
           local buffer_file_type = vim.api.nvim_buf_get_option(buffer_number, "filetype")
 
-          if buffer_name ~= "" and buffer_file_type ~= "norg" then
+          local ignore_buf_types = { "nofile", "help", "quickfix", "norg", "neo-tree" }
+
+          if buffer_name ~= "" and buffer_file_type ~= "" and not vim.tbl_contains(ignore_buf_types, buffer_file_type) then
             count = count + 1
           end
         end
         return count
       end
 
+      local directory = vim.fn.expand("$HOME") .. "/.cache/nvim/sessions/" .. project_folder_name .. "/"
+
       local minisessions = require("mini.sessions")
       minisessions.setup({
         autoread = false,
         autowrite = true,
-        directory = vim.fn.expand("$HOME") .. "/.cache/nvim/sessions/" .. project_folder_name .. "/",
+        directory = directory,
         file = "",
         force = { read = false, write = true, delete = false },
         hooks = {

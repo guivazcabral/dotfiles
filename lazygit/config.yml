@@ -1,41 +1,35 @@
-# yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
-
 gui:
-  nerdFontsVersion: "3"
-  mouseEvents: false
-  expandFocusedSidePanel: true
-  showRandomTip: false
-  showBottomLine: false
-  showPanelJumps: false
-
-  # use the mocha catpuccin theme
-  theme:
-    activeBorderColor:
-      - '#fab387'
-      - bold
-    inactiveBorderColor:
-      - '#a6adc8'
-    optionsTextColor:
-      - '#89b4fa'
-    selectedLineBgColor:
-      - '#313244'
-    cherryPickedCommitBgColor:
-      - '#45475a'
-    cherryPickedCommitFgColor:
-      - '#fab387'
-    unstagedChangesColor:
-      - '#f38ba8'
-    defaultFgColor:
-      - '#cdd6f4'
-    searchingActiveBorderColor:
-      - '#f9e2af'
-
-  authorColors:
-    '*': '#b4befe'
-
+    nerdFontsVersion: "3"
+    mouseEvents: false
+    expandFocusedSidePanel: true
+    showRandomTip: false
+    showBottomLine: false
+    showPanelJumps: false
+    # use the mocha catpuccin theme
+    theme:
+        activeBorderColor:
+            - '#fab387'
+            - bold
+        inactiveBorderColor:
+            - '#a6adc8'
+        optionsTextColor:
+            - '#89b4fa'
+        selectedLineBgColor:
+            - '#313244'
+        cherryPickedCommitBgColor:
+            - '#45475a'
+        cherryPickedCommitFgColor:
+            - '#fab387'
+        unstagedChangesColor:
+            - '#f38ba8'
+        defaultFgColor:
+            - '#cdd6f4'
+        searchingActiveBorderColor:
+            - '#f9e2af'
+    authorColors:
+        '*': '#b4befe'
 keybinding:
-  universal:
-    executeCustomCommand: <disabled>
-
+    universal:
+        executeShellCommand: <disabled>
 git:
-  branchPrefix: "gui/wl-"
+    branchPrefix: "gui/wl-"

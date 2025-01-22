@@ -333,10 +333,6 @@ local on_attach = function(client, bufnr)
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, "[W]orkspace [L]ist Folders")
 
-  if client.name == "ts_ls" then
-    nmap("<leader>o", "<CMD>OrganizeImports<CR>", "[O]rganize Imports")
-  end
-
   if vim.lsp.inlay_hint then
     vim.keymap.set("n", "<leader>uh", function()
       vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({}))
@@ -448,18 +444,6 @@ mason_lspconfig.setup({
 mason_lspconfig.setup_handlers({
   function(server_name)
     local commands = {}
-    if server_name == "ts_ls" then
-      commands["OrganizeImports"] = {
-        function()
-          local params = {
-            command = "_typescript.organizeImports",
-            arguments = { vim.api.nvim_buf_get_name(0) },
-            title = "",
-          }
-          vim.lsp.buf.execute_command(params)
-        end,
-      }
-    end
 
     require("lspconfig")[server_name].setup({
       capabilities = capabilities,
