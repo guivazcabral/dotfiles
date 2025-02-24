@@ -2,11 +2,6 @@ local wezterm = require("wezterm")
 local mux = wezterm.mux
 local keys = require("config.keys")
 
-wezterm.font("CommitMono", { weight = "Regular", stretch = "Normal", style = "Normal" }) -- /Users/guilherme/Library/Fonts/CommitMono-400-Regular.otf, CoreText
-wezterm.font("CommitMono", { weight = "Regular", stretch = "Normal", style = "Italic" }) -- /Users/guilherme/Library/Fonts/CommitMono-400-Italic.otf, CoreText
-wezterm.font("CommitMono", { weight = "Bold", stretch = "Normal", style = "Normal" }) -- /Users/guilherme/Library/Fonts/CommitMono-700-Regular.otf, CoreText
-wezterm.font("CommitMono", { weight = "Bold", stretch = "Normal", style = "Italic" }) -- /Users/guilherme/Library/Fonts/CommitMono-700-Italic.otf, CoreText
-
 wezterm.on("gui-startup", function(cmd)
   local _, _, window = mux.spawn_window(cmd or {})
   window:gui_window():maximize()
@@ -24,7 +19,9 @@ local config = {
   automatically_reload_config = true,
   color_scheme = "Catppuccin Mocha",
   disable_default_key_bindings = true,
-  font_size = 12.5,
+  font = wezterm.font("FiraCode Nerd Font"),
+  line_height = 1.1,
+  font_size = 13,
   hide_tab_bar_if_only_one_tab = true,
   keys = keys,
   native_macos_fullscreen_mode = true,
