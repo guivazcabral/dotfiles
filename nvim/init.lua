@@ -85,14 +85,11 @@ require("lazy").setup({
     },
   },
 
-  -- "gc" to comment visual regions/lines
-  { "numToStr/Comment.nvim", opts = {} },
-
   -- Fuzzy Finder (files, lsp, etc)
   {
     "nvim-telescope/telescope.nvim",
-    version = "*",
-    dependencies = { "nvim-lua/plenary.nvim", "Myzel394/jsonfly.nvim" },
+    branch = "0.1.x",
+    dependencies = { "nvim-lua/plenary.nvim", "Myzel394/jsonfly.nvim", "BurntSushi/ripgrep", "nvim-tree/nvim-web-devicons" },
     keys = {
       {
         "<leader>j",
@@ -100,6 +97,11 @@ require("lazy").setup({
         desc = "Open json(fly)",
         ft = { "json" },
         mode = "n",
+      },
+    },
+    opts = {
+      defaults = {
+        devicons = true,
       },
     },
   },
@@ -339,6 +341,10 @@ local on_attach = function(client, bufnr)
     end, { desc = "Toggle Inlay Hints" })
   end
 
+  if client.name == "ts_ls" then
+    nmap("<leader>o", "<CMD>OrganizeImports<CR>", "[O]rganize Imports")
+  end
+
   if client.name == "eslint" then
     local function fix_all(opts)
       local util = require("lspconfig.util")
@@ -441,9 +447,27 @@ mason_lspconfig.setup({
   automatic_installation = true,
 })
 
+local function organize_imports()
+  local params = {
+    command = "_typescript.organizeImports",
+    arguments = { vim.api.nvim_buf_get_name(0) },
+    title = "",
+  }
+  vim.lsp.buf.execute_command(params)
+end
+
 mason_lspconfig.setup_handlers({
   function(server_name)
     local commands = {}
+
+    if server_name == "ts_ls" then
+      commands = {
+        OrganizeImports = {
+          organize_imports,
+          description = "Organize Imports",
+        },
+      }
+    end
 
     require("lspconfig")[server_name].setup({
       capabilities = capabilities,
