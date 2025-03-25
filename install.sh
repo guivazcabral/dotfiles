@@ -63,6 +63,7 @@ install_brew_packages() {
     ripgrep
     zellij
     k9s
+    git-delta
   )
   brew install ${packages[@]}
 }
