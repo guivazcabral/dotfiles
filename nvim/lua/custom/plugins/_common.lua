@@ -17,4 +17,8 @@ return {
     event = "VeryLazy",
     enabled = true,
   },
+  {
+    "stevearc/overseer.nvim",
+    opts = {},
+  },
 }
