@@ -15,7 +15,7 @@ return {
     -- The adapter will then be automatically loaded with the config.
     adapters = {
       ["neotest-vitest"] = {
-        command = "npm test",
+        command = "yarn test",
       },
       ["neotest-jest"] = {
         jestCommand = "yarn test",
@@ -45,9 +45,9 @@ return {
     output = { open_on_run = true },
     icons = {
       running_animated = { "⣾", "⣽", "⣻", "⢿", "⡿", "⣟", "⣯", "⣷" },
-      skipped = "",
-      unknown = "",
-      watching = "",
+      skipped = " ",
+      unknown = " ",
+      watching = " ",
     },
   },
   config = function(_, opts)
