@@ -33,7 +33,7 @@ return {
           svn = false,
           yaml = false,
         },
-        copilot_node_command = "/Users/guilherme/Library/Application Support/fnm/node-versions/v18.16.0/installation/bin/node",
+        copilot_node_command = "/Users/guilherme/Library/Application Support/fnm/node-versions/v20.17.0/installation/bin/node",
         server_opts_overrides = {},
       })
     end,
