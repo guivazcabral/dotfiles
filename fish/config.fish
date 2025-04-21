@@ -31,4 +31,3 @@ end
 
 # auto load nvm version on pwd change
 load_nvm >/dev/stderr
-zellij_tab_name_update

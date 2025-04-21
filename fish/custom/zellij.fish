@@ -4,8 +4,9 @@ abbr zzls 'zellij list-sessions'
 abbr zza 'zellij attach'
 abbr zzkill 'zellij kill-session'
 abbr zzkillall 'zellij kill-all-sessions'
+abbr ztu zellij_tab_name_update
 
-function zellij_tab_name_update --on-variable="PWD"
+function zellij_tab_name_update
   if test -n $ZELLIJ
     set tab_name ''
     if git rev-parse --is-inside-work-tree > /dev/null 2>&1
