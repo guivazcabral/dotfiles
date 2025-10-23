@@ -2,7 +2,7 @@ return {
   "nvim-lualine/lualine.nvim",
   config = function()
     local copilot_indicator = function()
-      local client = vim.lsp.get_active_clients({ name = "copilot" })[1]
+      local client = vim.lsp.get_clients({ name = "copilot" })[1]
       if client == nil then
         return ""
       end

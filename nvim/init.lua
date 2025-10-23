@@ -89,7 +89,7 @@ require("lazy").setup({
   {
     "nvim-telescope/telescope.nvim",
     branch = "0.1.x",
-    dependencies = { "nvim-lua/plenary.nvim", "Myzel394/jsonfly.nvim", "BurntSushi/ripgrep", "nvim-tree/nvim-web-devicons" },
+    dependencies = {"nvim-lua/plenary.nvim", "Myzel394/jsonfly.nvim", "BurntSushi/ripgrep", "nvim-tree/nvim-web-devicons" },
     keys = {
       {
         "<leader>j",

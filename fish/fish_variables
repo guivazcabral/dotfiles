@@ -7,7 +7,7 @@ SETUVAR Z_CMD:z
 SETUVAR Z_DATA:/Users/guilherme/\x2elocal/share/z/data
 SETUVAR Z_DATA_DIR:/Users/guilherme/\x2elocal/share/z
 SETUVAR Z_EXCLUDE:\x5e/Users/guilherme\x24
-SETUVAR __fish_initialized:3400
+SETUVAR __fish_initialized:3800
 SETUVAR _fish_abbr_awswhoami:aws\x20sts\x20get\x2dcaller\x2didentity
 SETUVAR _fish_abbr_dk:docker
 SETUVAR _fish_abbr_dkC:docker\x20container

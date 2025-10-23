@@ -32,4 +32,4 @@ keybinding:
     universal:
         executeShellCommand: <disabled>
 git:
-    branchPrefix: "gui/wl-"
+    branchPrefix: "gui/lx-"
