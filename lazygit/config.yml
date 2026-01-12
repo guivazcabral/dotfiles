@@ -33,3 +33,4 @@ keybinding:
         executeShellCommand: <disabled>
 git:
     branchPrefix: "gui/lx-"
+    overrideGpg: true
