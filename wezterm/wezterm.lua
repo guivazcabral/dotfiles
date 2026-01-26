@@ -19,6 +19,7 @@ local config = {
   automatically_reload_config = true,
   color_scheme = "Catppuccin Mocha",
   disable_default_key_bindings = true,
+  disable_default_mouse_bindings = true,
   font = wezterm.font("FiraCode Nerd Font"),
   line_height = 1.1,
   font_size = 13,
