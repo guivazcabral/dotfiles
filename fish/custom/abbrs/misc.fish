@@ -12,5 +12,6 @@ abbr -g f fnm
 abbr -g nvm fnm
 abbr -g fuse "fnm use"
 abbr -g yw "yarn watch"
+abbr -g yt "yarn test"
 abbr -g omp "oh-my-posh"
 abbr -g spad "nvim ~/scratchpad.md"
