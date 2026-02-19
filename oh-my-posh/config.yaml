@@ -43,8 +43,6 @@ blocks:
     leading_powerline_symbol: █
     foreground: "p:surface0"
     background: "p:peach"
-    properties:
-      style: unique
   - type: git
     style: diamond
     leading_diamond: " "
@@ -55,11 +53,6 @@ blocks:
       }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and
       (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} 
       {{ .Staging.String }}{{ end }} "
-    properties:
-      branch_icon: ""
-      branch_identical_icon: ""
-      fetch_status: true
-      fetch_upstream_icon: true
   - type: node
     style: powerline
     powerline_symbol: 
@@ -82,7 +75,3 @@ blocks:
     foreground: "p:text"
     background: "p:base"
     template: "{{ .FormattedMs }}"
-    properties:
-      threshold: 500
-      style: austin
-      always_enabled: true

@@ -14,7 +14,6 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_ENV_HINTS=1
 
 oh-my-posh init fish --config ~/.config/oh-my-posh/config.yaml | source
-oh-my-posh completion fish | source
 
 export K9S_CONFIG_DIR="$HOME/.config/k9s"
 k9s completion fish | source
