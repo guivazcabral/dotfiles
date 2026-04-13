@@ -1,10 +1,13 @@
 abbr zj zellij
 abbr zjrt zellij action rename-tab
-abbr zzls 'zellij list-sessions'
-abbr zza 'zellij attach'
-abbr zzkill 'zellij kill-session'
-abbr zzkillall 'zellij kill-all-sessions'
-abbr ztu zellij_tab_name_update
+abbr zjls 'zellij list-sessions'
+abbr zja 'zellij attach'
+abbr zjkill 'zellij kill-session'
+
+abbr zjkillall 'zellij kill-all-sessions -y'
+abbr zjdelall 'zellij delete-all-sessions -y'
+
+abbr zjtu zellij_tab_name_update
 
 function zellij_tab_name_update
   if test -n $ZELLIJ
