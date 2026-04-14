@@ -21,20 +21,25 @@ local config = {
   disable_default_key_bindings = true,
   disable_default_mouse_bindings = true,
   font = wezterm.font("FiraCode Nerd Font"),
-  line_height = 1.1,
   font_size = 13,
   hide_tab_bar_if_only_one_tab = true,
   keys = keys,
+  mouse_bindings = {
+    { event = { Down = { streak = 1, button = { WheelUp = 1 } } }, mods = "NONE", action = wezterm.action.ScrollByCurrentEventWheelDelta },
+    { event = { Down = { streak = 1, button = { WheelDown = 1 } } }, mods = "NONE", action = wezterm.action.ScrollByCurrentEventWheelDelta },
+  },
+  line_height = 1.1,
   native_macos_fullscreen_mode = true,
   window_background_opacity = 1,
   window_decorations = "RESIZE",
 
-  default_prog = {
-    "/opt/homebrew/bin/fish",
-    "-l",
-    "-c",
-    "zellij",
-  },
+  default_cwd = "/Users/guilherme/dev/hq",
+  -- default_prog = {
+  --   "/opt/homebrew/bin/fish",
+  --   "-l",
+  --   "-c",
+  --   "zellij",
+  -- },
 }
 
 return config
