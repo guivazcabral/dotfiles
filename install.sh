@@ -7,24 +7,32 @@ create_symlinks() {
   echo "Creating symlinks..."
   echo "> Creating symlink for bat"
   ln -sf $DOTFILES_DIR/bat $XDG_CONFIG_HOME/bat
-  echo "> Creating symlink for wezterm"
-  ln -sf $DOTFILES_DIR/wezterm $XDG_CONFIG_HOME/wezterm
   echo "> Creating symlink for fish"
   ln -sf $DOTFILES_DIR/fish $XDG_CONFIG_HOME/fish
+  echo "> Creating symlink for ghostty"
+  ln -sf $DOTFILES_DIR/ghostty $XDG_CONFIG_HOME/ghostty
+  echo "> Creating symlink for tmux"
+  ln -sf $DOTFILES_DIR/tmux $XDG_CONFIG_HOME/tmux
   echo "> Creating symlink for oh-my-posh"
   ln -sf $DOTFILES_DIR/oh-my-posh $XDG_CONFIG_HOME/oh-my-posh
   echo "> Creating symlink for k9s"
   ln -sf $DOTFILES_DIR/k9s $XDG_CONFIG_HOME/k9s
+  echo "> Creating symlink for kitty"
+  ln -sf $DOTFILES_DIR/kitty $XDG_CONFIG_HOME/kitty
   echo "> Creating symlink for zellij"
   ln -sf $DOTFILES_DIR/zellij $XDG_CONFIG_HOME/zellij
   echo "> Creating symlink for nvim"
   ln -sf $DOTFILES_DIR/nvim $XDG_CONFIG_HOME/nvim
   echo "> Creating symlink for karabiner"
-  ln -sf $DOTFILES_DIR/nvim $XDG_CONFIG_HOME/karabiner
+  ln -sf $DOTFILES_DIR/karabiner $XDG_CONFIG_HOME/karabiner
+  echo "> Creating symlink for wezterm"
+  ln -sf $DOTFILES_DIR/wezterm $XDG_CONFIG_HOME/wezterm
   echo "> Creating symlink for lazygit"
-  ln -sf $DOTFILES_DIR/lazygit/config.yml $HOME/Library/Application\ Support/lazygit/config.yml
+  mkdir -p "$HOME/Library/Application Support/lazygit"
+  ln -sf $DOTFILES_DIR/lazygit/config.yml "$HOME/Library/Application Support/lazygit/config.yml"
   echo "> Creating symlink for lazydocker"
-  ln -sf $DOTFILES_DIR/lazydocker/config.yml $HOME/Library/Application\ Support/lazydocker/config.yml
+  mkdir -p "$HOME/Library/Application Support/lazydocker"
+  ln -sf $DOTFILES_DIR/lazydocker/config.yml "$HOME/Library/Application Support/lazydocker/config.yml"
 }
 
 override_mac_defaults() {
@@ -60,12 +68,20 @@ install_brew_packages() {
     jandedobbeleer/oh-my-posh/oh-my-posh
     lazygit
     lazydocker
+    neovim
     ripgrep
+    tmux
     zellij
     k9s
     git-delta
   )
   brew install ${packages[@]}
+
+  casks=(
+    ghostty
+    karabiner-elements
+  )
+  brew install --cask ${casks[@]}
 }
 
 change_shell_to_fish() {
