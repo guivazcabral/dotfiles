@@ -19,6 +19,7 @@ theme = catppuccin-mocha
 background-opacity = 1
 macos-option-as-alt = true
 cursor-style = block
+shell-integration = fish
 shell-integration-features = no-cursor
 quit-after-last-window-closed = true
 window-decoration = false
