@@ -50,6 +50,30 @@ override_mac_defaults() {
 
   # Only show scrollbars when scrolling
   defaults write -g AppleShowScrollBars -string "WhenScrolling"
+
+  # Enable three-finger drag (Accessibility > Pointer Control > Trackpad Options)
+  defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
+  defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool true
+
+  # Dark mode
+  defaults write -g AppleInterfaceStyle -string "Dark"
+
+  # Hide battery from menu bar
+  defaults write com.apple.controlcenter "NSStatusItem Visible Battery" -bool false
+
+  # Dock
+  defaults write com.apple.dock autohide -bool true
+  defaults write com.apple.dock tilesize -int 52
+  defaults write com.apple.dock minimize-to-application -bool true
+  defaults write com.apple.dock show-recents -bool false
+  defaults write com.apple.dock mineffect -string "scale"
+  killall Dock
+
+  # Finder
+  defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+  defaults write com.apple.finder NewWindowTarget -string "PfHm"
+  defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
+  killall Finder
 }
 
 install_brew_packages() {
@@ -97,6 +121,22 @@ setup_gitconfig() {
   echo "dotfiles/.gitconfig included successfully in global config"
 }
 
+print_manual_steps() {
+  echo ""
+  echo "========================================"
+  echo " Manual steps (cannot be scripted)"
+  echo "========================================"
+  echo ""
+  echo "Keyboard Shortcuts (System Settings > Keyboard > Keyboard Shortcuts):"
+  echo "  - Spotlight: disable all Spotlight shortcuts (using Raycast instead)"
+  echo "  - Screenshots: disable all screenshot shortcuts (using third-party app)"
+  echo ""
+  echo "Raycast:"
+  echo "  - Install from https://raycast.com and set shortcut to Cmd+Space"
+  echo ""
+  echo "========================================"
+}
+
 # Main function to execute the bootstrap process
 bootstrap() {
   install_brew_packages
@@ -104,6 +144,7 @@ bootstrap() {
   override_mac_defaults
   change_shell_to_fish
   setup_gitconfig
+  print_manual_steps
 
   echo "Dotfiles bootstrapped successfully! Restart your Mac for the changes to take effect."
 }
