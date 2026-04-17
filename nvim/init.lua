@@ -394,7 +394,7 @@ end
 -- Create a command to send messages output to a file
 -- This is useful for debugging purposes
 vim.api.nvim_create_user_command("EnableRedir", function()
-  vim.cmd("redir! >> /Users/guilherme/.cache/nvim/nvim.log")
+  vim.cmd("redir! >> " .. vim.fn.expand("~/.cache/nvim/nvim.log"))
 end, {})
 
 local js_inlay_hints = {

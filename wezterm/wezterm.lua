@@ -33,7 +33,7 @@ local config = {
   window_background_opacity = 1,
   window_decorations = "RESIZE",
 
-  default_cwd = "/Users/guilherme/dev/hq",
+  default_cwd = wezterm.home_dir .. "/dev/hq",
   -- default_prog = {
   --   "/opt/homebrew/bin/fish",
   --   "-l",
