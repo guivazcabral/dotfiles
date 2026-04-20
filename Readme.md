@@ -4,96 +4,55 @@ Welcome to my dotfiles 🎉 here you'll find (some of) the configuration I use i
 This is very personal, as it relies heavily on my preferences.
 It is also ever-changing so don't expect this to be super up to date.
 
-<details>
-  <summary>Kitty</summary>
-  
-  - Install [kitty](https://sw.kovidgoyal.net/kitty/binary/) 
+## Install
 
-  - Symlink `.config` folders:
-    ```sh
-    ln -s `dotfiles/kitty`
-    ```
+Clone this repo into `~/dev/dotfiles` and run:
 
-</details>
+```sh
+./install.sh
+```
 
+The script will:
 
-<details>
-  <summary>Terminal things</summary>
-  
-  - Install fish
-    ```sh
-    brew install fish
-    ```
+- Install Homebrew (if missing) and all the packages/casks I use
+- Symlink every config folder into `~/.config` (and the non-standard paths for lazygit / lazydocker)
+- Apply my macOS defaults (key repeat, trackpad, Dock, Finder, dark mode, etc.)
+- Add fish to `/etc/shells` and set it as the default shell
+- Set up `~/.gitconfig` to include this repo's gitconfig
 
-  - Install [Zellij](https://zellij.dev/documentation/installation.html) 
-    ```sh
-    brew install zellij
-    ```
+The script is idempotent — re-running it will skip Homebrew if already installed, overwrite existing symlinks in place (no nested links), and skip `/etc/shells` entries that already exist.
 
-  - Install [Exa](https://github.com/ogham/exa) 
-    ```sh
-    brew install exa
-    ```
+### Manual steps
 
-  - Symlink `.config` folders:
-    ```sh
-    ln -s `dotfiles/fish`
-    ln -s `dotfiles/zellij`
-    ```
-  
-</details>
+A few things can't be scripted. After the install script completes it prints a reminder for:
 
+- **Keyboard Shortcuts** (System Settings > Keyboard > Keyboard Shortcuts): disable Spotlight and screenshot shortcuts
+- **Raycast**: install from [raycast.com](https://raycast.com) and bind to `Cmd+Space`
 
-<details>
-  <summary>Karabiner</summary>
-  
-  - Download binary from [Karabiner](https://karabiner-elements.pqrs.org/) and install
+Restart your Mac after the script finishes for all the defaults to take effect.
 
-  - Symlink `.config` folder:
-    ```sh
-    ln -s `dotfiles/karabiner`
-    ```
-  
-</details>
+## What's configured
 
+| Tool | Path |
+| --- | --- |
+| bat | `~/.config/bat` |
+| fish | `~/.config/fish` |
+| ghostty | `~/.config/ghostty` |
+| k9s | `~/.config/k9s` |
+| karabiner | `~/.config/karabiner` |
+| kitty | `~/.config/kitty` |
+| lazydocker | `~/Library/Application Support/lazydocker/config.yml` |
+| lazygit | `~/Library/Application Support/lazygit/config.yml` |
+| nvim | `~/.config/nvim` |
+| oh-my-posh | `~/.config/oh-my-posh` |
+| tmux | `~/.config/tmux` |
+| wezterm | `~/.config/wezterm` |
+| zellij | `~/.config/zellij` |
 
-<details>
-  <summary>Neovim</summary>
-  
-  - Install [Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim) 
-  
-  - Symlink `.config` folder:
-    ```sh
-    ln -s `dotfiles/nvim`
-    ```
-  
-  - Install utilities:
-  
-    ```sh
-    brew install ripgrep
-    brew install fzf
-    npm install jsonlint -g
-    ```
-</details>
+## Misc
 
-<details>
-  <summary>Lazygit</summary>
-  
-  - Install Lazygit
+Slack theme:
 
-    ```sh
-    brew install lazygit
-    ```
-
-  - Create symlink for `/Users/guilherme/Library/Application\ Support/lazygit/config.yml` -> `dotfiles/lazygit/config.yml`
-</details>
-
-<details>
-  <summary>Misc</summary>
-  
-  - Slack theme: 
-    ```
-    #11111B,#F8F8FA,#6C7086,#B4BEFE,#181825,#CDD6F4,#A6E3A1,#F38BA8,#11111B,#FAB387
-    ```
-  
-</details>
+```
+#11111B,#F8F8FA,#6C7086,#B4BEFE,#181825,#CDD6F4,#A6E3A1,#F38BA8,#11111B,#FAB387
+```
