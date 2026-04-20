@@ -1,38 +1,37 @@
 #!/bin/bash
+set -euo pipefail
 
 XDG_CONFIG_HOME="$HOME/.config"
 DOTFILES_DIR="$HOME/dev/dotfiles"
 
 create_symlinks() {
   echo "Creating symlinks..."
-  echo "> Creating symlink for bat"
-  ln -sf $DOTFILES_DIR/bat $XDG_CONFIG_HOME/bat
-  echo "> Creating symlink for fish"
-  ln -sf $DOTFILES_DIR/fish $XDG_CONFIG_HOME/fish
-  echo "> Creating symlink for ghostty"
-  ln -sf $DOTFILES_DIR/ghostty $XDG_CONFIG_HOME/ghostty
-  echo "> Creating symlink for tmux"
-  ln -sf $DOTFILES_DIR/tmux $XDG_CONFIG_HOME/tmux
-  echo "> Creating symlink for oh-my-posh"
-  ln -sf $DOTFILES_DIR/oh-my-posh $XDG_CONFIG_HOME/oh-my-posh
-  echo "> Creating symlink for k9s"
-  ln -sf $DOTFILES_DIR/k9s $XDG_CONFIG_HOME/k9s
-  echo "> Creating symlink for kitty"
-  ln -sf $DOTFILES_DIR/kitty $XDG_CONFIG_HOME/kitty
-  echo "> Creating symlink for zellij"
-  ln -sf $DOTFILES_DIR/zellij $XDG_CONFIG_HOME/zellij
-  echo "> Creating symlink for nvim"
-  ln -sf $DOTFILES_DIR/nvim $XDG_CONFIG_HOME/nvim
-  echo "> Creating symlink for karabiner"
-  ln -sf $DOTFILES_DIR/karabiner $XDG_CONFIG_HOME/karabiner
-  echo "> Creating symlink for wezterm"
-  ln -sf $DOTFILES_DIR/wezterm $XDG_CONFIG_HOME/wezterm
+  mkdir -p "$XDG_CONFIG_HOME"
+
+  local config_dirs=(
+    bat
+    fish
+    ghostty
+    tmux
+    oh-my-posh
+    k9s
+    kitty
+    zellij
+    nvim
+    karabiner
+    wezterm
+  )
+  for dir in "${config_dirs[@]}"; do
+    echo "> Creating symlink for $dir"
+    ln -sfn "$DOTFILES_DIR/$dir" "$XDG_CONFIG_HOME/$dir"
+  done
+
   echo "> Creating symlink for lazygit"
   mkdir -p "$HOME/Library/Application Support/lazygit"
-  ln -sf $DOTFILES_DIR/lazygit/config.yml "$HOME/Library/Application Support/lazygit/config.yml"
+  ln -sfn "$DOTFILES_DIR/lazygit/config.yml" "$HOME/Library/Application Support/lazygit/config.yml"
   echo "> Creating symlink for lazydocker"
   mkdir -p "$HOME/Library/Application Support/lazydocker"
-  ln -sf $DOTFILES_DIR/lazydocker/config.yml "$HOME/Library/Application Support/lazydocker/config.yml"
+  ln -sfn "$DOTFILES_DIR/lazydocker/config.yml" "$HOME/Library/Application Support/lazydocker/config.yml"
 }
 
 override_mac_defaults() {
@@ -77,8 +76,23 @@ override_mac_defaults() {
 }
 
 install_brew_packages() {
-  echo "Installing Homebrew..."
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  if ! command -v brew >/dev/null 2>&1; then
+    echo "Installing Homebrew..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  else
+    echo "Homebrew already installed, skipping."
+  fi
+
+  # Make brew available in the current shell session (installer only writes
+  # the shellenv into ~/.zprofile, which doesn't apply until a new shell).
+  if [ -x /opt/homebrew/bin/brew ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  elif [ -x /usr/local/bin/brew ]; then
+    eval "$(/usr/local/bin/brew shellenv)"
+  else
+    echo "ERROR: brew not found on PATH after install. Aborting." >&2
+    exit 1
+  fi
 
   brew update
   echo "Installing Homebrew packages..."
@@ -110,8 +124,16 @@ install_brew_packages() {
 
 change_shell_to_fish() {
   echo "Changing shell to fish..."
-  echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells
-  chsh -s /opt/homebrew/bin/fish
+  local fish_path
+  fish_path="$(command -v fish || true)"
+  if [ -z "$fish_path" ] || [ ! -x "$fish_path" ]; then
+    echo "ERROR: fish not found on PATH. Skipping shell change to avoid locking you out." >&2
+    return 1
+  fi
+  if ! grep -qxF "$fish_path" /etc/shells; then
+    echo "$fish_path" | sudo tee -a /etc/shells
+  fi
+  chsh -s "$fish_path"
 }
 
 setup_gitconfig() {
