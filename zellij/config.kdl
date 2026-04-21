@@ -65,8 +65,8 @@ ui {
 }
  
 theme "catppuccin-mocha"
-layout_dir "/Users/guilherme/dev/dotfiles/zellij/layouts"
-theme_dir "/Users/guilherme/dev/dotfiles/zellij/themes"
+layout_dir "/Users/gui.cabral/dev/dotfiles/zellij/layouts"
+theme_dir "/Users/gui.cabral/dev/dotfiles/zellij/themes"
 
 mouse_mode true
 simplified_ui false

@@ -208,7 +208,7 @@ require("nvim-treesitter.configs").setup({
   ignore_install = {},
   modules = {},
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { "html", "javascript", "typescript", "tsx", "vimdoc", "vim", "json", "norg", "norg_meta" },
+  ensure_installed = { "html", "javascript", "typescript", "tsx", "vimdoc", "vim", "json" },
   auto_install = false,
   highlight = { enable = true },
   indent = { enable = true },

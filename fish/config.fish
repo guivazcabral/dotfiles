@@ -1,7 +1,7 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
-    rbenv init - fish | source
-    pyenv init - | source
+    # rbenv init - fish | source
+    # pyenv init - | source
 end
 
 function fish_greeting
