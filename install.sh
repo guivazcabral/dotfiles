@@ -111,6 +111,7 @@ install_brew_packages() {
     tmux
     zellij
     k9s
+    git
     git-delta
   )
   brew install ${packages[@]}
@@ -118,6 +119,7 @@ install_brew_packages() {
   casks=(
     ghostty
     karabiner-elements
+    devtoys
   )
   brew install --cask ${casks[@]}
 }
