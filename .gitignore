@@ -1,3 +1,4 @@
 .vscode
 fish/custom/secrets.fish
 k9s/clusters
+.DS_Store
