@@ -5,14 +5,15 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "convert right command to alt on kitty/wezterm terminals",
+                        "description": "convert right command to alt on kitty/wezterm/ghostty terminals",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
                                             "^net\\.kovidgoyal\\.kitty$",
-                                            "^com\\.github\\.wez\\.wezterm$"
+                                            "^com\\.github\\.wez\\.wezterm$",
+                                            "^com\\.mitchellh\\.ghostty$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
