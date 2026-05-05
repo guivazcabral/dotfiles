@@ -66,6 +66,7 @@ override_mac_defaults() {
   defaults write com.apple.dock minimize-to-application -bool true
   defaults write com.apple.dock show-recents -bool false
   defaults write com.apple.dock mineffect -string "scale"
+  defaults write "com.apple.dock" "persistent-apps" -array
   killall Dock
 
   # Finder
