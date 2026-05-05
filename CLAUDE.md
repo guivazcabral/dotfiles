@@ -8,22 +8,11 @@ Personal dotfiles for a macOS development environment. Configs are symlinked int
 
 ## Installation
 
-Manual symlinks only (no install script):
+`./install.sh` handles brew packages (see `Readme.md`), symlinks, macOS defaults, and the shell change. Re-runnable / idempotent.
 
-```sh
-ln -s ~/dev/dotfiles/fish ~/.config/fish
-ln -s ~/dev/dotfiles/nvim ~/.config/nvim
-ln -s ~/dev/dotfiles/zellij ~/.config/zellij
-ln -s ~/dev/dotfiles/wezterm ~/.config/wezterm
-ln -s ~/dev/dotfiles/karabiner ~/.config/karabiner
-```
+For manual symlinks, mirror what `create_symlinks` does in `install.sh`. Lazygit / lazydocker use non-standard paths (`~/Library/Application Support/...`).
 
-Lazygit uses a non-standard path:
-```sh
-ln -s ~/dev/dotfiles/lazygit/config.yml ~/Library/Application\ Support/lazygit/config.yml
-```
-
-Neovim requires separate utilities: `brew install ripgrep fzf` and `npm install jsonlint -g`.
+Neovim deps that aren't part of the dotfiles tree: `tree-sitter-cli` (required by nvim-treesitter's `main` branch), `ripgrep`, `fzf` — all in the brew package list. `jsonlint` is installed separately via `npm install -g jsonlint`.
 
 ## Architecture
 

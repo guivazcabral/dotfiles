@@ -1,5 +1,5 @@
 local function isGitRepo()
-  local stat = vim.loop.fs_stat(".git")
+  local stat = vim.uv.fs_stat(".git")
   return (stat and stat.type) or false
 end
 
@@ -52,8 +52,8 @@ return {
       local close_bad_buffers = function()
         local buffer_numbers = vim.api.nvim_list_bufs()
         for _, buffer_number in pairs(buffer_numbers) do
-          local buffer_type = vim.api.nvim_buf_get_option(buffer_number, "buftype")
-          local buffer_file_type = vim.api.nvim_buf_get_option(buffer_number, "filetype")
+          local buffer_type = vim.bo[buffer_number].buftype
+          local buffer_file_type = vim.bo[buffer_number].filetype
 
           if buffer_type == "nofile" or buffer_file_type == "norg" then
             vim.api.nvim_buf_delete(buffer_number, { force = true })
@@ -65,7 +65,7 @@ return {
         local count = 0
         for _, buffer_number in pairs(vim.api.nvim_list_bufs()) do
           local buffer_name = vim.api.nvim_buf_get_name(buffer_number)
-          local buffer_file_type = vim.api.nvim_buf_get_option(buffer_number, "filetype")
+          local buffer_file_type = vim.bo[buffer_number].filetype
 
           local ignore_buf_types = { "nofile", "help", "quickfix", "norg", "neo-tree" }
 
