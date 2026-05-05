@@ -12,7 +12,7 @@ return {
       end
 
       local spinners = { "⣾", "⣽", "⣻", "⢿", "⡿", "⣟", "⣯", "⣷" }
-      local ms = vim.loop.hrtime() / 1000000
+      local ms = vim.uv.hrtime() / 1000000
       local frame = math.floor(ms / 120) % #spinners
 
       return spinners[frame + 1]
@@ -21,7 +21,7 @@ return {
     require("lualine").setup({
       options = {
         icons_enabled = true,
-        theme = "catppuccin",
+        theme = "catppuccin-mocha",
         component_separators = { left = "", right = "" },
         section_separators = { left = "", right = "" },
         disabled_filetypes = {

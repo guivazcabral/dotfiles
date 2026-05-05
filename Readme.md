@@ -14,13 +14,21 @@ Clone this repo into `~/dev/dotfiles` and run:
 
 The script will:
 
-- Install Homebrew (if missing) and all the packages/casks I use
+- Install Homebrew (if missing) and the packages/casks listed below
 - Symlink every config folder into `~/.config` (and the non-standard paths for lazygit / lazydocker)
 - Apply my macOS defaults (key repeat, trackpad, Dock, Finder, dark mode, etc.)
 - Add fish to `/etc/shells` and set it as the default shell
 - Set up `~/.gitconfig` to include this repo's gitconfig
 
 The script is idempotent — re-running it will skip Homebrew if already installed, overwrite existing symlinks in place (no nested links), and skip `/etc/shells` entries that already exist.
+
+### Brew packages
+
+**Formulae:** `bat`, `eza`, `fish`, `fnm`, `fzf`, `git`, `git-delta`, `oh-my-posh`, `k9s`, `lazydocker`, `lazygit`, `neovim`, `ripgrep`, `tmux`, `tree-sitter-cli`, `zellij`
+
+**Casks:** `ghostty`, `karabiner-elements`, `devtoys`
+
+`tree-sitter-cli` is required by nvim-treesitter's `main` branch to compile parsers at runtime. `ripgrep` and `fzf` are required by Telescope and the fish git pickers.
 
 ### Manual steps
 

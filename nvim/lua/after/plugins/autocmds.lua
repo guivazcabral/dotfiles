@@ -16,7 +16,12 @@ vim.cmd([[autocmd BufRead,BufNewFile *.graphqls set filetype=graphql]])
 vim.cmd([[autocmd BufRead,BufNewFile *.graphql set filetype=graphql]])
 vim.cmd([[autocmd BufRead,BufNewFile *.env.* set filetype=sh]])
 
-vim.cmd([[autocmd BufRead,BufNewFile */node_modules/* lua vim.diagnostic.disable(0)]])
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*/node_modules/*",
+  callback = function(args)
+    vim.diagnostic.enable(false, { bufnr = args.buf })
+  end,
+})
 
 vim.cmd([[
   " auto save

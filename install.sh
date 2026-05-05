@@ -103,16 +103,17 @@ install_brew_packages() {
     fish
     fnm
     fzf
+    git
+    git-delta
     jandedobbeleer/oh-my-posh/oh-my-posh
-    lazygit
+    k9s
     lazydocker
+    lazygit
     neovim
     ripgrep
     tmux
+    tree-sitter-cli
     zellij
-    k9s
-    git
-    git-delta
   )
   brew install ${packages[@]}
 
