@@ -4,7 +4,6 @@ return {
   -- Enable `lukas-reineke/indent-blankline.nvim`
   -- See `:help indent_blankline.txt`
   main = "ibl",
-  version = "3.5.4",
   config = function()
     local highlight = {
       "RainbowRed",
