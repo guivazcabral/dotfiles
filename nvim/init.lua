@@ -88,7 +88,7 @@ require("lazy").setup({
   -- Fuzzy Finder (files, lsp, etc)
   {
     "nvim-telescope/telescope.nvim",
-    dependencies = {"nvim-lua/plenary.nvim", "Myzel394/jsonfly.nvim", "BurntSushi/ripgrep", "nvim-tree/nvim-web-devicons" },
+    dependencies = { "nvim-lua/plenary.nvim", "Myzel394/jsonfly.nvim", "BurntSushi/ripgrep", "nvim-tree/nvim-web-devicons" },
     keys = {
       {
         "<leader>j",
@@ -250,25 +250,57 @@ local ts_move = require("nvim-treesitter-textobjects.move")
 local ts_swap = require("nvim-treesitter-textobjects.swap")
 
 for _, mode in ipairs({ "x", "o" }) do
-  vim.keymap.set(mode, "aa", function() ts_select.select_textobject("@parameter.outer", "textobjects", mode) end)
-  vim.keymap.set(mode, "ia", function() ts_select.select_textobject("@parameter.inner", "textobjects", mode) end)
-  vim.keymap.set(mode, "af", function() ts_select.select_textobject("@function.outer", "textobjects", mode) end)
-  vim.keymap.set(mode, "if", function() ts_select.select_textobject("@function.inner", "textobjects", mode) end)
-  vim.keymap.set(mode, "ac", function() ts_select.select_textobject("@class.outer", "textobjects", mode) end)
-  vim.keymap.set(mode, "ic", function() ts_select.select_textobject("@class.inner", "textobjects", mode) end)
+  vim.keymap.set(mode, "aa", function()
+    ts_select.select_textobject("@parameter.outer", "textobjects", mode)
+  end)
+  vim.keymap.set(mode, "ia", function()
+    ts_select.select_textobject("@parameter.inner", "textobjects", mode)
+  end)
+  vim.keymap.set(mode, "af", function()
+    ts_select.select_textobject("@function.outer", "textobjects", mode)
+  end)
+  vim.keymap.set(mode, "if", function()
+    ts_select.select_textobject("@function.inner", "textobjects", mode)
+  end)
+  vim.keymap.set(mode, "ac", function()
+    ts_select.select_textobject("@class.outer", "textobjects", mode)
+  end)
+  vim.keymap.set(mode, "ic", function()
+    ts_select.select_textobject("@class.inner", "textobjects", mode)
+  end)
 end
 
-vim.keymap.set({ "n", "x", "o" }, "]m", function() ts_move.goto_next_start("@function.outer", "textobjects") end)
-vim.keymap.set({ "n", "x", "o" }, "]]", function() ts_move.goto_next_start("@class.outer", "textobjects") end)
-vim.keymap.set({ "n", "x", "o" }, "]M", function() ts_move.goto_next_end("@function.outer", "textobjects") end)
-vim.keymap.set({ "n", "x", "o" }, "][", function() ts_move.goto_next_end("@class.outer", "textobjects") end)
-vim.keymap.set({ "n", "x", "o" }, "[m", function() ts_move.goto_previous_start("@function.outer", "textobjects") end)
-vim.keymap.set({ "n", "x", "o" }, "[[", function() ts_move.goto_previous_start("@class.outer", "textobjects") end)
-vim.keymap.set({ "n", "x", "o" }, "[M", function() ts_move.goto_previous_end("@function.outer", "textobjects") end)
-vim.keymap.set({ "n", "x", "o" }, "[]", function() ts_move.goto_previous_end("@class.outer", "textobjects") end)
+vim.keymap.set({ "n", "x", "o" }, "]m", function()
+  ts_move.goto_next_start("@function.outer", "textobjects")
+end)
+vim.keymap.set({ "n", "x", "o" }, "]]", function()
+  ts_move.goto_next_start("@class.outer", "textobjects")
+end)
+vim.keymap.set({ "n", "x", "o" }, "]M", function()
+  ts_move.goto_next_end("@function.outer", "textobjects")
+end)
+vim.keymap.set({ "n", "x", "o" }, "][", function()
+  ts_move.goto_next_end("@class.outer", "textobjects")
+end)
+vim.keymap.set({ "n", "x", "o" }, "[m", function()
+  ts_move.goto_previous_start("@function.outer", "textobjects")
+end)
+vim.keymap.set({ "n", "x", "o" }, "[[", function()
+  ts_move.goto_previous_start("@class.outer", "textobjects")
+end)
+vim.keymap.set({ "n", "x", "o" }, "[M", function()
+  ts_move.goto_previous_end("@function.outer", "textobjects")
+end)
+vim.keymap.set({ "n", "x", "o" }, "[]", function()
+  ts_move.goto_previous_end("@class.outer", "textobjects")
+end)
 
-vim.keymap.set("n", "<leader>a", function() ts_swap.swap_next("@parameter.inner") end, { desc = "Swap next parameter" })
-vim.keymap.set("n", "<leader>A", function() ts_swap.swap_previous("@parameter.inner") end, { desc = "Swap previous parameter" })
+vim.keymap.set("n", "<leader>a", function()
+  ts_swap.swap_next("@parameter.inner")
+end, { desc = "Swap next parameter" })
+vim.keymap.set("n", "<leader>A", function()
+  ts_swap.swap_previous("@parameter.inner")
+end, { desc = "Swap previous parameter" })
 
 -- Diagnostic keymaps
 vim.keymap.set("n", "[d", function()
@@ -325,7 +357,7 @@ vim.lsp.config("lua_ls", {
 -- Setup mason and let mason-lspconfig auto-enable installed servers
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "ts_ls", "lua_ls" },
+  ensure_installed = { "ts_ls", "lua_ls", "oxfmt", "oxlint", "stylua" },
   automatic_enable = true,
 })
 
