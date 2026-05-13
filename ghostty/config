@@ -24,7 +24,7 @@ shell-integration-features = no-cursor
 quit-after-last-window-closed = true
 window-decoration = false
 working-directory = /Users/gui.cabral/dev/hq
-command = /opt/homebrew/bin/fish -l -c "tmux attach || tmux new-session"
+# command = /opt/homebrew/bin/fish -l -c "tmux attach || tmux new-session"
 desktop-notifications = true
 
 # =============================================================================
