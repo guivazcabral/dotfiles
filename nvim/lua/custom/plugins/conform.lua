@@ -7,10 +7,10 @@ return {
     -- Define your formatters
     formatters_by_ft = {
       lua = { "stylua" },
-      javascript = { "eslint_d" },
-      graphql = { "prettierd", "prettier" },
-      blade = { "prettierd" },
-      php = { "pint" },
+      javascript = { "oxfmt", "oxlint" },
+      javascriptreact = { "oxfmt", "oxlint" },
+      typescript = { "oxfmt", "oxlint" },
+      typescriptreact = { "oxfmt", "oxlint" },
     },
     -- Set up format-on-save
     format_on_save = { timeout_ms = 500, lsp_format = "fallback" },
