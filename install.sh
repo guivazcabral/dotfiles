@@ -12,14 +12,15 @@ create_symlinks() {
     bat
     fish
     ghostty
-    tmux
-    oh-my-posh
+    hunk
     k9s
-    kitty
-    zellij
-    nvim
     karabiner
+    kitty
+    nvim
+    oh-my-posh
+    tmux
     wezterm
+    zellij
   )
   for dir in "${config_dirs[@]}"; do
     echo "> Creating symlink for $dir"
