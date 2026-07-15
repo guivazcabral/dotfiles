@@ -105,6 +105,7 @@ install_brew_packages() {
     fzf
     git
     git-delta
+    hunk
     jandedobbeleer/oh-my-posh/oh-my-posh
     k9s
     lazydocker
