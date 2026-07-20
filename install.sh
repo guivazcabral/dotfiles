@@ -62,6 +62,7 @@ override_mac_defaults() {
   defaults write com.apple.controlcenter "NSStatusItem Visible Battery" -bool false
 
   # Dock
+  defaults write com.apple.dock persistent-apps -array
   defaults write com.apple.dock autohide -bool true
   defaults write com.apple.dock tilesize -int 52
   defaults write com.apple.dock minimize-to-application -bool true
@@ -104,6 +105,7 @@ install_brew_packages() {
     fish
     fnm
     fzf
+    gh
     git
     git-delta
     hunk
