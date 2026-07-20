@@ -1,12 +1,12 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export FZF_DEFAULT_OPTS:\x2d\x2dcolor\x3dbg\x2b\x3a\x23313244\x2cbg\x3a\x231e1e2e\x2cspinner\x3a\x23f5e0dc\x2chl\x3a\x23f38ba8\x20\x2d\x2dcolor\x3dfg\x3a\x23cdd6f4\x2cheader\x3a\x23f38ba8\x2cinfo\x3a\x23cba6f7\x2cpointer\x3a\x23f5e0dc\x20\x2d\x2dcolor\x3dmarker\x3a\x23f5e0dc\x2cfg\x2b\x3a\x23cdd6f4\x2cprompt\x3a\x23cba6f7\x2chl\x2b\x3a\x23f38ba8
-SETUVAR --export PYENV_ROOT:/Users/gui.cabral/\x2epyenv
+SETUVAR --export PYENV_ROOT:/Users/guilhermevazsilvacabral/\x2epyenv
 SETUVAR ZO_CMD:zo
 SETUVAR Z_CMD:z
-SETUVAR Z_DATA:/Users/gui.cabral/\x2elocal/share/z/data
-SETUVAR Z_DATA_DIR:/Users/gui.cabral/\x2elocal/share/z
-SETUVAR Z_EXCLUDE:\x5e/Users/gui.cabral\x24
+SETUVAR Z_DATA:/Users/guilhermevazsilvacabral/\x2elocal/share/z/data
+SETUVAR Z_DATA_DIR:/Users/guilhermevazsilvacabral/\x2elocal/share/z
+SETUVAR Z_EXCLUDE:\x5e/Users/guilhermevazsilvacabral\x24
 SETUVAR __fish_initialized:4300
 SETUVAR _fish_abbr_awswhoami:aws\x20sts\x20get\x2dcaller\x2didentity
 SETUVAR _fish_abbr_dk:docker

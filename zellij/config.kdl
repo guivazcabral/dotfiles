@@ -65,8 +65,9 @@ ui {
 }
  
 theme "catppuccin-mocha"
-layout_dir "/Users/gui.cabral/dev/dotfiles/zellij/layouts"
-theme_dir "/Users/gui.cabral/dev/dotfiles/zellij/themes"
+# layout_dir / theme_dir are intentionally omitted: zellij auto-discovers
+# `layouts/` and `themes/` from its config dir (~/.config/zellij, symlinked
+# here), so no absolute, username-specific path is needed.
 
 mouse_mode true
 simplified_ui false
