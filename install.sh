@@ -9,6 +9,7 @@ create_symlinks() {
   mkdir -p "$XDG_CONFIG_HOME"
 
   local config_dirs=(
+    aerospace
     bat
     fish
     ghostty
@@ -122,6 +123,7 @@ install_brew_packages() {
   brew install ${packages[@]}
 
   casks=(
+    nikitabobko/tap/aerospace
     ghostty
     karabiner-elements
     devtoys
