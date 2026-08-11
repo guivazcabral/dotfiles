@@ -101,6 +101,8 @@ run = 'move-node-to-workspace R'
     alt-minus = 'resize smart -50'
     alt-equal = 'resize smart +50'
 
+    alt-f = 'fullscreen' # toggle focused window to fill the monitor
+
     # QWERT -> monitor 1, ASDFG -> monitor 2 (ctrl-alt to avoid option dead keys)
     ctrl-alt-q = 'workspace Q'
     ctrl-alt-w = 'workspace W'
