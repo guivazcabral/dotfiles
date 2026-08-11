@@ -52,6 +52,11 @@ override_mac_defaults() {
   # Only show scrollbars when scrolling
   defaults write -g AppleShowScrollBars -string "WhenScrolling"
 
+  # Neutralize macOS ctrl-cmd-F fullscreen (conflicts with AeroSpace) by
+  # remapping the menu items to a dead chord (cmd-opt-ctrl-shift-F).
+  defaults write -g NSUserKeyEquivalents -dict-add "Enter Full Screen" '@~^$f'
+  defaults write -g NSUserKeyEquivalents -dict-add "Exit Full Screen" '@~^$f'
+
   # Enable three-finger drag (Accessibility > Pointer Control > Trackpad Options)
   defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
   defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool true
