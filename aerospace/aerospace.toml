@@ -80,6 +80,10 @@ run = 'move-node-to-workspace S'
 if.app-id = 'com.linear'
 run = 'move-node-to-workspace F'
 
+[[on-window-detected]]
+if.app-id = 'org.mozilla.firefox'
+run = 'move-node-to-workspace R'
+
 [mode.main.binding]
     alt-slash = 'layout tiles horizontal vertical'
     alt-comma = 'layout accordion horizontal vertical'
