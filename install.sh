@@ -157,6 +157,22 @@ setup_gitconfig() {
   echo "dotfiles/.gitconfig included successfully in global config"
 }
 
+setup_input_device_lock() {
+  echo "Setting up input-device lock (force USB mic as default input)..."
+  if ! command -v swiftc >/dev/null 2>&1; then
+    echo "  swiftc not found (install Xcode Command Line Tools). Skipping." >&2
+    return 0
+  fi
+  mkdir -p "$HOME/.local/bin"
+  swiftc -O "$DOTFILES_DIR/macos/force-input-device.swift" -o "$HOME/.local/bin/force-input-device"
+
+  local plist="$HOME/Library/LaunchAgents/com.gui.force-input-device.plist"
+  mkdir -p "$HOME/Library/LaunchAgents"
+  ln -sfn "$DOTFILES_DIR/macos/com.gui.force-input-device.plist" "$plist"
+  launchctl unload "$plist" 2>/dev/null || true
+  launchctl load "$plist"
+}
+
 print_manual_steps() {
   echo ""
   echo "========================================"
@@ -178,6 +194,7 @@ bootstrap() {
   install_brew_packages
   create_symlinks
   override_mac_defaults
+  setup_input_device_lock
   change_shell_to_fish
   setup_gitconfig
   print_manual_steps
