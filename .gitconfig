@@ -14,12 +14,14 @@
   excludefile = ~/dev/dotfiles/.gitignore_global
   pager = delta
 [interactive]
-    diffFilter = delta --color-only
+  diffFilter = delta --color-only
 [delta]
-    navigate = true  # use n and N to move between diff sections
-    dark = true      # or light = true, or omit for auto-detection
+  navigate = true  # use n and N to move between diff sections
+  dark = true      # or light = true, or omit for auto-detection
 [merge]
-    conflictstyle = zdiff3
+  conflictstyle = zdiff3
+[init]
+  defaultBranch = main
 
 ; if you want to include a file only for repos under a certain folder,
 ; you can use the following syntax:
