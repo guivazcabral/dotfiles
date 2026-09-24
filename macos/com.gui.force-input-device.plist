@@ -8,7 +8,7 @@
     <array>
         <string>/bin/sh</string>
         <string>-c</string>
-        <string>exec "$HOME/.local/bin/force-input-device" QuadCast</string>
+        <string>exec "$HOME/.local/bin/force-input-device" QuadCast AirPods</string>
     </array>
     <key>RunAtLoad</key>
     <true/>

@@ -2,12 +2,15 @@
 // macOS switches away (e.g. when a headset connects). Event-driven via Core
 // Audio property listeners — no polling.
 //
-// Usage: force-input-device "<name substring>"   (default: "QuadCast")
+// Usage: force-input-device "<name substring>" ["<exception substring>" ...]
+//   (default: "QuadCast"). If the current default input matches an exception
+//   (e.g. "AirPods"), it's left alone.
 
 import CoreAudio
 import Foundation
 
 let wanted = (CommandLine.arguments.count > 1 ? CommandLine.arguments[1] : "QuadCast").lowercased()
+let exceptions = CommandLine.arguments.dropFirst(2).map { $0.lowercased() }
 let sys = AudioObjectID(kAudioObjectSystemObject)
 
 let logPath = NSHomeDirectory() + "/Library/Logs/force-input-device.log"
@@ -77,7 +80,10 @@ func setDefaultInput(_ id: AudioDeviceID) {
 
 func enforce() {
     guard let target = targetDevice() else { return }   // not connected → leave macOS's choice
-    if defaultInput() != target {
+    let current = defaultInput()
+    let currentName = deviceName(current).lowercased()
+    if exceptions.contains(where: { currentName.contains($0) }) { return }
+    if current != target {
         setDefaultInput(target)
         log("input -> \(deviceName(target))")
     }
@@ -91,6 +97,6 @@ var devAddr = addr(kAudioHardwarePropertyDevices)
 AudioObjectAddPropertyListenerBlock(sys, &defAddr, queue, listener)
 AudioObjectAddPropertyListenerBlock(sys, &devAddr, queue, listener)
 
-log("watching for input matching \"\(wanted)\"")
+log("watching for input matching \"\(wanted)\", except \(exceptions)")
 enforce()
 CFRunLoopRun()
