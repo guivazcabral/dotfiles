@@ -128,10 +128,11 @@ install_brew_packages() {
   brew install ${packages[@]}
 
   casks=(
-    nikitabobko/tap/aerospace
+    devtoys
     ghostty
     karabiner-elements
-    devtoys
+    nikitabobko/tap/aerospace
+    openlogi
   )
   brew install --cask ${casks[@]}
 }
