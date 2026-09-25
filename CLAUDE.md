@@ -8,7 +8,7 @@ Personal dotfiles for a macOS development environment. Configs are symlinked int
 
 ## Installation
 
-`./install.sh` handles brew packages (see `Readme.md`), symlinks, macOS defaults, and the shell change. Re-runnable / idempotent.
+`./install.sh` handles brew packages (see `Readme.md`), symlinks, macOS defaults, the input-device LaunchAgent, the shell change, and gitconfig include. Re-runnable / idempotent.
 
 For manual symlinks, mirror what `create_symlinks` does in `install.sh`. Lazygit / lazydocker use non-standard paths (`~/Library/Application Support/...`).
 
@@ -16,16 +16,19 @@ Neovim deps that aren't part of the dotfiles tree: `tree-sitter-cli` (required b
 
 ## Architecture
 
-**Launch chain:** Wezterm → Fish → Zellij → (Neovim, Lazygit, etc.)
+**Terminal:** Ghostty is the primary terminal (Wezterm and Kitty configs are kept). Both Ghostty and Wezterm launch plain Fish — the tmux / Zellij autostart lines are commented out. Tmux (plugins via TPM, not tracked) and Zellij are both configured.
 
-Wezterm's `default_prog` launches Fish with Zellij, so the terminal always starts inside Zellij. Fish sources all custom modules from `~/.config/fish/custom/` at startup.
+**Window management:** AeroSpace (tiling WM) with Karabiner-Elements for key remapping. `install.sh` remaps the macOS ctrl-cmd-F fullscreen shortcut to avoid AeroSpace conflicts.
 
-**Fish custom modules** (`fish/custom/`):
-- `abbrs/` — command abbreviations (e.g. `lg`→lazygit, `nv`→nvim, `ls`→eza)
+**Fish custom modules** (`fish/custom/`), sourced explicitly from `fish/config.fish` — add a `source` line when creating a new one:
+- `abbrs/misc.fish` — command abbreviations (e.g. `lg`→lazygit, `nv`→nvim, `ls`→eza)
 - `zellij.fish` — Zellij abbreviations + auto-renaming of tabs by git repo name
 - `git.fish` — fzf-powered branch search (`gfsb`) and commit picker (`fcommit`)
 - `fnm.fish` — FNM (Fast Node Manager) init; no NVM
+- `chrome.fish` — `xchrome`, launches Chrome with web security disabled
 - `secrets.fish` — gitignored env vars
+
+**macOS helpers** (`macos/`): `force-input-device.swift` is compiled by `install.sh` to `~/.local/bin/force-input-device` and run by the `com.gui.force-input-device` LaunchAgent (symlinked into `~/Library/LaunchAgents`). It keeps the QuadCast as default input unless AirPods are active.
 
 **Neovim** uses Lazy.nvim with configs split across:
 - `lua/custom/plugins/` — individual plugin configs
@@ -34,7 +37,7 @@ Wezterm's `default_prog` launches Fish with Zellij, so the terminal always start
 
 ## Theme
 
-All visual tools use **Catppuccin Mocha** for consistency: Wezterm, Zellij, Oh-My-Posh, Lazygit, Bat. When adding new tool configs, follow this theme.
+All visual tools use **Catppuccin Mocha** for consistency: Ghostty, Wezterm, Tmux, Zellij, Oh-My-Posh, Lazygit, Bat, Hunk. When adding new tool configs, follow this theme.
 
 ## Prompt Engine
 
