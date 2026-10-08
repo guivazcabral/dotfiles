@@ -18,6 +18,7 @@ The script will:
 - Symlink every config folder into `~/.config` (and the non-standard paths for lazygit / lazydocker)
 - Apply my macOS defaults (key repeat, trackpad, Dock, Finder, dark mode, fullscreen shortcut neutralized for AeroSpace, etc.)
 - Compile and load a LaunchAgent that keeps the USB mic (QuadCast) as default input, unless AirPods are in use (see [Input device lock](#input-device-lock))
+- Compile and load a LaunchAgent that disables AeroSpace when no external monitor is connected (see [AeroSpace display toggle](#aerospace-display-toggle))
 - Add fish to `/etc/shells` and set it as the default shell
 - Set up `~/.gitconfig` to include this repo's gitconfig
 
@@ -43,6 +44,10 @@ Restart your Mac after the script finishes for all the defaults to take effect.
 ### Input device lock
 
 `macos/force-input-device.swift` is compiled to `~/.local/bin/force-input-device` and run by the `com.gui.force-input-device` LaunchAgent. It listens to Core Audio events and switches the default input back to the QuadCast whenever macOS moves away from it, except when AirPods are the default. Requires Xcode Command Line Tools (`swiftc`); skipped otherwise. Logs to `~/Library/Logs/force-input-device.log`.
+
+### AeroSpace display toggle
+
+`macos/aerospace-display-toggle.swift` is compiled to `~/.local/bin/aerospace-display-toggle` and run by the `com.gui.aerospace-display-toggle` LaunchAgent. It listens to display reconfiguration events and runs `aerospace enable off` when only the built-in screen is active, `aerospace enable on` once an external monitor is back. Requires `swiftc`; skipped otherwise. Logs to `~/Library/Logs/aerospace-display-toggle.log`.
 
 ## What's configured
 

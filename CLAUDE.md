@@ -8,7 +8,7 @@ Personal dotfiles for a macOS development environment. Configs are symlinked int
 
 ## Installation
 
-`./install.sh` handles brew packages (see `Readme.md`), symlinks, macOS defaults, the input-device LaunchAgent, the shell change, and gitconfig include. Re-runnable / idempotent.
+`./install.sh` handles brew packages (see `Readme.md`), symlinks, macOS defaults, the input-device and AeroSpace display-toggle LaunchAgents, the shell change, and gitconfig include. Re-runnable / idempotent.
 
 For manual symlinks, mirror what `create_symlinks` does in `install.sh`. Lazygit / lazydocker use non-standard paths (`~/Library/Application Support/...`).
 
@@ -28,7 +28,7 @@ Neovim deps that aren't part of the dotfiles tree: `tree-sitter-cli` (required b
 - `chrome.fish` — `xchrome`, launches Chrome with web security disabled
 - `secrets.fish` — gitignored env vars
 
-**macOS helpers** (`macos/`): `force-input-device.swift` is compiled by `install.sh` to `~/.local/bin/force-input-device` and run by the `com.gui.force-input-device` LaunchAgent (symlinked into `~/Library/LaunchAgents`). It keeps the QuadCast as default input unless AirPods are active.
+**macOS helpers** (`macos/`): `force-input-device.swift` is compiled by `install.sh` to `~/.local/bin/force-input-device` and run by the `com.gui.force-input-device` LaunchAgent (symlinked into `~/Library/LaunchAgents`). It keeps the QuadCast as default input unless AirPods are active. `aerospace-display-toggle.swift` follows the same pattern (`com.gui.aerospace-display-toggle`) and disables AeroSpace when no external monitor is connected.
 
 **Neovim** uses Lazy.nvim with configs split across:
 - `lua/custom/plugins/` — individual plugin configs

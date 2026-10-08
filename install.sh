@@ -174,6 +174,22 @@ setup_input_device_lock() {
   launchctl load "$plist"
 }
 
+setup_aerospace_display_toggle() {
+  echo "Setting up AeroSpace display toggle (disable without external monitors)..."
+  if ! command -v swiftc >/dev/null 2>&1; then
+    echo "  swiftc not found (install Xcode Command Line Tools). Skipping." >&2
+    return 0
+  fi
+  mkdir -p "$HOME/.local/bin"
+  swiftc -O "$DOTFILES_DIR/macos/aerospace-display-toggle.swift" -o "$HOME/.local/bin/aerospace-display-toggle"
+
+  local plist="$HOME/Library/LaunchAgents/com.gui.aerospace-display-toggle.plist"
+  mkdir -p "$HOME/Library/LaunchAgents"
+  ln -sfn "$DOTFILES_DIR/macos/com.gui.aerospace-display-toggle.plist" "$plist"
+  launchctl unload "$plist" 2>/dev/null || true
+  launchctl load "$plist"
+}
+
 print_manual_steps() {
   echo ""
   echo "========================================"
@@ -196,6 +212,7 @@ bootstrap() {
   create_symlinks
   override_mac_defaults
   setup_input_device_lock
+  setup_aerospace_display_toggle
   change_shell_to_fish
   setup_gitconfig
   print_manual_steps
