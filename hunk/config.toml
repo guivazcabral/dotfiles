@@ -1,6 +1,9 @@
 theme = "catppuccin-mocha"
-mode = "auto"
+mode = "unified"
 line_numbers = true
-wrap_lines = false
+wrap_lines = true
 menu_bar = true
 agent_notes = true
+hunk_headers = true
+copy_decorations = false
+cursor_line = "row"
